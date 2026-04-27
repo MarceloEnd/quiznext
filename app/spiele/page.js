@@ -1,0 +1,199 @@
+"use client"; // Required for MUI hooks and interactivity
+
+import React from 'react';
+import Link from 'next/link'; // Changed from react-router-dom
+import { StandardHeader } from "../components/components/StandardHeader";;
+import {
+  Typography,
+  Button,
+  Paper,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Container,
+  Box,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material';
+import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
+
+// Grouped Game Data
+const GAMES = [
+  {
+    title: "Fehlersuche",
+    basePath: "/spiele/fehlersuche",
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+  },
+  {
+    title: "Memory (Symbole)",
+    basePath: "/spiele/memorys",
+    difficulties: [
+      { label: "Leicht", query: "?leicht", color: "#4caf50" },
+      { label: "Normal", query: "", color: "#2196f3" },
+      { label: "Schwer", query: "?schwer", color: "#f44336" }
+    ]
+  },
+  {
+    title: "Memory (Farben)",
+    basePath: "/spiele/memorycolor",
+    difficulties: [
+      { label: "Leicht", query: "?leicht", color: "#4caf50" },
+      { label: "Normal", query: "", color: "#2196f3" },
+      { label: "Schwer", query: "?schwer", color: "#f44336" }
+    ]
+  },
+  {
+    title: "Memory (Versus)",
+    basePath: "/spiele/memoryversus",
+    difficulties: [
+      { label: "Leicht", query: "?leicht", color: "#4caf50" },
+      { label: "Normal", query: "", color: "#2196f3" },
+      { label: "Schwer", query: "?schwer", color: "#f44336" }
+    ]
+  },
+  {
+    title: "Sudoku 4x4",
+    basePath: "/spiele/sudoku4x4",
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+  },
+  {
+    title: "Sudoku 6x6",
+    basePath: "/spiele/sudoku6x6",
+    difficulties: [
+      { label: "Leicht", query: "?leicht", color: "#4caf50" },
+      { label: "Normal", query: "", color: "#2196f3" },
+      { label: "Schwer", query: "?schwer", color: "#f44336" }
+    ]
+  },
+  {
+    title: "Rechne Quadrat",
+    basePath: "/spiele/rechnequadrat",
+    difficulties: [
+      { label: "Leicht", query: "?leicht", color: "#4caf50" },
+      { label: "Normal", query: "", color: "#2196f3" },
+      { label: "Schwer", query: "?schwer", color: "#f44336" }
+    ]
+  },
+  {
+    title: "Wort Suche",
+    basePath: "/spiele/wortsuche",
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+  },
+  {
+    title: "Wort Schlange",
+    basePath: "/spiele/wortschlange",
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+  },
+  {
+    title: "Das kleine 1x1",
+    basePath: "/spiele/1x1",
+    difficulties: [
+      { label: "Mal", query: "", color: "#4caf50" },
+      { label: "Mal Zeit", query: "zeit", color: "#2196f3" },
+      { label: "Geteilt", query: "geteilt", color: "#f44336" }
+    ]
+  },
+  {
+    title: "Wimmelbild",
+    basePath: "/spiele/wimmelbild",
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+  },
+  {
+    title: "Lese-Maus",
+    basePath: "/spiele/lesemaus",
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+  },
+];
+
+export default function GameOverviewSite() { // Changed to default export (standard for Next.js pages)
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  return (
+    <Box>
+      <StandardHeader previousPath="/"/>
+
+      <Container maxWidth="md" sx={{ py: { xs: 2, sm: 4 } }}>
+
+      <Typography
+        variant={isMobile ? "h4" : "h2"}
+        gutterBottom
+        sx={{
+          fontWeight: 800,
+          textAlign: 'center',
+          color: "#4ba5f7"
+        }}
+        >
+          Spiele
+        </Typography>
+
+          <List sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 0 }}>
+            {GAMES.map((game, index) => (
+              <Paper
+                key={index}
+                elevation={2}
+                sx={{
+                  borderRadius: '20px',
+                  backgroundColor: "#c5efff",
+                  overflow: 'hidden'
+                }}
+              >
+                <ListItem
+                  sx={{
+                    p: { xs: 2, sm: 3 },
+                    flexDirection: isMobile ? 'column' : 'row',
+                    alignItems: 'center',
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: isMobile ? 0 : 56, mb: isMobile ? 1 : 0 }}>
+                    <VideogameAssetIcon sx={{ fontSize: isMobile ? 32 : 40, color: '#219538ff' }} />
+                  </ListItemIcon>
+
+                  <ListItemText
+                    primary={
+                      <Typography
+                        variant={isMobile ? "h6" : "h5"}
+                        sx={{ fontWeight: 'bold', mb: isMobile ? 2 : 0 }}
+                      >
+                        {game.title}
+                      </Typography>
+                    }
+                  />
+
+                  {/* Difficulty Selection Section */}
+                  <Box sx={{
+                    display: 'flex',
+                    gap: 1,
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    width: isMobile ? '100%' : 'auto'
+                  }}>
+                    {game.difficulties.map((diff) => (
+                      <Button
+                        key={diff.label}
+                        variant="contained"
+                        component={Link} // Now uses next/link
+                        href={`${game.basePath}${diff.query}`} // to -> href
+                        size={isMobile ? "medium" : "large"}
+                        sx={{
+                          borderRadius: '10px',
+                          backgroundColor: diff.color,
+                          fontWeight: 'bold',
+                          flexGrow: isMobile ? 1 : 0,
+                          fontSize: isMobile ? '0.75rem' : '0.875rem',
+                          '&:hover': { backgroundColor: diff.color, filter: 'brightness(0.9)' },
+                        }}
+                      >
+                        {diff.label}
+                      </Button>
+                    ))}
+                  </Box>
+                </ListItem>
+              </Paper>
+            ))}
+          </List>
+      </Container>
+    </Box>
+  );
+}

@@ -1,0 +1,172 @@
+"use client"; // Required for hooks and interactivity
+
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  Box, Container, Typography,
+  Card, CardActionArea
+} from '@mui/material';
+import { StandardHeader } from '../../components/components/StandardHeader';
+import { useSearchParams } from 'next/navigation'; // Changed from react-router-dom
+import { EndMenuNextGame } from '../../components/components/EndMenuNextGame';
+
+// Vibrant, kid-friendly color palette
+const COLORS = [
+  '#FF5252', '#448AFF', '#4CAF50', '#FFEB3B',
+  '#E040FB', '#FF9800', '#00BCD4', '#795548',
+  '#9E9E9E', '#607D8B', '#FF4081', '#7C4DFF',
+  '#18FFFF', '#8BC34A', '#F44336', '#3F51B5'
+];
+
+export default function MemoryColorSite() {
+  const [cards, setCards] = useState([]);
+  const [flipped, setFlipped] = useState([]);
+  const [matched, setMatched] = useState([]);
+  const [moves, setMoves] = useState(0);
+  const [gameWon, setGameWon] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+
+  const searchParams = useSearchParams();
+  const isHard = searchParams.has('schwer');
+  const isEasy = searchParams.has('leicht');
+
+  const initGame = useCallback(() => {
+    let pairCount = 10;
+    if (isEasy) pairCount = 8;
+    else if (isHard) pairCount = 12;
+
+    const activeColors = COLORS.slice(0, pairCount);
+    const gameSet = [...activeColors, ...activeColors]
+      .sort(() => Math.random() - 0.5)
+      .map((color, index) => ({ id: index, color }));
+
+    setCards(gameSet);
+    setMatched([]);
+    setFlipped([]);
+    setMoves(0);
+    setGameWon(false);
+    setDisabled(false);
+  }, [isHard, isEasy]);
+
+  useEffect(() => {
+    initGame();
+  }, [initGame]);
+
+  const handleCardClick = (index) => {
+    if (disabled || matched.includes(index) || flipped.includes(index)) return;
+
+    const newFlipped = [...flipped, index];
+    setFlipped(newFlipped);
+
+    if (newFlipped.length === 2) {
+      setMoves(m => m + 1);
+      setDisabled(true);
+      checkMatch(newFlipped);
+    }
+  };
+
+  const checkMatch = (currentFlipped) => {
+    const [first, second] = currentFlipped;
+
+    if (cards[first].color === cards[second].color) {
+      setMatched(prev => {
+        const nextMatched = [...prev, first, second];
+        if (nextMatched.length === cards.length && cards.length > 0) {
+          setGameWon(true);
+        }
+        return nextMatched;
+      });
+      setFlipped([]);
+      setDisabled(false);
+    } else {
+      setTimeout(() => {
+        setFlipped([]);
+        setDisabled(false);
+      }, 800);
+    }
+  };
+
+  return (
+    <Box sx={{ bgcolor: '#F5F7FA', minHeight: '100vh', pb: 10 }}>
+      <StandardHeader previousPath="/spiele"/>
+
+      <Container maxWidth="md" sx={{ mt: { xs: 2, sm: 4 }, textAlign: 'center' }}>
+        <Typography
+          variant="h3"
+          fontWeight="900"
+          color="primary"
+          sx={{
+            mb: 1,
+            letterSpacing: -1,
+            fontSize: { xs: '2.2rem', sm: '3.5rem' },
+            textAlign: 'center' // Explicitly centered
+          }}
+        >
+            FARBEN MEMORY
+        </Typography>
+
+        <Box sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: { xs: 1, sm: 2 },
+            maxWidth: { xs: 400, sm: 850 },
+            margin: '0 auto',
+            px: { xs: 2, sm: 0 },
+            boxSizing: 'border-box'
+        }}>
+            {cards.map((card, index) => {
+            const isFlipped = flipped.includes(index) || matched.includes(index);
+            const isMatched = matched.includes(index);
+
+            return (
+                <Card
+                key={index}
+                elevation={isFlipped ? 4 : 2}
+                sx={{
+                    flex: {
+                    xs: '0 0 calc(25% - 8px)',
+                    sm: '0 0 calc(16.66% - 17px)'
+                    },
+                    aspectRatio: '1/1',
+                    transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    transform: isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)',
+                    bgcolor: isFlipped ? 'white' : '#1976d2',
+                    borderRadius: { xs: 1.5, sm: 2 },
+                    overflow: 'hidden',
+                    p: isFlipped ? 0.8 : 0,
+                    boxSizing: 'border-box'
+                }}
+                >
+                <CardActionArea
+                    onClick={() => handleCardClick(index)}
+                    sx={{ height: '100%', borderRadius: 'inherit' }}
+                >
+                    <Box
+                    sx={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 'inherit',
+                        bgcolor: card.color,
+                        visibility: isFlipped ? 'visible' : 'hidden',
+                        transform: isFlipped ? 'none' : 'rotateY(180deg)',
+                        transition: 'opacity 0.3s',
+                        opacity: isMatched ? 0.6 : 1,
+                    }}
+                    />
+                </CardActionArea>
+                </Card>
+            );
+            })}
+        </Box>
+
+        <EndMenuNextGame
+          gameWon={gameWon}
+          winText={"GEWINNER!"}
+          winAnswer={`In ${moves} Zügen gelöst`}
+          nextGameLink="/spiele"
+          backLink="/spiele"
+        />
+      </Container>
+    </Box>
+  );
+}
