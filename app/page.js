@@ -6,7 +6,7 @@ import { FeaturedGames } from './components/components/FeaturedGames';
 export default function Home() {
   return (
     <div className="Start">
-      <StandardHeader previousPath='' />
+      <StandardHeader />
       <Banner />
       <FeaturedGames />
     </div>
