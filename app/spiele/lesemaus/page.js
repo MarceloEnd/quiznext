@@ -20,13 +20,11 @@ import { StandardHeader } from '../../components/components/StandardHeader';
 import { categoriesLeseMaus } from './functions/functions';
 
 export default function LesemausOverviewSite() {
-  // In Next.js, ensure this function doesn't rely on browser-only
-  // globals during the very first server render.
   const themes = categoriesLeseMaus();
 
   return (
     <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh' }}>
-      <StandardHeader previousPath="/spiele"/>
+      <StandardHeader/>
 
       <Box sx={{ p: { xs: 2, sm: 6 } }}>
         <Paper
@@ -95,25 +93,25 @@ export default function LesemausOverviewSite() {
                     }
                   />
 
-                  <Link href={`/spiele/lesemaus/${item.id}`} passHref legacyBehavior>
-                    <Button
-                      variant="contained"
-                      sx={{
-                        borderRadius: '12px',
-                        backgroundColor: '#219538',
-                        px: 4,
-                        fontWeight: 'bold',
-                        textTransform: 'none',
-                        width: { xs: '100%', sm: 'auto' },
-                        '&:hover': {
-                          backgroundColor: '#1a7a2e',
-                        }
-                      }}
-                      endIcon={<ArrowIcon />}
-                    >
-                      Los!
-                    </Button>
-                  </Link>
+                  <Button
+                    component={Link}
+                    href={`/spiele/lesemaus/${item.id}`}
+                    variant="contained"
+                    sx={{
+                      borderRadius: '12px',
+                      backgroundColor: '#219538',
+                      px: 4,
+                      fontWeight: 'bold',
+                      textTransform: 'none',
+                      width: { xs: '100%', sm: 'auto' },
+                      '&:hover': {
+                        backgroundColor: '#1a7a2e',
+                      }
+                    }}
+                    endIcon={<ArrowIcon />}
+                  >
+                    Los!
+                  </Button>
                 </ListItem>
               </Paper>
             ))}

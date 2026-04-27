@@ -104,6 +104,11 @@ const GAMES = [
     basePath: "/spiele/lesemaus",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
   },
+  {
+    title: "Wordle",
+    basePath: "/spiele/wordle",
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+  },
 ];
 
 export default function GameOverviewSite() { // Changed to default export (standard for Next.js pages)

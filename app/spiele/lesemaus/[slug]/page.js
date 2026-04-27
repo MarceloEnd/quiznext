@@ -166,7 +166,7 @@ export default function LesemausSite() {
         gameWon={istRichtig}
         winText={"Du hast das Rätsel gelöst:"}
         winAnswer={originalWort}
-        nextGameLink={`/spiele/lesemaus/${wordId + 1}`}
+        nextGameLink={`/spiele/lesemaus/${(wordId % 20) + 1}`}
         backLink={`/spiele/lesemaus`}
       />
     </Box>
