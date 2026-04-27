@@ -22,13 +22,13 @@ export const FeaturedGames = () => {
       title: "Wortschlange",
       desc: "Folge der Spur!",
       icon: <ExtensionIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/wortschlangeliste",
+      path: "/spiele/wortschlange",
       gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
       shadow: '0 8px 20px rgba(76, 175, 80, 0.3)'
     },
     {
       title: "Mathe-Quadrat",
-      desc: "Zahlen-Rätsel",
+      desc: "Stärke deine Kopfrechne Fähigkeiten",
       icon: <CalculateIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/rechnequadrat",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
@@ -36,7 +36,7 @@ export const FeaturedGames = () => {
     },
     {
       title: "Sudoku",
-      desc: "Bist du schlau?",
+      desc: "Bist du schlau genug?",
       icon: <SportsEsportsIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/sudoku6x6",
       gradient: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
@@ -44,9 +44,9 @@ export const FeaturedGames = () => {
     },
     {
       title: "Wortsuche",
-      desc: "Finde alle!",
+      desc: "Finde alle Wörter!",
       icon: <SpellcheckIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/wortsucheliste",
+      path: "/spiele/wortsuche",
       gradient: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)',
       shadow: '0 8px 20px rgba(233, 30, 99, 0.3)'
     }
@@ -141,12 +141,12 @@ export const FeaturedGames = () => {
                     variant="body2"
                     sx={{
                       color: 'rgba(255,255,255,0.9)',
-                      fontWeight: '600',
+                      fontWeight: '500',
                       mt: 0.5,
                       fontSize: { xs: '0.65rem', sm: '0.8rem' },
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis'
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      lineHeight: 1.4,
                     }}
                   >
                     {game.desc}
