@@ -2,7 +2,7 @@ import { Footer } from './components/components/Footer';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 export default function RootLayout({ children }) {
   return (
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
             <Footer />
         </AppRouterCacheProvider>
       </body>
-      <GoogleAnalytics gaId="G-4BEMP9FEDP" />
+      
     </html>
   );
 }
