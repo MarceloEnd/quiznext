@@ -1,9 +1,9 @@
-"use client"; // Required for state, effects, and search params
+"use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
 import { Box, Container, Typography, Card, CardActionArea, Grid, Paper } from '@mui/material';
 import { StandardHeader } from '../../components/components/StandardHeader';
-import { useSearchParams } from 'next/navigation'; // Changed from react-router-dom
+import { useSearchParams } from 'next/navigation';
 import { EndMenuNextGame } from '../../components/components/EndMenuNextGame';
 
 const SYMBOLS = [
@@ -11,7 +11,10 @@ const SYMBOLS = [
   '🥑', '🥦', '🌽', '🥕', '🍑', '🍋', '🍉', '🍄'
 ];
 
-export default function MemoryVersusSite() {
+/**
+ * Logic Component
+ */
+function MemoryVersusGame() {
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [matched, setMatched] = useState([]);
@@ -27,8 +30,8 @@ export default function MemoryVersusSite() {
 
   const initGame = useCallback(() => {
     let pairCount = 10;
-    if(isEasy) pairCount = 8;
-    else if(isHard) pairCount = 12;
+    if (isEasy) pairCount = 8;
+    else if (isHard) pairCount = 12;
 
     const activeSymbols = SYMBOLS.slice(0, pairCount);
     const gameSet = [...activeSymbols, ...activeSymbols]
@@ -88,7 +91,7 @@ export default function MemoryVersusSite() {
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', bgcolor: '#f9f9f9' }}>
-      <StandardHeader previousPath="/spiele"/>
+      <StandardHeader previousPath="/spiele" />
 
       <Container
         maxWidth="md"
@@ -107,85 +110,83 @@ export default function MemoryVersusSite() {
           color="primary"
           sx={{ mb: 4, letterSpacing: -1, textAlign: 'center', fontSize: { xs: '2rem', sm: '3.5rem' } }}
         >
-            MEMORY VERSUS
+          MEMORY VERSUS
         </Typography>
 
-        {/* Scoreboard */}
         <Grid container spacing={2} sx={{ mb: 4, maxWidth: 600 }} justifyContent="center">
-            <Grid item xs={5} sm={4}>
-                <Paper elevation={currentPlayer === 1 ? 8 : 1} sx={{
-                    p: 2, textAlign: 'center',
-                    bgcolor: currentPlayer === 1 ? '#e3f2fd' : '#fff',
-                    border: currentPlayer === 1 ? '3px solid #1976d2' : '3px solid transparent',
-                    borderRadius: 3,
-                    transition: 'all 0.3s ease'
-                }}>
-                    <Typography variant="subtitle1" fontWeight="bold">Spieler 1</Typography>
-                    <Typography variant="h4" fontWeight="900" color={currentPlayer === 1 ? 'primary' : 'inherit'}>{scores[1]}</Typography>
-                </Paper>
-            </Grid>
-            <Grid item xs={2} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Typography variant="h6" color="textSecondary" fontWeight="bold">VS</Typography>
-            </Grid>
-            <Grid item xs={5} sm={4}>
-                <Paper elevation={currentPlayer === 2 ? 8 : 1} sx={{
-                    p: 2, textAlign: 'center',
-                    bgcolor: currentPlayer === 2 ? '#fce4ec' : '#fff',
-                    border: currentPlayer === 2 ? '3px solid #d81b60' : '3px solid transparent',
-                    borderRadius: 3,
-                    transition: 'all 0.3s ease'
-                }}>
-                    <Typography variant="subtitle1" fontWeight="bold">Spieler 2</Typography>
-                    <Typography variant="h4" fontWeight="900" color={currentPlayer === 2 ? '#d81b60' : 'inherit'}>{scores[2]}</Typography>
-                </Paper>
-            </Grid>
+          <Grid item xs={5} sm={4}>
+            <Paper elevation={currentPlayer === 1 ? 8 : 1} sx={{
+              p: 2, textAlign: 'center',
+              bgcolor: currentPlayer === 1 ? '#e3f2fd' : '#fff',
+              border: currentPlayer === 1 ? '3px solid #1976d2' : '3px solid transparent',
+              borderRadius: 3,
+              transition: 'all 0.3s ease'
+            }}>
+              <Typography variant="subtitle1" fontWeight="bold">Spieler 1</Typography>
+              <Typography variant="h4" fontWeight="900" color={currentPlayer === 1 ? 'primary' : 'inherit'}>{scores[1]}</Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={2} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant="h6" color="textSecondary" fontWeight="bold">VS</Typography>
+          </Grid>
+          <Grid item xs={5} sm={4}>
+            <Paper elevation={currentPlayer === 2 ? 8 : 1} sx={{
+              p: 2, textAlign: 'center',
+              bgcolor: currentPlayer === 2 ? '#fce4ec' : '#fff',
+              border: currentPlayer === 2 ? '3px solid #d81b60' : '3px solid transparent',
+              borderRadius: 3,
+              transition: 'all 0.3s ease'
+            }}>
+              <Typography variant="subtitle1" fontWeight="bold">Spieler 2</Typography>
+              <Typography variant="h4" fontWeight="900" color={currentPlayer === 2 ? '#d81b60' : 'inherit'}>{scores[2]}</Typography>
+            </Paper>
+          </Grid>
         </Grid>
 
-        {/* Game Grid */}
         <Box sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: { xs: 1, sm: 2 },
-            width: '100%',
-            maxWidth: { xs: 400, sm: 850 },
-            margin: '0 auto',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: { xs: 1, sm: 2 },
+          width: '100%',
+          maxWidth: { xs: 400, sm: 850 },
+          margin: '0 auto',
         }}>
-            {cards.map((card, index) => {
-              const isFlipped = flipped.includes(index) || matched.includes(index);
-              const isMatched = matched.includes(index);
+          {cards.map((card, index) => {
+            const isFlipped = flipped.includes(index) || matched.includes(index);
+            const isMatched = matched.includes(index);
 
-              return (
-                <Card
-                  key={index}
-                  sx={{
-                      width: {
-                        xs: 'calc(25% - 8px)',
-                        sm: 'calc(16.66% - 16px)'
-                      },
-                      aspectRatio: '1/1',
-                      transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                      transform: isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)',
-                      bgcolor: isMatched ? '#c8e6c9' : (isFlipped ? 'white' : (currentPlayer === 1 ? '#1976d2' : '#d81b60')),
-                      boxShadow: isFlipped ? 4 : 2,
-                      borderRadius: { xs: 1, sm: 2 },
-                  }}
-                >
-                  <CardActionArea onClick={() => handleCardClick(index)} sx={{ height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <Typography
-                      sx={{
-                        fontSize: { xs: '1.5rem', sm: '2.5rem' },
-                        visibility: isFlipped ? 'visible' : 'hidden',
-                        transform: isFlipped ? 'none' : 'rotateY(180deg)',
-                        textAlign: 'center'
-                      }}
-                    >
-                      {card.symbol}
-                    </Typography>
-                  </CardActionArea>
-                </Card>
-              );
-            })}
+            return (
+              <Card
+                key={index}
+                sx={{
+                  width: {
+                    xs: 'calc(25% - 8px)',
+                    sm: 'calc(16.66% - 16px)'
+                  },
+                  aspectRatio: '1/1',
+                  transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)',
+                  bgcolor: isMatched ? '#c8e6c9' : (isFlipped ? 'white' : (currentPlayer === 1 ? '#1976d2' : '#d81b60')),
+                  boxShadow: isFlipped ? 4 : 2,
+                  borderRadius: { xs: 1, sm: 2 },
+                }}
+              >
+                <CardActionArea onClick={() => handleCardClick(index)} sx={{ height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: '1.5rem', sm: '2.5rem' },
+                      visibility: isFlipped ? 'visible' : 'hidden',
+                      transform: isFlipped ? 'none' : 'rotateY(180deg)',
+                      textAlign: 'center'
+                    }}
+                  >
+                    {card.symbol}
+                  </Typography>
+                </CardActionArea>
+              </Card>
+            );
+          })}
         </Box>
 
         <EndMenuNextGame
@@ -197,5 +198,16 @@ export default function MemoryVersusSite() {
         />
       </Container>
     </Box>
+  );
+}
+
+/**
+ * Main Page Export with Suspense Boundary
+ */
+export default function MemoryVersusSite() {
+  return (
+    <Suspense fallback={<Typography align="center" sx={{ mt: 10 }}>Laden...</Typography>}>
+      <MemoryVersusGame />
+    </Suspense>
   );
 }

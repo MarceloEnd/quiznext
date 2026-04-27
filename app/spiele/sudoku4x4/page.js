@@ -1,21 +1,23 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import { Box, Paper, Typography, Container, Button, Stack } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import TimerIcon from '@mui/icons-material/Timer';
 import { createNewGame } from './functions/functions';
 import { StandardHeader } from '../../components/components/StandardHeader';
-import { useSearchParams } from 'next/navigation'; // Changed from react-router-dom
+import { useSearchParams } from 'next/navigation';
 import { EndMenuNextGame } from '../../components/components/EndMenuNextGame';
 
-export default function Sudoku4x4Site() {
+/**
+ * 1. Internal Game Logic Component
+ */
+function Sudoku4x4Game() {
   const searchParams = useSearchParams();
   const isHard = searchParams.has('schwer');
   const isEasy = searchParams.has('leicht');
 
-  // Initialize with empty state to prevent hydration errors
   const [game, setGame] = useState({ puzzle: Array(4).fill(Array(4).fill(0)), solution: [] });
   const [userBoard, setUserBoard] = useState(Array(4).fill(Array(4).fill(0)));
   const [selected, setSelected] = useState(null);
@@ -24,7 +26,6 @@ export default function Sudoku4x4Site() {
   const [isActive, setIsActive] = useState(true);
   const timerRef = useRef(null);
 
-  // Initialize game on mount
   useEffect(() => {
     const newGame = createNewGame(isEasy, isHard);
     setGame(newGame);
@@ -37,7 +38,6 @@ export default function Sudoku4x4Site() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // Win Logic
   useEffect(() => {
     if (!game.solution || game.solution.length === 0) return;
 
@@ -50,7 +50,6 @@ export default function Sudoku4x4Site() {
     }
   }, [userBoard, game.solution, gameWon]);
 
-  // Timer Logic
   useEffect(() => {
     if (isActive && !gameWon) {
       timerRef.current = setInterval(() => setTime((t) => t + 1), 1000);
@@ -68,7 +67,6 @@ export default function Sudoku4x4Site() {
     setUserBoard(next);
   }, [selected, userBoard, game.puzzle, isActive, gameWon]);
 
-  // Keyboard Support
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!isActive || !selected || gameWon) return;
@@ -78,16 +76,6 @@ export default function Sudoku4x4Site() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isActive, selected, updateCell, gameWon]);
-
-  const startNewGame = () => {
-    const newGame = createNewGame(isEasy, isHard);
-    setGame(newGame);
-    setUserBoard(newGame.puzzle);
-    setSelected(null);
-    setTime(0);
-    setIsActive(true);
-    setGameWon(false);
-  };
 
   const renderQuadrant = (startRow, startCol) => (
     <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 70px)', gap: '1px', bgcolor: '#ccc' }}>
@@ -126,7 +114,7 @@ export default function Sudoku4x4Site() {
 
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: '#fdfdfd' }}>
-      <StandardHeader previousPath="/spiele"/>
+      <StandardHeader previousPath="/spiele" />
       <Container maxWidth="sm" sx={{ mt: 4, textAlign: 'center', pb: 10 }}>
         <Typography variant="h3" fontWeight="900" color="primary" sx={{ mb: 2 }}>
           4x4 SUDOKU
@@ -199,5 +187,16 @@ export default function Sudoku4x4Site() {
         />
       </Container>
     </Box>
+  );
+}
+
+/**
+ * 2. Main Page Wrapper (Fixes Vercel Error)
+ */
+export default function Sudoku4x4Site() {
+  return (
+    <Suspense fallback={<Typography align="center" sx={{ mt: 10 }}>Laden...</Typography>}>
+      <Sudoku4x4Game />
+    </Suspense>
   );
 }

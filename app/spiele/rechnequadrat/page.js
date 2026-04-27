@@ -1,15 +1,18 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
 import {
     Box, TextField, Paper, Typography, Container, useTheme, useMediaQuery
 } from '@mui/material';
 import { generatePuzzle } from './functions/functions';
-import { useSearchParams } from 'next/navigation'; // Changed from react-router-dom
+import { useSearchParams } from 'next/navigation';
 import { StandardHeader } from '../../components/components/StandardHeader';
 import { EndMenuNextGame } from '../../components/components/EndMenuNextGame';
 
-export default function MathSquareSite() {
+/**
+ * 1. Internal Game Component
+ */
+function MathSquareGame() {
     const searchParams = useSearchParams();
     const isHard = searchParams.has('schwer');
     const isEasy = searchParams.has('leicht');
@@ -19,7 +22,6 @@ export default function MathSquareSite() {
     const [status, setStatus] = useState({});
     const [showSuccess, setShowSuccess] = useState(false);
 
-    // Responsive sizing logic
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const cellSize = isMobile ? 42 : 60;
@@ -34,12 +36,10 @@ export default function MathSquareSite() {
         setShowSuccess(false);
     }, [isEasy, isHard]);
 
-    // Initial game load (Client-side only to prevent hydration errors)
     useEffect(() => {
         startNewGame();
     }, [startNewGame]);
 
-    // --- AUTOMATIC CHECK LOGIC ---
     useEffect(() => {
         if (!gameData || Object.keys(inputs).length === 0) return;
 
@@ -185,5 +185,16 @@ export default function MathSquareSite() {
                 />
             </Container>
         </Box>
+    );
+}
+
+/**
+ * 2. Main Export with Suspense
+ */
+export default function MathSquareSite() {
+    return (
+        <Suspense fallback={<Typography align="center" sx={{ mt: 10 }}>Laden...</Typography>}>
+            <MathSquareGame />
+        </Suspense>
     );
 }

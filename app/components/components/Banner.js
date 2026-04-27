@@ -9,8 +9,8 @@ import {
 } from '@mui/icons-material';
 
 // 3. Static image imports work slightly differently in Next.js
-import crossword from '../../images/banners/Crossword.png';
-import wizard from '../../images/banners/Wizards.png';
+import crossword from '../images/banners/Crossword.png';
+import wizard from '../images/banners/Wizards.png';
 
 export const Banner = () => {
     const [currentBanner, setCurrentBanner] = useState(0);

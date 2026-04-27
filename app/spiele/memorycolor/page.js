@@ -1,15 +1,14 @@
-"use client"; // Required for hooks and interactivity
+"use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
 import {
   Box, Container, Typography,
   Card, CardActionArea
 } from '@mui/material';
 import { StandardHeader } from '../../components/components/StandardHeader';
-import { useSearchParams } from 'next/navigation'; // Changed from react-router-dom
+import { useSearchParams } from 'next/navigation';
 import { EndMenuNextGame } from '../../components/components/EndMenuNextGame';
 
-// Vibrant, kid-friendly color palette
 const COLORS = [
   '#FF5252', '#448AFF', '#4CAF50', '#FFEB3B',
   '#E040FB', '#FF9800', '#00BCD4', '#795548',
@@ -17,7 +16,10 @@ const COLORS = [
   '#18FFFF', '#8BC34A', '#F44336', '#3F51B5'
 ];
 
-export default function MemoryColorSite() {
+/**
+ * 1. The Internal Game Component
+ */
+function MemoryColorGame() {
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [matched, setMatched] = useState([]);
@@ -87,7 +89,7 @@ export default function MemoryColorSite() {
 
   return (
     <Box sx={{ bgcolor: '#F5F7FA', minHeight: '100vh', pb: 10 }}>
-      <StandardHeader previousPath="/spiele"/>
+      <StandardHeader previousPath="/spiele" />
 
       <Container maxWidth="md" sx={{ mt: { xs: 2, sm: 4 }, textAlign: 'center' }}>
         <Typography
@@ -98,65 +100,65 @@ export default function MemoryColorSite() {
             mb: 1,
             letterSpacing: -1,
             fontSize: { xs: '2.2rem', sm: '3.5rem' },
-            textAlign: 'center' // Explicitly centered
+            textAlign: 'center'
           }}
         >
-            FARBEN MEMORY
+          FARBEN MEMORY
         </Typography>
 
         <Box sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: { xs: 1, sm: 2 },
-            maxWidth: { xs: 400, sm: 850 },
-            margin: '0 auto',
-            px: { xs: 2, sm: 0 },
-            boxSizing: 'border-box'
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: { xs: 1, sm: 2 },
+          maxWidth: { xs: 400, sm: 850 },
+          margin: '0 auto',
+          px: { xs: 2, sm: 0 },
+          boxSizing: 'border-box'
         }}>
-            {cards.map((card, index) => {
+          {cards.map((card, index) => {
             const isFlipped = flipped.includes(index) || matched.includes(index);
             const isMatched = matched.includes(index);
 
             return (
-                <Card
+              <Card
                 key={index}
                 elevation={isFlipped ? 4 : 2}
                 sx={{
-                    flex: {
+                  flex: {
                     xs: '0 0 calc(25% - 8px)',
                     sm: '0 0 calc(16.66% - 17px)'
-                    },
-                    aspectRatio: '1/1',
-                    transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    transform: isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)',
-                    bgcolor: isFlipped ? 'white' : '#1976d2',
-                    borderRadius: { xs: 1.5, sm: 2 },
-                    overflow: 'hidden',
-                    p: isFlipped ? 0.8 : 0,
-                    boxSizing: 'border-box'
+                  },
+                  aspectRatio: '1/1',
+                  transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)',
+                  bgcolor: isFlipped ? 'white' : '#1976d2',
+                  borderRadius: { xs: 1.5, sm: 2 },
+                  overflow: 'hidden',
+                  p: isFlipped ? 0.8 : 0,
+                  boxSizing: 'border-box'
                 }}
-                >
+              >
                 <CardActionArea
-                    onClick={() => handleCardClick(index)}
-                    sx={{ height: '100%', borderRadius: 'inherit' }}
+                  onClick={() => handleCardClick(index)}
+                  sx={{ height: '100%', borderRadius: 'inherit' }}
                 >
-                    <Box
+                  <Box
                     sx={{
-                        width: '100%',
-                        height: '100%',
-                        borderRadius: 'inherit',
-                        bgcolor: card.color,
-                        visibility: isFlipped ? 'visible' : 'hidden',
-                        transform: isFlipped ? 'none' : 'rotateY(180deg)',
-                        transition: 'opacity 0.3s',
-                        opacity: isMatched ? 0.6 : 1,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: 'inherit',
+                      bgcolor: card.color,
+                      visibility: isFlipped ? 'visible' : 'hidden',
+                      transform: isFlipped ? 'none' : 'rotateY(180deg)',
+                      transition: 'opacity 0.3s',
+                      opacity: isMatched ? 0.6 : 1,
                     }}
-                    />
+                  />
                 </CardActionArea>
-                </Card>
+              </Card>
             );
-            })}
+          })}
         </Box>
 
         <EndMenuNextGame
@@ -168,5 +170,16 @@ export default function MemoryColorSite() {
         />
       </Container>
     </Box>
+  );
+}
+
+/**
+ * 2. The Main Default Export with Suspense
+ */
+export default function MemoryColorSite() {
+  return (
+    <Suspense fallback={<Typography align="center" sx={{ mt: 10 }}>Laden...</Typography>}>
+      <MemoryColorGame />
+    </Suspense>
   );
 }

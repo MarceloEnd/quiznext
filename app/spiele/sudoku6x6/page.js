@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import {
   Box, Paper, Typography, Container, Button, Stack
 } from '@mui/material';
@@ -9,10 +9,13 @@ import PauseIcon from '@mui/icons-material/Pause';
 import TimerIcon from '@mui/icons-material/Timer';
 import { createNewGame } from './functions/functions';
 import { StandardHeader } from '../../components/components/StandardHeader';
-import { useSearchParams } from 'next/navigation'; // Changed from react-router-dom
+import { useSearchParams } from 'next/navigation';
 import { EndMenuNextGame } from '../../components/components/EndMenuNextGame';
 
-export default function Sudoku6x6Site() {
+/**
+ * 1. The Game Logic Component
+ */
+function Sudoku6x6Game() {
   const searchParams = useSearchParams();
   const isHard = searchParams.has('schwer');
   const isEasy = searchParams.has('leicht');
@@ -81,16 +84,6 @@ export default function Sudoku6x6Site() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isActive, selected, updateCell, gameWon]);
 
-  const startNewGame = () => {
-    const newGame = createNewGame(isEasy, isHard);
-    setGame(newGame);
-    setUserBoard(newGame.puzzle);
-    setSelected(null);
-    setTime(0);
-    setIsActive(true);
-    setGameWon(false);
-  };
-
   const renderQuadrant = (startRow, startCol) => (
     <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', bgcolor: '#ccc' }}>
       {userBoard.slice(startRow, startRow + 2).map((row, relativeR) => {
@@ -126,7 +119,7 @@ export default function Sudoku6x6Site() {
 
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: '#fdfdfd' }}>
-      <StandardHeader previousPath="/spiele"/>
+      <StandardHeader previousPath="/spiele" />
       <Container maxWidth="sm" sx={{ mt: 4, textAlign: 'center', pb: 10 }}>
         <Typography variant="h3" fontWeight="900" color="primary" sx={{ mb: 2 }}>
           6x6 SUDOKU
@@ -190,5 +183,16 @@ export default function Sudoku6x6Site() {
         />
       </Container>
     </Box>
+  );
+}
+
+/**
+ * 2. Main Page Wrapper with Suspense
+ */
+export default function Sudoku6x6Site() {
+  return (
+    <Suspense fallback={<Typography align="center" sx={{ mt: 10 }}>Laden...</Typography>}>
+      <Sudoku6x6Game />
+    </Suspense>
   );
 }
