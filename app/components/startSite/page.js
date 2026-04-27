@@ -4,7 +4,7 @@ import { StandardHeader } from "../components/StandardHeader";
 import { Banner } from "./components/banner";
 import { FeaturedGames } from "./components/featuredGames";
 
-export const StartSite = () => {
+export default function StartSite() {
 
   return (
     <div className="Start">
