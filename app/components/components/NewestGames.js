@@ -16,37 +16,37 @@ import ExtensionIcon from '@mui/icons-material/Extension';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import SpellcheckIcon from '@mui/icons-material/Spellcheck';
 
-export const FeaturedGames = () => {
+export const NewestGames = () => {
   const featured = [
     {
-      title: "Wortschlange",
-      desc: "Folge der Spur!",
+      title: "Wordle",
+      desc: "Finde das Wort",
       icon: <ExtensionIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/wortschlange",
+      path: "/spiele/wordle",
       gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
       shadow: '0 8px 20px rgba(76, 175, 80, 0.3)'
     },
     {
-      title: "Mathe-Quadrat",
-      desc: "Stärke deine Kopfrechne Fähigkeiten",
+      title: "Wimmelbilder",
+      desc: "Finde die Fehler",
       icon: <CalculateIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/rechnequadrat",
+      path: "/spiele/wimmelbild",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
       shadow: '0 8px 20px rgba(33, 150, 243, 0.3)'
     },
     {
-      title: "Sudoku",
-      desc: "Bist du schlau genug?",
+      title: "Das kleine 1x1",
+      desc: "Wie schnell bist du",
       icon: <SportsEsportsIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/sudoku6x6",
+      path: "/spiele/1x1",
       gradient: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
       shadow: '0 8px 20px rgba(255, 152, 0, 0.3)'
     },
     {
-      title: "Wortsuche",
-      desc: "Finde alle Wörter!",
+      title: "Lese Maus",
+      desc: "Knacke den Code",
       icon: <SpellcheckIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/wortsuche",
+      path: "/spiele/lesemaus",
       gradient: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)',
       shadow: '0 8px 20px rgba(233, 30, 99, 0.3)'
     }
@@ -65,7 +65,7 @@ export const FeaturedGames = () => {
           letterSpacing: 2
         }}
       >
-        Beliebteste Spiele
+        Neuste Spiele
       </Typography>
 
       {/* Grid container stays the same */}

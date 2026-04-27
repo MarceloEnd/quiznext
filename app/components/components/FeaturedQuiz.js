@@ -16,40 +16,25 @@ import ExtensionIcon from '@mui/icons-material/Extension';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import SpellcheckIcon from '@mui/icons-material/Spellcheck';
 
-export const FeaturedGames = () => {
+export const FeaturedQuiz = () => {
   const featured = [
     {
-      title: "Wortschlange",
-      desc: "Folge der Spur!",
+      title: "Ponys und Pferde",
+      desc: "Alles über Feen und Füchse",
       icon: <ExtensionIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/wortschlange",
+      path: "/quiz/1",
       gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
       shadow: '0 8px 20px rgba(76, 175, 80, 0.3)'
     },
     {
-      title: "Mathe-Quadrat",
-      desc: "Stärke deine Kopfrechne Fähigkeiten",
+      title: "Farben",
+      desc: "Der Farbkreis",
       icon: <CalculateIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/rechnequadrat",
+      path: "/quiz/2",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
       shadow: '0 8px 20px rgba(33, 150, 243, 0.3)'
     },
-    {
-      title: "Sudoku",
-      desc: "Bist du schlau genug?",
-      icon: <SportsEsportsIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/sudoku6x6",
-      gradient: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
-      shadow: '0 8px 20px rgba(255, 152, 0, 0.3)'
-    },
-    {
-      title: "Wortsuche",
-      desc: "Finde alle Wörter!",
-      icon: <SpellcheckIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
-      path: "/spiele/wortsuche",
-      gradient: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)',
-      shadow: '0 8px 20px rgba(233, 30, 99, 0.3)'
-    }
+
   ];
 
   return (
@@ -65,7 +50,7 @@ export const FeaturedGames = () => {
           letterSpacing: 2
         }}
       >
-        Beliebteste Spiele
+        Beliebteste Quizze
       </Typography>
 
       {/* Grid container stays the same */}
