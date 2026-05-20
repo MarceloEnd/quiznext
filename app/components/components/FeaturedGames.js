@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {
   Typography,
   Box,
-  Grid, // Back to standard Grid
+  Grid,
   Container,
   CardActionArea,
   Card,
@@ -60,7 +60,7 @@ export const FeaturedGames = () => {
           fontWeight: '900',
           color: '#4ba5f7',
           mb: 3,
-          textAlign: { xs: 'center', md: 'left' },
+          textAlign: { xs: 'center', md: 'center' },
           textTransform: 'uppercase',
           letterSpacing: 2
         }}
@@ -68,22 +68,14 @@ export const FeaturedGames = () => {
         Beliebteste Spiele
       </Typography>
 
-      {/* Grid container stays the same */}
-      <Grid container spacing={2}>
+      {/* FIXED: Added justifyContent="center" here to center the entire group of cards */}
+      <Grid container spacing={2} sx={{justifyContent: 'center',}}>
         {featured.map((game, index) => (
           <Grid
             key={index}
-            // 1. REMOVED the 'item' prop to stop the console error
-            // 2. Breakpoints xs, sm, md work fine as long as 'item' is gone
             xs={6}
             sm={6}
             md={3}
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              p: 1 // Optional: manual padding if 'spacing' acts up
-            }}
           >
             <Card
               elevation={0}

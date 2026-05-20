@@ -45,7 +45,7 @@ export const FeaturedQuiz = () => {
           fontWeight: '900',
           color: '#4ba5f7',
           mb: 3,
-          textAlign: { xs: 'center', md: 'left' },
+          textAlign: { xs: 'center', md: 'center' },
           textTransform: 'uppercase',
           letterSpacing: 2
         }}
@@ -54,7 +54,7 @@ export const FeaturedQuiz = () => {
       </Typography>
 
       {/* Grid container stays the same */}
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{justifyContent: 'center',}}>
         {featured.map((game, index) => (
           <Grid
             key={index}
