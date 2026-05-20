@@ -84,7 +84,7 @@ export const StandardHeader = () => {
                     component="img"
                     src={logo.src || logo}
                     alt="Logo"
-                    sx={{ width: 55, height: 55, borderRadius: '12px', mr: 1.5, border: '2px solid #FFF' }}
+                    sx={{ width: 55, height: 55, borderRadius: '12px', mr: 1.5 }}
                   />
                 </Box>
               )}
