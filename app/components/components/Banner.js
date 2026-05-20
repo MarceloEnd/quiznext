@@ -26,7 +26,7 @@ export const Banner = () => {
         image: wizard.src || wizard
       },
       {
-        path: "/quizliste",
+        path: "/quiz",
         image: crossword.src || crossword
       },
     ];
