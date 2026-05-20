@@ -10,8 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image'; // Optional: Use Next.js Image component for optimization
 
 // Note: Ensure these paths are relative to this file in your new structure
-import logo from '../images/logo.jpeg';
-import oldlogo from '../images/logo_old.jpeg';
+import logo from '../images/logo_transparent.png';
 
 export const StandardHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -64,7 +63,8 @@ export const StandardHeader = () => {
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', flex: isMobile ? 1 : '0 1 auto' }}>
+            {/* Left Side: Mobile Menu Button OR Desktop Logo */}
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
               {isMobile ? (
                 <Box onClick={handleDrawerToggle} sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                   <IconButton sx={{ color: 'white', p: 0 }}>
@@ -77,48 +77,45 @@ export const StandardHeader = () => {
               ) : (
                 <Box
                   component={Link}
-                  href="/" // 4. Changed 'to' to 'href'
+                  href="/"
                   sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
                 >
                   <Box
                     component="img"
-                    src={logo.src || logo} // Added .src for static imports in Next.js
+                    src={logo.src || logo}
                     alt="Logo"
-                    sx={{ width: 50, height: 50, borderRadius: '12px', mr: 1.5, border: '2px solid #FFF' }}
+                    sx={{ width: 55, height: 55, borderRadius: '12px', mr: 1.5, border: '2px solid #FFF' }}
                   />
-                  <Box
-                    component="img"
-                    src={oldlogo.src || oldlogo}
-                    alt="OldLogo"
-                    sx={{ width: 50, height: 50, borderRadius: '12px', mr: 1.5, border: '2px solid #FFF' }}
-                  />
-                  <Typography variant="h5" sx={{ fontWeight: 900, color: '#ffffffff' }}>
-                    Quiz for Kids
-                  </Typography>
                 </Box>
               )}
             </Box>
 
+            {/* Right Side / Center Content: Desktop Nav Links OR Mobile Logo */}
             <Box
               sx={{
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)',
                 display: 'flex',
-                alignItems: 'center'
+                alignItems: 'center',
+                // On desktop, push the links to the far right.
+                // On mobile, perfectly center the absolute logo.
+                ml: isMobile ? 0 : 'auto',
+                ...(isMobile && {
+                  position: 'absolute',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                })
               }}
             >
               {isMobile ? (
                 <Box
                   component={Link}
-                  href="/" // 5. Changed 'to' to 'href'
+                  href="/"
                   sx={{ display: 'flex' }}
                 >
                   <Box
                     component="img"
                     src={logo.src || logo}
                     alt="Logo"
-                    sx={{ width: 45, height: 45, borderRadius: '10px', border: '2px solid #FFF' }}
+                    sx={{ width: 55, height: 55, borderRadius: '10px', border: '2px solid #FFF' }}
                   />
                 </Box>
               ) : (
@@ -126,7 +123,7 @@ export const StandardHeader = () => {
                   <Button
                     key={link.title}
                     component={Link}
-                    href={link.path} // 6. Changed 'to' to 'href'
+                    href={link.path}
                     sx={getLinkStyle(link.path)}
                   >
                     {link.title}
@@ -135,15 +132,11 @@ export const StandardHeader = () => {
               )}
             </Box>
 
-            <Box sx={{ flex: isMobile ? 1 : '0 1 auto', display: 'flex', justifyContent: 'flex-end', minWidth: isMobile ? 0 : 50 }}>
-               {!isMobile && <Box sx={{ width: 50 }} />}
-               {isMobile && <Box sx={{ width: 60 }} />}
-            </Box>
-
           </Toolbar>
         </Container>
       </AppBar>
 
+      {/* Drawer Menu remains unchanged */}
       <Drawer
         anchor="left"
         open={mobileOpen}
@@ -157,7 +150,7 @@ export const StandardHeader = () => {
               <ListItem
                 key={item.title}
                 component={Link}
-                href={item.path} // 7. Changed 'to' to 'href'
+                href={item.path}
                 sx={{ textDecoration: 'none' }}
               >
                 <ListItemText
@@ -166,7 +159,7 @@ export const StandardHeader = () => {
                     primary: {
                       sx: {
                         textAlign: 'center',
-                        color: pathname === item.path ? '#FF9800' : '#2D3436', // 8. Use pathname here
+                        color: pathname === item.path ? '#FF9800' : '#2D3436',
                         fontWeight: 700
                       }
                     }

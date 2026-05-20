@@ -4,9 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { getRandomQuestions } from '../functions/json_helpers';
 import { getQuiz } from '../functions/get_quiz';
-import { QuizResult } from '../components/QuizEndScreen';
 import { QuizArea } from '../components/QuizArea';
 import { StandardHeader } from '../../components/components/StandardHeader';
+import { EndMenuNewGame } from '../../components/components/EndMenuNewGame';
+import { Box } from '@mui/material';
 
 export default function QuizSite() {
   const params = useParams();
@@ -53,12 +54,27 @@ export default function QuizSite() {
       )}
 
       {currentIndex >= 10 && (
-        <QuizResult
-          score={score}
-          totalQuestions={10}
-          onRestart={handleRestart}
+        <Box
+          sx={{
+            maxHeight: '80vh',
+            minHeight: { xs: '100%', sm: '80vh' }
+          }}
+        >
+          {/* Add your inner content here, for example: */}
+          <div/>
+        </Box>
+      )}
+
+      {currentIndex >= 10 && (
+        <EndMenuNewGame
+          gameWon={true}
+          winText={`${score} von 10 Punkten`}
+          winAnswer={`Quizmeister`}
+          restart={handleRestart}
+          backLink="/quiz"
         />
       )}
+
     </div>
-  );
+  )
 }

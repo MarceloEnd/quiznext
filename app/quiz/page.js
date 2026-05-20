@@ -8,10 +8,8 @@ import {
   Typography,
   Button,
   Paper,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  Box,
+  Grid,
   useTheme,
   useMediaQuery
 } from '@mui/material';
@@ -40,81 +38,104 @@ export default function QuizOverviewSite(){
   return (
     <div className="Start">
       <StandardHeader />
-      <Paper
-        elevation={0} // Elevation 4 can sometimes look heavy on bright backgrounds
+
+      <Box
         sx={{
-          p: { xs: 2, sm: 6 },
+          p: { xs: 3, sm: 6 },
           textAlign: 'center',
-          bgcolor: 'transparent' // Changed to transparent if it's inside a layout
+          bgcolor: 'transparent',
+          maxWidth: 'lg',
+          mx: 'auto'
         }}
       >
-      <Typography
-        variant={isMobile ? "h4" : "h2"}
-        gutterBottom
-        sx={{
-          fontWeight: 800,
-          color: "#4ba5f7"
-        }}
+        <Typography
+          variant={isMobile ? "h4" : "h2"}
+          gutterBottom
+          sx={{
+            fontWeight: 800,
+            color: "#4ba5f7",
+            mb: 4
+          }}
         >
           Teste dein Quiz Wissen
         </Typography>
 
-        <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        {/* Using Grid layout to handle the dynamic side-by-side card structure */}
+        <Grid container spacing={3} justifycontent="center">
           {activities.map((item, index) => (
-            <Paper
+            <Grid
               key={index}
-              elevation={3}
-              sx={{
-                borderRadius: '20px',
-                overflow: 'hidden',
-                backgroundColor: '#c5efff',
-                transition: 'transform 0.2s',
-                '&:hover': { transform: 'scale(1.02)' }
-              }}
+              size={{ xs: 12, sm: 6, md: 4 }} // Fluid resizing across viewports
             >
-              <ListItem
+              <Paper
+                elevation={3}
                 sx={{
+                  borderRadius: '24px',
                   p: 3,
-                  flexDirection: { xs: 'column', sm: 'row' },
+                  height: '100%', // Ensures all cards match heights evenly
+                  display: 'flex',
+                  flexDirection: 'column',
                   alignItems: 'center',
-                  gap: { xs: 2, sm: 0 }
+                  textAlign: 'center',
+                  backgroundColor: '#ffffff', // Clean card base background
+                  border: '3px solid #4ba5f7', // Playful border matching theme accent
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 12px 24px rgba(75, 165, 247, 0.2)'
+                  }
                 }}
               >
-                <ListItemIcon sx={{ minWidth: { xs: 0, sm: '56px' } }}>
-                  <QuizIcon sx={{ fontSize: 40, color: '#FF9800' }} />
-                </ListItemIcon>
+                {/* Visual Icon Header Zone */}
+                <Box
+                  sx={{
+                    bgcolor: 'rgba(255, 152, 0, 0.1)',
+                    p: 2,
+                    borderRadius: '50%',
+                    mb: 2
+                  }}
+                >
+                  <QuizIcon sx={{ fontSize: 50, color: '#FF9800', display: 'block' }} />
+                </Box>
 
-                <ListItemText
-                  primary={
-                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                      {item.title}
-                    </Typography>
-                  }
-                  secondary={item.description}
-                  sx={{ textAlign: { xs: 'center', sm: 'left' } }}
-                />
+                {/* Card Content area with flexible growth spacing */}
+                <Box sx={{ flexGrow: 1, mb: 3 }}>
+                  <Typography variant="h5" sx={{ fontWeight: 800, color: '#2D3436', mb: 1 }}>
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body1" color="text.secondary">
+                    {item.description}
+                  </Typography>
+                </Box>
 
+                {/* Interactive Action Anchor Button */}
                 <Button
                   variant="contained"
-                  component={Link} // 2. Use Next.js Link
-                  href={item.path} // 3. Use 'href' instead of 'to'
+                  component={Link}
+                  href={item.path}
+                  fullWidth
                   sx={{
-                    borderRadius: '12px',
+                    borderRadius: '16px',
                     backgroundColor: '#FF9800',
-                    px: 4,
+                    fontSize: '1.1rem',
+                    fontWeight: 700,
+                    py: 1.2,
+                    textTransform: 'none',
+                    boxShadow: '0 4px 12px rgba(255, 152, 0, 0.3)',
                     '&:hover': {
-                        backgroundColor: '#e68900', // Better contrast than FFF3E0 for a button
+                      backgroundColor: '#e68900',
+                      boxShadow: '0 6px 16px rgba(255, 152, 0, 0.4)',
                     }
                   }}
                   endIcon={<ArrowIcon />}
                 >
-                  Go!
+                  Los geht's!
                 </Button>
-              </ListItem>
-            </Paper>
+              </Paper>
+            </Grid>
           ))}
-        </List>
-      </Paper>
+        </Grid>
+      </Box>
     </div>
   );
 };

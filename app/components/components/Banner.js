@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // 2. Import Next.js Link
 import Link from 'next/link';
-import { Box, Container, Fade, IconButton } from '@mui/material';
+// Added useTheme and useMediaQuery to fix the missing definition
+import { Box, Fade, IconButton, useTheme, useMediaQuery } from '@mui/material';
 
 import {
   ArrowForwardIos as ArrowIcon,
@@ -15,7 +16,10 @@ import wizard from '../images/banners/Wizards.png';
 export const Banner = () => {
     const [currentBanner, setCurrentBanner] = useState(0);
 
-    // Static imports in Next.js are objects; use .src or let MUI handle it
+    // Responsive setup to fix the 'isMobile is not defined' error
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
     const banners = [
       {
         path: "/spiele",
@@ -29,7 +33,7 @@ export const Banner = () => {
 
     const nextBanner = (e) => {
       e.preventDefault();
-      e.stopPropagation(); // Stops the event from reaching the Link wrapper
+      e.stopPropagation();
       setCurrentBanner((prev) => (prev + 1) % banners.length);
     };
 
@@ -49,51 +53,55 @@ export const Banner = () => {
     const activeBanner = banners[currentBanner];
 
     return(
-        <Container maxWidth="md" sx={{ mt: 3, px: { xs: 1, md: 3 } }}>
+      <Box sx={{ width: '100%', overflow: 'hidden' }}>
         <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
 
           <IconButton
             onClick={prevBanner}
             sx={{
-                position: 'absolute', left: 10, zIndex: 10,
+                position: 'absolute', left: 16, zIndex: 10,
                 color: 'white',
                 bgcolor: 'rgba(0,0,0,0.3)',
                 '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' }
             }}
           >
-            <ArrowBackIcon />
+            {/* Now correctly evaluates based on the media query hook above */}
+            <ArrowBackIcon fontSize={isMobile ? "small" : "medium"} />
           </IconButton>
 
-          {/* 4. Use 'href' instead of 'to' */}
           <Link href={activeBanner.path} style={{ textDecoration: 'none', width: '100%' }}>
             <Fade in={true} key={currentBanner} timeout={800}>
               <Box
                 sx={{
-                  borderRadius: '24px',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+                  borderRadius: 0,
                   cursor: 'pointer',
                   overflow: 'hidden',
                   transition: 'transform 0.3s ease',
-                  '&:hover': { transform: 'scale(1.01)' },
+                  '&:hover': { transform: 'scale(1.005)' },
 
                   backgroundImage: `url(${activeBanner.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
+                  backgroundSize: { xs: 'contain', sm: 'cover' },
+                  backgroundPosition: 'center',
 
-                  height: { xs: '180px', sm: '220px', md: '260px' },
+                  // Sets 16:9 proportional fluid layout for small screens
+                  height: {
+                    xs: '56.25vw',
+                    sm: '260px',
+                    md: '340px'
+                  },
 
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'flex-end',
                   alignItems: 'center',
-                  p: 2,
+                  p: { xs: 1, sm: 3 },
                   position: 'relative',
 
                   '&::after': {
                     content: '""',
                     position: 'absolute',
-                    bottom: 0, left: 0, width: '100%', height: '40px',
+                    bottom: 0, left: 0, width: '100%', height: '50px',
                     background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent)',
                     zIndex: 1
                   }
@@ -119,15 +127,15 @@ export const Banner = () => {
           <IconButton
             onClick={nextBanner}
             sx={{
-                position: 'absolute', right: 10, zIndex: 10,
+                position: 'absolute', right: 16, zIndex: 10,
                 color: 'white',
                 bgcolor: 'rgba(0,0,0,0.3)',
                 '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' }
             }}
           >
-            <ArrowIcon />
+            <ArrowIcon fontSize={isMobile ? "small" : "medium"} />
           </IconButton>
         </Box>
-      </Container>
+      </Box>
     );
 }

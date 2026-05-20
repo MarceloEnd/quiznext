@@ -140,7 +140,7 @@ export default function GameOverviewSite() { // Changed to default export (stand
                 elevation={2}
                 sx={{
                   borderRadius: '20px',
-                  backgroundColor: "#c5efff",
+                  backgroundColor: "#4ba5f7",
                   overflow: 'hidden'
                 }}
               >

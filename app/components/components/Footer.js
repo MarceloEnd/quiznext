@@ -11,7 +11,7 @@ export const Footer = () => {
     <Box
       component="footer"
       sx={{
-        background: 'linear-gradient(90deg, #4ba5f7 0%, #c5efff 100%)',
+        background: '#4ba5f7',
         borderTop: '1px solid rgba(0, 0, 0, 0.05)',
         py: 4,
         mt: 'auto',
@@ -64,7 +64,7 @@ export const Footer = () => {
               component={Link}
               href="/agb"
               sx={{
-                color: '#2D3436',
+                color: '#ffffff',
                 textDecoration: 'none',
                 fontSize: '0.85rem',
                 fontWeight: 600,
@@ -80,7 +80,7 @@ export const Footer = () => {
               component={Link}
               href="/impressum"
               sx={{
-                color: '#2D3436',
+                color: '#ffffff',
                 textDecoration: 'none',
                 fontSize: '0.85rem',
                 fontWeight: 600,

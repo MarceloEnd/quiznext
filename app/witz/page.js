@@ -60,7 +60,7 @@ export default function JokeOverviewSite() {
                 sx={{
                   borderRadius: '20px',
                   overflow: 'hidden',
-                  backgroundColor: '#c5efff',
+                  backgroundColor: '#4ba5f7',
                   transition: 'transform 0.2s',
                   '&:hover': { transform: 'scale(1.02)' }
                 }}

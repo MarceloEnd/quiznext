@@ -1,55 +1,68 @@
-import { 
-  Box, Typography, 
-  Dialog, DialogTitle, DialogContent, DialogActions, 
-  Button} from '@mui/material';
+import {
+  Box, Typography,
+  Dialog, DialogTitle, DialogContent, DialogActions,
+  Button
+} from '@mui/material';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 export const EndMenuNewGame = ({gameWon, winText, winAnswer, restart, backLink}) => {
-    const navigate = useNavigate();
+    const router = useRouter();
+
     return(
       <Dialog open={gameWon} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: 4, textAlign: 'center' } }}>
-        <DialogTitle sx={{ pt: 4 }}>
+        <DialogTitle sx={{ pt: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <EmojiEventsIcon sx={{ fontSize: 80, color: '#ffc107', mb: 1 }} />
           <Typography variant="h4" fontWeight="900">{winText}</Typography>
         </DialogTitle>
         <DialogContent>
-          <Box sx={{ my: 3, p: 2, bgcolor: '#f0f7ff', borderRadius: 2 }}>
+          {/* Added flex layout alignment here to guarantee winAnswer centers perfectly */}
+          <Box
+            sx={{
+              my: 3,
+              p: 2,
+              bgcolor: '#f0f7ff',
+              borderRadius: 2,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
             <Typography variant="h5" fontWeight="bold" color="primary">
                {winAnswer}
             </Typography>
           </Box>
         </DialogContent>
-        <DialogActions 
-            sx={{ 
-                flexDirection: 'column', 
-                justifyContent: 'center', 
-                alignItems: 'center',    
-                gap: 2,                  
+        <DialogActions
+            sx={{
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 2,
                 pb: 4,
-                px: 4           
+                px: 4
             }}
             >
-            <Button 
-                variant="contained" 
-                size="large" 
-                onClick={restart} 
-                fullWidth 
+            <Button
+                variant="contained"
+                size="large"
+                onClick={restart}
+                fullWidth
                 sx={{ py: 1.5, borderRadius: 2, fontWeight: 'bold', m: '0 !important' }}
             >
-                Neues Spiel 
+                Neues Spiel
             </Button>
 
-            <Button 
-                variant="contained" 
-                size="large" 
-                onClick={() => navigate(backLink)} 
-                fullWidth 
+            <Button
+                variant="contained"
+                size="large"
+                onClick={() => router.push(backLink)}
+                fullWidth
                 sx={{ py: 1.5, borderRadius: 2, fontWeight: 'bold', m: '0 !important' }}
             >
                 Zurück zum Menü
             </Button>
         </DialogActions>
       </Dialog>
-      )
-    }
+    );
+};

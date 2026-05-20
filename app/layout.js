@@ -1,8 +1,8 @@
 import { Footer } from './components/components/Footer';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import { GoogleAnalytics } from '@next/third-parties/google'
+import './globals.css'
 
 export const metadata = {
   title: 'Quiz for Kids',
@@ -13,7 +13,6 @@ export default function RootLayout({ children }) {
     <html lang="de">
       <body>
         <AppRouterCacheProvider>
-            <CssBaseline />
             {children}
             <Footer />
         </AppRouterCacheProvider>
