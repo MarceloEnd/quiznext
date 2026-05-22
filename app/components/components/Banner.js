@@ -78,12 +78,12 @@ export const Banner = () => {
                   overflow: 'hidden',
                   transition: 'transform 0.3s ease',
                   '&:hover': { transform: 'scale(1.005)' },
-
+                  backgroundColor: 'white',
                   backgroundImage: `url(${activeBanner.image})`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: { xs: 'contain', sm: 'cover' },
                   backgroundPosition: 'center',
-
+                  boxShadow: 'inset 0 -20px 20px -10px rgba(255, 255, 255, 0.8)',
                   // Sets 16:9 proportional fluid layout for small screens
                   height: {
                     xs: '56.25vw',

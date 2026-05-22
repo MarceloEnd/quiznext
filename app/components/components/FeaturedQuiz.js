@@ -58,17 +58,9 @@ export const FeaturedQuiz = () => {
         {featured.map((game, index) => (
           <Grid
             key={index}
-            // 1. REMOVED the 'item' prop to stop the console error
-            // 2. Breakpoints xs, sm, md work fine as long as 'item' is gone
             xs={6}
             sm={6}
             md={3}
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              p: 1 // Optional: manual padding if 'spacing' acts up
-            }}
           >
             <Card
               elevation={0}
@@ -76,9 +68,9 @@ export const FeaturedQuiz = () => {
                 borderRadius: '24px',
                 background: game.gradient,
                 boxShadow: game.shadow,
-                width: {xs: '140px', sm: '140px'},
-                maxWidth: {xs: '140px', sm: '140px'},
-                height: { xs: '140px', sm: '140px' },
+                width: {xs: '150px', sm: '200px',md: '200px'},
+                maxWidth: {xs: '150px', sm: '200px',md: '200px'},
+                height: { xs: '150px', sm: '150px' },
                 display: 'flex',
                 flexDirection: 'column',
                 overflow: 'hidden',

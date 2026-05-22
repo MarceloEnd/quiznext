@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image'; // Optional: Use Next.js Image component for optimization
 
 // Note: Ensure these paths are relative to this file in your new structure
-import logo from '../images/logo_transparent.png';
+import logo from '../images/logo.png';
 
 export const StandardHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,14 +38,14 @@ export const StandardHeader = () => {
     fontWeight: 700,
     textDecoration: 'none',
     mx: 2,
-    color: '#FFFFFF',
-    borderRadius: '50px',
-    backgroundColor: isActive(path) ? '#f7bd4a' : 'transparent',
+    color: 'white',
+    borderRadius: '12px',
+    backgroundColor: isActive(path) ? '#f7bd4a' : '#4ba5f7',
     textTransform: 'none',
     fontSize: '1rem',
     transition: 'all 0.3s ease',
     '&:hover': {
-      backgroundColor: isActive(path) ? '#f7bd4a' : 'rgba(255, 255, 255, 0.1)',
+      backgroundColor: isActive(path) ? 'rgba(247, 189, 74, 0.4)' : 'rgba(75, 165, 247, 0.2)',
     }
   });
 
@@ -55,7 +55,7 @@ export const StandardHeader = () => {
         position="sticky"
         elevation={0}
         sx={{
-          background: '#4ba5f7',
+          background: '#c5efff',
           borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
           py: 0.5
         }}
@@ -67,12 +67,9 @@ export const StandardHeader = () => {
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               {isMobile ? (
                 <Box onClick={handleDrawerToggle} sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-                  <IconButton sx={{ color: 'white', p: 0 }}>
+                  <IconButton sx={{ color: '#4ba5f7', p: 0 }}>
                     <MenuIcon />
                   </IconButton>
-                  <Typography sx={{ color: 'white', fontWeight: 700, ml: 0.5, fontSize: '0.9rem' }}>
-                    Menu
-                  </Typography>
                 </Box>
               ) : (
                 <Box
@@ -84,7 +81,7 @@ export const StandardHeader = () => {
                     component="img"
                     src={logo.src || logo}
                     alt="Logo"
-                    sx={{ width: 55, height: 55, borderRadius: '12px', mr: 1.5 }}
+                    sx={{ width: 250, height: 62.5 }}
                   />
                 </Box>
               )}
@@ -115,7 +112,7 @@ export const StandardHeader = () => {
                     component="img"
                     src={logo.src || logo}
                     alt="Logo"
-                    sx={{ width: 55, height: 55, borderRadius: '10px', border: '2px solid #FFF' }}
+                    sx={{ width: 250, height: 62.5 }}
                   />
                 </Box>
               ) : (
@@ -136,15 +133,20 @@ export const StandardHeader = () => {
         </Container>
       </AppBar>
 
-      {/* Drawer Menu remains unchanged */}
+      {/* Drawer Menu */}
       <Drawer
         anchor="left"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        sx={{ '& .MuiDrawer-paper': { width: 240 } }}
+        sx={{ '& .MuiDrawer-paper': { width: 240, backgroundColor: '#c5efff' } }}
       >
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', pt: 3 }}>
-          <Typography variant="h6" sx={{ fontWeight: 900, mb: 2 }}>Quiz for Kids</Typography>
+          <Box
+            component="img"
+            src={logo.src || logo}
+            alt="Logo"
+            sx={{ width: 200, height: 50 }}
+          />
           <List>
             {navLinks.map((item) => (
               <ListItem
@@ -159,7 +161,7 @@ export const StandardHeader = () => {
                     primary: {
                       sx: {
                         textAlign: 'center',
-                        color: pathname === item.path ? '#FF9800' : '#2D3436',
+                        color: pathname === item.path ? '#FF9800' : '#4ba5f7',
                         fontWeight: 700
                       }
                     }

@@ -77,8 +77,7 @@ export default function QuizOverviewSite(){
                   flexDirection: 'column',
                   alignItems: 'center',
                   textAlign: 'center',
-                  backgroundColor: '#ffffff', // Clean card base background
-                  border: '3px solid #4ba5f7', // Playful border matching theme accent
+                  backgroundColor: '#ffffff', 
                   transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                   '&:hover': {
                     transform: 'translateY(-5px)',
@@ -86,17 +85,6 @@ export default function QuizOverviewSite(){
                   }
                 }}
               >
-                {/* Visual Icon Header Zone */}
-                <Box
-                  sx={{
-                    bgcolor: 'rgba(255, 152, 0, 0.1)',
-                    p: 2,
-                    borderRadius: '50%',
-                    mb: 2
-                  }}
-                >
-                  <QuizIcon sx={{ fontSize: 50, color: '#FF9800', display: 'block' }} />
-                </Box>
 
                 {/* Card Content area with flexible growth spacing */}
                 <Box sx={{ flexGrow: 1, mb: 3 }}>

@@ -1,23 +1,21 @@
 "use client"; // Required for MUI hooks and interactivity
 
 import React from 'react';
-import Link from 'next/link'; // Changed from react-router-dom
-import { StandardHeader } from "../components/components/StandardHeader";;
+import Link from 'next/link';
+import { StandardHeader } from "../components/components/StandardHeader";
 import {
   Typography,
   Button,
-  Paper,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  Card,
+  CardContent,
+  CardActions,
   Container,
   Box,
+  Grid,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
-
 // Grouped Game Data
 const GAMES = [
   {
@@ -111,93 +109,72 @@ const GAMES = [
   },
 ];
 
-export default function GameOverviewSite() { // Changed to default export (standard for Next.js pages)
+export default function GameOverviewSite() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Box>
-      <StandardHeader previousPath="/"/>
+      <StandardHeader previousPath="/" />
 
-      <Container maxWidth="md" sx={{ py: { xs: 2, sm: 4 } }}>
-
-      <Typography
-        variant={isMobile ? "h4" : "h2"}
-        gutterBottom
-        sx={{
-          fontWeight: 800,
-          textAlign: 'center',
-          color: "#4ba5f7"
-        }}
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Typography
+          variant={isMobile ? "h4" : "h2"}
+          gutterBottom
+          sx={{ fontWeight: 800, textAlign: 'center', color: "#4ba5f7", mb: 6 }}
         >
           Spiele
         </Typography>
 
-          <List sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 0 }}>
-            {GAMES.map((game, index) => (
-              <Paper
-                key={index}
-                elevation={2}
+        {/* Grid Container für die Karten */}
+        <Grid container spacing={3} justifycontent="center">
+          {GAMES.map((game, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Card
+                elevation={3}
                 sx={{
-                  borderRadius: '20px',
-                  backgroundColor: "#4ba5f7",
-                  overflow: 'hidden'
+                  borderRadius: '24px',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  p: 2,
+                  transition: 'transform 0.2s',
+                  '&:hover': { transform: 'scale(1.02)' },
+                  minWidth: { xs: '150px', sm: '200px' },
+                  maxWidth: { xs: '150px', sm: '200px' },
                 }}
               >
-                <ListItem
-                  sx={{
-                    p: { xs: 2, sm: 3 },
-                    flexDirection: isMobile ? 'column' : 'row',
-                    alignItems: 'center',
-                  }}
-                >
-                  <ListItemIcon sx={{ minWidth: isMobile ? 0 : 56, mb: isMobile ? 1 : 0 }}>
-                    <VideogameAssetIcon sx={{ fontSize: isMobile ? 32 : 40, color: '#219538ff' }} />
-                  </ListItemIcon>
+                <CardContent sx={{ textAlign: 'center', pb: 0 }}>
+                  <VideogameAssetIcon sx={{ fontSize: 50, color: '#4ba5f7', mb: 1 }} />
+                  <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                    {game.title}
+                  </Typography>
+                </CardContent>
 
-                  <ListItemText
-                    primary={
-                      <Typography
-                        variant={isMobile ? "h6" : "h5"}
-                        sx={{ fontWeight: 'bold', mb: isMobile ? 2 : 0 }}
-                      >
-                        {game.title}
-                      </Typography>
-                    }
-                  />
-
-                  {/* Difficulty Selection Section */}
-                  <Box sx={{
-                    display: 'flex',
-                    gap: 1,
-                    flexWrap: 'wrap',
-                    justifyContent: 'center',
-                    width: isMobile ? '100%' : 'auto'
-                  }}>
-                    {game.difficulties.map((diff) => (
-                      <Button
-                        key={diff.label}
-                        variant="contained"
-                        component={Link} // Now uses next/link
-                        href={`${game.basePath}${diff.query}`} // to -> href
-                        size={isMobile ? "medium" : "large"}
-                        sx={{
-                          borderRadius: '10px',
-                          backgroundColor: diff.color,
-                          fontWeight: 'bold',
-                          flexGrow: isMobile ? 1 : 0,
-                          fontSize: isMobile ? '0.75rem' : '0.875rem',
-                          '&:hover': { backgroundColor: diff.color, filter: 'brightness(0.9)' },
-                        }}
-                      >
-                        {diff.label}
-                      </Button>
-                    ))}
-                  </Box>
-                </ListItem>
-              </Paper>
-            ))}
-          </List>
+                <CardActions sx={{ flexDirection: 'column', gap: 1, width: '100%', px: 1 }}>
+                  {game.difficulties.map((diff) => (
+                    <Button
+                      key={diff.label}
+                      variant="contained"
+                      component={Link}
+                      href={`${game.basePath}${diff.query}`}
+                      fullWidth
+                      sx={{
+                        borderRadius: '10px',
+                        backgroundColor: diff.color,
+                        fontWeight: 'bold',
+                        '&:hover': { backgroundColor: diff.color, filter: 'brightness(0.9)' },
+                      }}
+                    >
+                      {diff.label}
+                    </Button>
+                  ))}
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   );
