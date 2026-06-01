@@ -1,23 +1,30 @@
 import { Footer } from './components/components/Footer';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { ThemeProvider } from '@mui/material/styles';
-import { GoogleAnalytics } from '@next/third-parties/google'
-import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google';
+import './globals.css';
+import { Red_Hat_Text } from 'next/font/google';
+import ThemeRegistry from './components/components/providers/ThemeRegistry';
+
+// Initialize the font
+const redHat = Red_Hat_Text({
+  subsets: ['latin'],
+  variable: '--font-red-hat',
+});
 
 export const metadata = {
   title: 'Quiz for Kids',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="de">
+    <html lang="de" className={redHat.variable}>
       <body>
-        <AppRouterCacheProvider>
-            {children}
-            <Footer />
-        </AppRouterCacheProvider>
+        {/* Use the registry component instead */}
+        <ThemeRegistry>
+          {children}
+          <Footer />
+        </ThemeRegistry>
+        <GoogleAnalytics gaId="G-4BEMP9FEDP" />
       </body>
-      <GoogleAnalytics gaId="G-4BEMP9FEDP" />
     </html>
   );
 }
