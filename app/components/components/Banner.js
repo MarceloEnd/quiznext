@@ -1,141 +1,100 @@
 import React, { useState, useEffect } from 'react';
-// 2. Import Next.js Link
 import Link from 'next/link';
-// Added useTheme and useMediaQuery to fix the missing definition
-import { Box, Fade, IconButton, useTheme, useMediaQuery } from '@mui/material';
-
+import Image from 'next/image';
+import { Box, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import {
   ArrowForwardIos as ArrowIcon,
   ArrowBackIosNew as ArrowBackIcon,
 } from '@mui/icons-material';
 
-// 3. Static image imports work slightly differently in Next.js
-import crossword from '../images/banners/Crossword.png';
-import wizard from '../images/banners/Wizards.png';
+// Import images
+import spiele from '../images/banners/banner1.png';
+import quiz from '../images/banners/banner2.png';
+import spiele2 from '../images/banners/banner3.png';
+
+const banners = [
+  { path: "/spiele", image: spiele },
+  { path: "/quiz", image: quiz },
+  { path: "/spiele", image: spiele2 },
+];
 
 export const Banner = () => {
-    const [currentBanner, setCurrentBanner] = useState(0);
+  const [currentBanner, setCurrentBanner] = useState(0);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-    // Responsive setup to fix the 'isMobile is not defined' error
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const nextBanner = (e) => {
+    e.preventDefault();
+    setCurrentBanner((prev) => (prev + 1) % banners.length);
+  };
 
-    const banners = [
-      {
-        path: "/spiele",
-        image: wizard.src || wizard
-      },
-      {
-        path: "/quiz",
-        image: crossword.src || crossword
-      },
-    ];
+  const prevBanner = (e) => {
+    e.preventDefault();
+    setCurrentBanner((prev) => (prev - 1 + banners.length) % banners.length);
+  };
 
-    const nextBanner = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+  useEffect(() => {
+    const timer = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % banners.length);
-    };
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
 
-    const prevBanner = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      setCurrentBanner((prev) => (prev - 1 + banners.length) % banners.length);
-    };
+  const activeBanner = banners[currentBanner];
 
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setCurrentBanner((prev) => (prev + 1) % banners.length);
-      }, 10000);
-      return () => clearInterval(timer);
-    }, [banners.length]);
+  return (
+    <Box sx={{ width: '100%', overflow: 'hidden' }}>
+      <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
 
-    const activeBanner = banners[currentBanner];
+        {/* Navigation Buttons */}
+        <IconButton
+          onClick={prevBanner}
+          sx={{ position: 'absolute', left: 16, zIndex: 10, color: 'white', bgcolor: 'rgba(0,0,0,0.3)', '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' } }}
+        >
+          <ArrowBackIcon fontSize={isMobile ? "small" : "medium"} />
+        </IconButton>
 
-    return(
-      <Box sx={{ width: '100%', overflow: 'hidden' }}>
-        <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+        {/* Banner Image Container */}
+        <Link href={activeBanner.path} style={{ width: '100%' }}>
+          <Box sx={{
+            position: 'relative',
+            width: '100%',
+            // Fixed aspect ratio: 1920/300 is roughly 6.4.
+            // On mobile, you might prefer a taller ratio like 3/1 or 2/1.
+            aspectRatio: { xs: '3/1', sm: '1920/300' },
+            cursor: 'pointer'
+          }}>
+            <Image
+              src={activeBanner.image}
+              alt="Banner"
+              fill
+              priority
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, 1920px"
+            />
 
-          <IconButton
-            onClick={prevBanner}
-            sx={{
-                position: 'absolute', left: 16, zIndex: 10,
-                color: 'white',
-                bgcolor: 'rgba(0,0,0,0.3)',
-                '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' }
-            }}
-          >
-            {/* Now correctly evaluates based on the media query hook above */}
-            <ArrowBackIcon fontSize={isMobile ? "small" : "medium"} />
-          </IconButton>
+            {/* Pagination Dots overlay */}
+            <Box sx={{
+              position: 'absolute', bottom: 16, left: 0, right: 0,
+              display: 'flex', justifyContent: 'center', gap: 1, zIndex: 2
+            }}>
+              {banners.map((_, i) => (
+                <Box key={i} sx={{
+                  width: 9, height: 9, borderRadius: '50%', bgcolor: 'white',
+                  opacity: i === currentBanner ? 1 : 0.45
+                }} />
+              ))}
+            </Box>
+          </Box>
+        </Link>
 
-          <Link href={activeBanner.path} style={{ textDecoration: 'none', width: '100%' }}>
-            <Fade in={true} key={currentBanner} timeout={800}>
-              <Box
-                sx={{
-                  borderRadius: 0,
-                  cursor: 'pointer',
-                  overflow: 'hidden',
-                  transition: 'transform 0.3s ease',
-                  '&:hover': { transform: 'scale(1.005)' },
-                  backgroundColor: 'white',
-                  backgroundImage: `url(${activeBanner.image})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: { xs: 'contain', sm: 'cover' },
-                  backgroundPosition: 'center',
-                  boxShadow: 'inset 0 -20px 20px -10px rgba(255, 255, 255, 0.8)',
-                  // Sets 16:9 proportional fluid layout for small screens
-                  height: {
-                    xs: '56.25vw',
-                    sm: '260px',
-                    md: '340px'
-                  },
-
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-end',
-                  alignItems: 'center',
-                  p: { xs: 1, sm: 3 },
-                  position: 'relative',
-
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    bottom: 0, left: 0, width: '100%', height: '50px',
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent)',
-                    zIndex: 1
-                  }
-                }}
-              >
-                <Box sx={{ display: 'flex', gap: 1, zIndex: 2 }}>
-                  {banners.map((_, i) => (
-                    <Box
-                      key={i}
-                      sx={{
-                        width: 9, height: 9, borderRadius: '50%',
-                        bgcolor: 'white',
-                        opacity: i === currentBanner ? 1 : 0.45,
-                        boxShadow: '0 1px 3px rgba(0,0,0,0.3)'
-                      }}
-                    />
-                  ))}
-                </Box>
-              </Box>
-            </Fade>
-          </Link>
-
-          <IconButton
-            onClick={nextBanner}
-            sx={{
-                position: 'absolute', right: 16, zIndex: 10,
-                color: 'white',
-                bgcolor: 'rgba(0,0,0,0.3)',
-                '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' }
-            }}
-          >
-            <ArrowIcon fontSize={isMobile ? "small" : "medium"} />
-          </IconButton>
-        </Box>
+        <IconButton
+          onClick={nextBanner}
+          sx={{ position: 'absolute', right: 16, zIndex: 10, color: 'white', bgcolor: 'rgba(0,0,0,0.3)', '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' } }}
+        >
+          <ArrowIcon fontSize={isMobile ? "small" : "medium"} />
+        </IconButton>
       </Box>
-    );
-}
+    </Box>
+  );
+};
