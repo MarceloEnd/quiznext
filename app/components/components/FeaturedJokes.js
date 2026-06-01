@@ -57,7 +57,7 @@ export const FeaturedJokes = () => {
           letterSpacing: 2
         }}
       >
-        Beliebteste Spiele
+        Beliebteste Witze
       </Typography>
 
       {/* FIXED: Added justifyContent="center" here to center the entire group of cards */}
