@@ -88,7 +88,7 @@ const GAMES = [
     basePath: "/spiele/1x1",
     difficulties: [
       { label: "Mal", query: "", color: "#4caf50" },
-      { label: "Mal Zeit", query: "zeit", color: "#2196f3" },
+      { label: "Mal ⌛", query: "zeit", color: "#2196f3" },
       { label: "Geteilt", query: "geteilt", color: "#f44336" }
     ]
   },
@@ -121,28 +121,22 @@ export default function GameOverviewSite() {
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom
-          sx={{ fontWeight: 800, textAlign: 'center', color: "#4ba5f7", mb: 6 }}
+          sx={{ fontWeight: 800, textAlign: 'center', color: "#4ba5f7", textTransform: 'uppercase', mb: 6 }}
         >
           Spiele
         </Typography>
 
         {/* Grid Container für die Karten */}
-        <Grid container spacing={3} justifycontent="center">
+        <Grid container spacing={3} >
           {GAMES.map((game, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
               <Card
                 elevation={3}
                 sx={{
                   borderRadius: '24px',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
                   p: 2,
                   transition: 'transform 0.2s',
                   '&:hover': { transform: 'scale(1.02)' },
-                  minWidth: { xs: '150px', sm: '200px' },
-                  maxWidth: { xs: '150px', sm: '200px' },
                 }}
               >
                 <CardContent sx={{ textAlign: 'center', pb: 0 }}>
@@ -152,7 +146,7 @@ export default function GameOverviewSite() {
                   </Typography>
                 </CardContent>
 
-                <CardActions sx={{ flexDirection: 'column', gap: 1, width: '100%', px: 1 }}>
+                <CardActions sx={{ flexDirection: 'row', gap: 1, width: '100%' }}>
                   {game.difficulties.map((diff) => (
                     <Button
                       key={diff.label}

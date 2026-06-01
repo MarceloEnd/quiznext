@@ -136,7 +136,7 @@ export default function WimmelbildSite({ params }) {
                         top: `${diff.y}%`,
                         width: `${diff.r * 2.2}%`, // Slightly larger than click radius
                         height: `${diff.r * 2.2}%`,
-                        border: '4px solid #4CAF50',
+                        border: '4px solid #f7bd4a',
                         borderRadius: '50%',
                         transform: 'translate(-50%, -50%)',
                         boxShadow: '0 0 15px rgba(0,0,0,0.3)',
@@ -146,7 +146,6 @@ export default function WimmelbildSite({ params }) {
                         animation: 'pulse 1.5s infinite ease-in-out',
                         '@keyframes pulse': {
                           '0%': { transform: 'translate(-50%, -50%) scale(1)' },
-                          '50%': { transform: 'translate(-50%, -50%) scale(1.1)' },
                           '100%': { transform: 'translate(-50%, -50%) scale(1)' },
                         }
                       }}

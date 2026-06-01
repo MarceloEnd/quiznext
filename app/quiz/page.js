@@ -54,7 +54,8 @@ export default function QuizOverviewSite(){
           sx={{
             fontWeight: 800,
             color: "#4ba5f7",
-            mb: 4
+            mb: 4,
+            textTransform: 'uppercase'
           }}
         >
           Teste dein Quiz Wissen
@@ -77,7 +78,7 @@ export default function QuizOverviewSite(){
                   flexDirection: 'column',
                   alignItems: 'center',
                   textAlign: 'center',
-                  backgroundColor: '#ffffff', 
+                  backgroundColor: '#ffffff',
                   transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                   '&:hover': {
                     transform: 'translateY(-5px)',
@@ -117,7 +118,7 @@ export default function QuizOverviewSite(){
                   }}
                   endIcon={<ArrowIcon />}
                 >
-                  Los geht's!
+                  Los gehts!
                 </Button>
               </Paper>
             </Grid>

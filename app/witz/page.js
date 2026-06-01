@@ -27,79 +27,94 @@ export default function JokeOverviewSite() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <div className="Jokes Overview">
+    <div className="Start">
       <StandardHeader />
-      <Paper
-        elevation={0}
+
+      <Box
         sx={{
           p: { xs: 3, sm: 6 },
           textAlign: 'center',
-          bgcolor: '#c5efff',
-          borderRadius: '24px'
+          bgcolor: 'transparent',
+          maxWidth: 'lg',
+          mx: 'auto'
         }}
       >
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom
-          sx={{ fontWeight: 800, mb: 6, color: "#4ba5f7" }}
+          sx={{
+            fontWeight: 800,
+            color: "#4ba5f7",
+            mb: 4,
+            textTransform: 'uppercase'
+          }}
         >
           Witze vom feinsten
         </Typography>
 
-        {/* Grid anstelle von List */}
-        <Grid container spacing={3} justifycontent="center" direction="row">
+        {/* Using Grid layout to handle the dynamic side-by-side card structure */}
+        <Grid container spacing={3} justifycontent="center">
           {themes.map((item, index) => (
-            <Grid item xs={6} sm={6} md={3} key={index}
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-              <Card
+            <Grid
+              key={index}
+              size={{ xs: 12, sm: 6, md: 4 }} // Fluid resizing across viewports
+            >
+              <Paper
                 elevation={3}
                 sx={{
                   borderRadius: '24px',
-                  backgroundColor: '#4ba5f7',
-                  color: 'white',
-                  transition: 'transform 0.2s',
-                  '&:hover': { transform: 'scale(1.03)' },
+                  p: 3,
+                  height: '100%', // Ensures all cards match heights evenly
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  p: 2,
-                  minWidth: { xs: '150px', sm: '200px' },
-                  maxWidth: { xs: '150px', sm: '200px' },
-                  height: { xs: '150px', sm: '200px' },
-                  p: 0
+                  textAlign: 'center',
+                  backgroundColor: '#ffffff',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 12px 24px rgba(75, 165, 247, 0.2)'
+                  }
                 }}
               >
-                <CardContent sx={{ textAlign: 'center' }}>
-                  <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+
+                {/* Card Content area with flexible growth spacing */}
+                <Box sx={{ flexGrow: 1, mb: 3 }}>
+                  <Typography variant="h5" sx={{ fontWeight: 800, color: '#2D3436', mb: 1 }}>
                     {item}
                   </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button
-                    variant="contained"
-                    component={Link}
-                    href={`/witz/${index}`}
-                    sx={{
-                      borderRadius: '12px',
-                      backgroundColor: '#412199',
-                      px: 4,
-                      '&:hover': { backgroundColor: '#2e176b' }
-                    }}
-                    endIcon={<ArrowIcon />}
-                  >
-                    Go!
-                  </Button>
-                </CardActions>
-              </Card>
+                  <Typography variant="body1" color="text.secondary">
+                    Die besten Witze zum Thema: {item}
+                  </Typography>
+                </Box>
+
+                <Button
+                  variant="contained"
+                  component={Link}
+                  href={`/witz/${index}`}
+                  fullWidth
+                  sx={{
+                    borderRadius: '16px',
+                    backgroundColor: '#FF9800',
+                    fontSize: '1.1rem',
+                    fontWeight: 700,
+                    py: 1.2,
+                    textTransform: 'none',
+                    boxShadow: '0 4px 12px rgba(255, 152, 0, 0.3)',
+                    '&:hover': {
+                      backgroundColor: '#e68900',
+                      boxShadow: '0 6px 16px rgba(255, 152, 0, 0.4)',
+                    }
+                  }}
+                  endIcon={<ArrowIcon />}
+                >
+                  Los gehts!
+                </Button>
+              </Paper>
             </Grid>
           ))}
         </Grid>
-      </Paper>
+      </Box>
     </div>
   );
-}
+};

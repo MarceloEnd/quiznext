@@ -11,3 +11,8 @@ export const selectedJokes = (id) => {
     const results = jokes.filter(item => item.Themenbereich === category).map(item => item.Inhalt);
     return results;
 }
+
+export const selectedCategory = (id) => {
+    const category = categories()[id];
+    return category;
+}

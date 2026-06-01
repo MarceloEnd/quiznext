@@ -75,21 +75,28 @@ export default function SpotTheDifferenceSite() {
           Gefunden: {foundIds.length} von {DIFFERENCES.length}
         </Typography>
 
-        <Grid container spacing={4} justifyContent="center" alignItems="center">
+        <Grid container spacing={4} >
           {/* Linkes Bild: Original */}
-          <Grid item xs={12} md={6}>
-            <Paper elevation={5} sx={{ borderRadius: 4, overflow: 'hidden', position: 'relative' }}>
+          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Paper
+              elevation={5}
+              sx={{
+                borderRadius: 4,
+                overflow: 'hidden',
+                width: '100%'
+              }}
+            >
               <Image
                 src={OhneFehler1}
                 alt="Originalbild"
-                layout="responsive"
-                placeholder="blur" // Optional: adds a nice blur while loading
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                sizes="(max-width: 900px) 90vw, 45vw"
               />
             </Paper>
           </Grid>
 
-          {/* Rechtes Bild: Fehlerbild (Klickbar + Kreise) */}
-          <Grid item xs={12} md={6}>
+          {/* Rechtes Bild: Fehlerbild */}
+          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
             <Paper
               elevation={10}
               sx={{
@@ -97,16 +104,17 @@ export default function SpotTheDifferenceSite() {
                 borderRadius: 4,
                 overflow: 'hidden',
                 cursor: 'crosshair',
-                touchAction: 'none'
+                touchAction: 'none',
+                width: '100%'
               }}
               ref={clickableImageRef}
               onClick={handleImageClick}
             >
               <Image
                 src={MitFehler1}
-                alt="Fehlerbild - Finde die Unterschiede!"
-                layout="responsive"
-                placeholder="blur"
+                alt="Fehlerbild"
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                sizes="(max-width: 900px) 90vw, 45vw"
               />
 
               {/* Success Circles */}

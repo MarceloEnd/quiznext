@@ -4,6 +4,7 @@ import { Banner } from './components/components/Banner';
 import { FeaturedGames } from './components/components/FeaturedGames';
 import { NewestGames } from './components/components/NewestGames';
 import { FeaturedQuiz } from './components/components/FeaturedQuiz';
+import { FeaturedJokes } from './components/components/FeaturedJokes';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <FeaturedGames />
       <FeaturedQuiz/>
       <NewestGames />
+      <FeaturedJokes/>
     </div>
   )
 }
