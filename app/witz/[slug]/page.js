@@ -43,7 +43,18 @@ export default function JokeSite() {
                   textTransform: 'uppercase'
                 }}
               >
-                Witze über: {category}
+                Witze über
+              </Typography>
+              <Typography
+                variant={isMobile ? "h5" : "h3"}
+                gutterBottom
+                sx={{
+                  fontWeight: 500,
+                  color: "#4ba5f7",
+                  textTransform: 'uppercase'
+                }}
+              >
+                {category}
               </Typography>
             </Box>
             {/* Using Box for spacing instead of <br/> for better Next.js layout control */}

@@ -21,7 +21,8 @@ const GAMES = [
   {
     title: "Fehlersuche",
     basePath: "/spiele/fehlersuche",
-    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
+    description: "Finde alle Fehler innerhalb des Bildes"
   },
   {
     title: "Memory (Symbole)",
@@ -39,7 +40,8 @@ const GAMES = [
       { label: "Leicht", query: "?leicht", color: "#4caf50" },
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
-    ]
+    ],
+    description: ""
   },
   {
     title: "Memory (Versus)",
@@ -48,12 +50,14 @@ const GAMES = [
       { label: "Leicht", query: "?leicht", color: "#4caf50" },
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
-    ]
+    ],
+    description: ""
   },
   {
     title: "Sudoku 4x4",
     basePath: "/spiele/sudoku4x4",
-    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
+    description: ""
   },
   {
     title: "Sudoku 6x6",
@@ -62,7 +66,8 @@ const GAMES = [
       { label: "Leicht", query: "?leicht", color: "#4caf50" },
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
-    ]
+    ],
+    description: ""
   },
   {
     title: "Rechne Quadrat",
@@ -71,17 +76,20 @@ const GAMES = [
       { label: "Leicht", query: "?leicht", color: "#4caf50" },
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
-    ]
+    ],
+    description: ""
   },
   {
     title: "Wort Suche",
     basePath: "/spiele/wortsuche",
-    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
+    description: ""
   },
   {
     title: "Wort Schlange",
     basePath: "/spiele/wortschlange",
-    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
+    description: ""
   },
   {
     title: "Das kleine 1x1",
@@ -90,22 +98,26 @@ const GAMES = [
       { label: "Mal", query: "", color: "#4caf50" },
       { label: "Mal ⌛", query: "zeit", color: "#2196f3" },
       { label: "Geteilt", query: "geteilt", color: "#f44336" }
-    ]
+    ],
+    description: ""
   },
   {
     title: "Wimmelbild",
     basePath: "/spiele/wimmelbild",
-    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
+    description: ""
   },
   {
     title: "Lese-Maus",
     basePath: "/spiele/lesemaus",
-    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
+    description: ""
   },
   {
     title: "Wordle",
     basePath: "/spiele/wordle",
-    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }]
+    difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
+    description: ""
   },
 ];
 
@@ -143,6 +155,18 @@ export default function GameOverviewSite() {
                   <VideogameAssetIcon sx={{ fontSize: 50, color: '#4ba5f7', mb: 1 }} />
                   <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                     {game.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontWeight: '500',
+                      mt: 0.5,
+                      fontSize: { xs: '0.65rem', sm: '0.8rem' },
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      lineHeight: 1.4,
+                    }}>
+                    {game.description}
                   </Typography>
                 </CardContent>
 
