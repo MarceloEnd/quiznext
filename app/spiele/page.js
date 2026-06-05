@@ -153,19 +153,10 @@ export default function GameOverviewSite() {
               >
                 <CardContent sx={{ textAlign: 'center', pb: 0 }}>
                   <VideogameAssetIcon sx={{ fontSize: 50, color: '#4ba5f7', mb: 1 }} />
-                  <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  <Typography variant="h5" sx={{ fontWeight: 800, color: '#2D3436', mb: 1 }}>
                     {game.title}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontWeight: '500',
-                      mt: 0.5,
-                      fontSize: { xs: '0.65rem', sm: '0.8rem' },
-                      whiteSpace: 'normal',
-                      wordBreak: 'break-word',
-                      lineHeight: 1.4,
-                    }}>
+                  <Typography variant="body1" color="text.secondary">
                     {game.description}
                   </Typography>
                 </CardContent>

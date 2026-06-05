@@ -16,7 +16,7 @@ export const TextCarousel = ({ messages }) => {
   };
 
   return (
-    <Box sx={{ maxWidth: 500, flexGrow: 1, margin: 'auto', px: { xs: 2, sm: 0 } }}>
+    <Box sx={{ maxWidth: 500, flexGrow: 1, margin: 'auto', }}>
         <Paper
             elevation={0}
             sx={{
@@ -32,10 +32,10 @@ export const TextCarousel = ({ messages }) => {
                 overflow: 'hidden',
             }}
             >
-            <Typography 
-                variant="h6" 
+            <Typography
+                variant="h6"
                 component="p"
-                sx={{ 
+                sx={{
                 fontWeight: 600,
                 lineHeight: 1.6, // Better readability for long text
                 fontStyle: 'italic',
@@ -45,7 +45,7 @@ export const TextCarousel = ({ messages }) => {
                 "{messages[activeStep]}"
             </Typography>
         </Paper>
-      
+
         <MobileStepper
             variant="dots"
             steps={maxSteps}

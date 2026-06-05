@@ -35,11 +35,9 @@ export default function JokeSite() {
             >
               <Typography
                 variant={isMobile ? "h4" : "h2"}
-                gutterBottom
                 sx={{
                   fontWeight: 800,
                   color: "#4ba5f7",
-                  mb: 4,
                   textTransform: 'uppercase'
                 }}
               >
@@ -57,8 +55,7 @@ export default function JokeSite() {
                 {category}
               </Typography>
             </Box>
-            {/* Using Box for spacing instead of <br/> for better Next.js layout control */}
-                <TextCarousel messages={data} />
+            <TextCarousel messages={data} />
         </Box>
     );
 }
