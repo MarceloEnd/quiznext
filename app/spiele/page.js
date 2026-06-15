@@ -15,14 +15,15 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material';
-import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
+import { setIcon } from '../components/components/functions';
 // Grouped Game Data
 const GAMES = [
   {
     title: "Fehlersuche",
     basePath: "/spiele/fehlersuche",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
-    description: "Finde alle Fehler innerhalb des Bildes"
+    description: "Finde alle Fehler innerhalb des Bildes",
+    iconSrc: "fehlersuche"
   },
   {
     title: "Memory (Symbole)",
@@ -31,7 +32,9 @@ const GAMES = [
       { label: "Leicht", query: "?leicht", color: "#4caf50" },
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
-    ]
+    ],
+    description: "",
+    iconSrc: "memory"
   },
   {
     title: "Memory (Farben)",
@@ -41,7 +44,8 @@ const GAMES = [
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
     ],
-    description: ""
+    description: "",
+    iconSrc: "memory"
   },
   {
     title: "Memory (Versus)",
@@ -51,13 +55,15 @@ const GAMES = [
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
     ],
-    description: ""
+    description: "",
+    iconSrc: "memory"
   },
   {
     title: "Sudoku 4x4",
     basePath: "/spiele/sudoku4x4",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
-    description: ""
+    description: "",
+    iconSrc: "sudoku"
   },
   {
     title: "Sudoku 6x6",
@@ -67,7 +73,8 @@ const GAMES = [
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
     ],
-    description: ""
+    description: "",
+    iconSrc: "sudoku"
   },
   {
     title: "Rechne Quadrat",
@@ -77,19 +84,22 @@ const GAMES = [
       { label: "Normal", query: "", color: "#2196f3" },
       { label: "Schwer", query: "?schwer", color: "#f44336" }
     ],
-    description: ""
+    description: "",
+    iconSrc: "rechnequadrat"
   },
   {
     title: "Wort Suche",
     basePath: "/spiele/wortsuche",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
-    description: ""
+    description: "",
+    iconSrc: "wortsuche"
   },
   {
     title: "Wort Schlange",
     basePath: "/spiele/wortschlange",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
-    description: ""
+    description: "",
+    iconSrc: "wortschlange"
   },
   {
     title: "Das kleine 1x1",
@@ -99,19 +109,22 @@ const GAMES = [
       { label: "Mal ⌛", query: "zeit", color: "#2196f3" },
       { label: "Geteilt", query: "geteilt", color: "#f44336" }
     ],
-    description: ""
+    description: "",
+    iconSrc: "1x1"
   },
   {
     title: "Wimmelbild",
     basePath: "/spiele/wimmelbild",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
-    description: ""
+    description: "",
+    iconSrc: "wimmelbild"
   },
   {
     title: "Lese-Maus",
     basePath: "/spiele/lesemaus",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],
-    description: ""
+    description: "",
+    iconSrc: "lesemaus"
   },
   {
     title: "Wordle",
@@ -152,7 +165,11 @@ export default function GameOverviewSite() {
                 }}
               >
                 <CardContent sx={{ textAlign: 'center', pb: 0 }}>
-                  <VideogameAssetIcon sx={{ fontSize: 50, color: '#4ba5f7', mb: 1 }} />
+                  <Box
+                    component="img"
+                    src={setIcon(game.iconSrc)}
+                    sx={{ width: 60, height: 45 , mb: 1, display: 'inline-block'}}
+                  />
                   <Typography variant="h5" sx={{ fontWeight: 800, color: '#2D3436', mb: 1 }}>
                     {game.title}
                   </Typography>

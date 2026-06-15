@@ -11,44 +11,41 @@ import {
   Card,
   CardContent
 } from '@mui/material';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import ExtensionIcon from '@mui/icons-material/Extension';
-import CalculateIcon from '@mui/icons-material/Calculate';
-import SpellcheckIcon from '@mui/icons-material/Spellcheck';
+import { setIcon } from './functions';
 
 export const NewestGames = () => {
   const featured = [
     {
       title: "Wordle",
       desc: "Finde das Wort",
-      icon: <ExtensionIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/wordle",
       gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
-      shadow: '0 8px 20px rgba(76, 175, 80, 0.3)'
+      shadow: '0 8px 20px rgba(76, 175, 80, 0.3)',
+      iconSrc: "wordle"
     },
     {
       title: "Wimmelbilder",
       desc: "Finde die Fehler",
-      icon: <CalculateIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/wimmelbild",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
-      shadow: '0 8px 20px rgba(33, 150, 243, 0.3)'
+      shadow: '0 8px 20px rgba(33, 150, 243, 0.3)',
+      iconSrc: "wimmelbilder"
     },
     {
       title: "Das kleine 1x1",
       desc: "Wie schnell bist du",
-      icon: <SportsEsportsIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/1x1",
       gradient: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
-      shadow: '0 8px 20px rgba(255, 152, 0, 0.3)'
+      shadow: '0 8px 20px rgba(255, 152, 0, 0.3)',
+      iconSrc: "1x1"
     },
     {
       title: "Lese Maus",
       desc: "Knacke den Code",
-      icon: <SpellcheckIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/lesemaus",
       gradient: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)',
-      shadow: '0 8px 20px rgba(233, 30, 99, 0.3)'
+      shadow: '0 8px 20px rgba(233, 30, 99, 0.3)',
+      iconSrc: "lesemaus"
     }
   ];
 
@@ -113,7 +110,11 @@ export const NewestGames = () => {
                     boxSizing: 'border-box'
                 }}>
                   <Box sx={{ mb: 1, display: 'flex', justifyContent: 'center' }}>
-                    {game.icon}
+                    <Box
+                      component="img"
+                      src={setIcon(game.iconSrc)}
+                      sx={{ width: 60, height: 45 , mb: 1, display: 'inline-block'}}
+                    />
                   </Box>
 
                   <Typography

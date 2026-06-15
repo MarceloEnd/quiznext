@@ -19,6 +19,7 @@ import {
 } from '@mui/icons-material';
 import { StandardHeader } from '../../components/components/StandardHeader';
 import { categoriesWordSearch } from './functions/functions';
+import { setIcon } from '../../components/components/functions';
 
 export default function WordSearchOverviewSite() {
   const themes = categoriesWordSearch();
@@ -63,7 +64,11 @@ export default function WordSearchOverviewSite() {
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: { xs: 0, sm: 56 } }}>
-                    <QuizIcon sx={{ fontSize: 40, color: '#219538ff' }} />
+                    <Box
+                      component="img"
+                      src={setIcon(item.iconSrc)}
+                      sx={{ width: 60, height: 45 }}
+                    />
                   </ListItemIcon>
 
                   <ListItemText

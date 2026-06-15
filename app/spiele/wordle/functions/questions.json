@@ -1,6 +1,6 @@
 [
-  { "id": 1, "kategorie": "Natur", "wort": "Alpen" },
-  { "id": 2, "kategorie": "Tiere", "wort": "Fuchs" },
+  { "id": 1, "kategorie": "Natur", "wort": "Alpen", "iconSrc": "fahrzeuge"},
+  { "id": 2, "kategorie": "Tiere", "wort": "Fuchs","iconSrc": "computer"},
   { "id": 3, "kategorie": "Objekt", "wort": "Radio" },
   { "id": 4, "kategorie": "Natur", "wort": "Strom" },
   { "id": 5, "kategorie": "Farbe", "wort": "Blau" },

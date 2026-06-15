@@ -1,5 +1,5 @@
 [
-  { "id": 1, "kategorie": "Farben", "wort": "hellbraun" },
+  { "id": 1, "kategorie": "Farben", "wort": "hellbraun", "iconSrc": "farben" },
   { "id": 2, "kategorie": "Farben", "wort": "rosarotet" },
   { "id": 3, "kategorie": "Farben", "wort": "tiefschwarz" },
   { "id": 4, "kategorie": "Tiere", "wort": "Abendpfau" },

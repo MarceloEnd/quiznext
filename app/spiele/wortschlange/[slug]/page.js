@@ -102,7 +102,7 @@ export default function WortSchlangeSite() {
                         direction="row"
                         spacing={1}
                         justifyContent="center"
-                        sx={{ mb: { xs: 4, sm: 6 }, flexWrap: 'wrap', gap: 1 }}
+                        sx={{ mb: { xs: 4, sm: 6 }, flexWrap: 'nowrap', gap: 1 }}
                     >
                         {targetWord.split('').map((char, index) => {
                             const isFilled = index < wordProgress.length;

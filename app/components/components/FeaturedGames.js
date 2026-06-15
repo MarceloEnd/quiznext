@@ -11,44 +11,41 @@ import {
   Card,
   CardContent
 } from '@mui/material';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import ExtensionIcon from '@mui/icons-material/Extension';
-import CalculateIcon from '@mui/icons-material/Calculate';
-import SpellcheckIcon from '@mui/icons-material/Spellcheck';
+import { setIcon } from './functions';
 
 export const FeaturedGames = () => {
   const featured = [
     {
       title: "Wortschlange",
       desc: "Folge der Spur!",
-      icon: <ExtensionIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/wortschlange",
       gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
-      shadow: '0 8px 20px rgba(76, 175, 80, 0.3)'
+      shadow: '0 8px 20px rgba(76, 175, 80, 0.3)',
+      iconSrc: "wortschlange"
     },
     {
       title: "Mathe-Quadrat",
       desc: "Stärke deine Kopfrechne Fähigkeiten",
-      icon: <CalculateIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/rechnequadrat",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
-      shadow: '0 8px 20px rgba(33, 150, 243, 0.3)'
+      shadow: '0 8px 20px rgba(33, 150, 243, 0.3)',
+      iconSrc: "mathequadrat"
     },
     {
       title: "Sudoku",
       desc: "Bist du schlau genug?",
-      icon: <SportsEsportsIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/sudoku6x6",
       gradient: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
-      shadow: '0 8px 20px rgba(255, 152, 0, 0.3)'
+      shadow: '0 8px 20px rgba(255, 152, 0, 0.3)',
+      iconSrc: "sudoku"
     },
     {
       title: "Wortsuche",
       desc: "Finde alle Wörter!",
-      icon: <SpellcheckIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/spiele/wortsuche",
       gradient: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)',
-      shadow: '0 8px 20px rgba(233, 30, 99, 0.3)'
+      shadow: '0 8px 20px rgba(233, 30, 99, 0.3)',
+      iconSrc: "wortsuche"
     }
   ];
 
@@ -111,7 +108,11 @@ export const FeaturedGames = () => {
                     boxSizing: 'border-box'
                 }}>
                   <Box sx={{ mb: 1, display: 'flex', justifyContent: 'center' }}>
-                    {game.icon}
+                    <Box
+                      component="img"
+                      src={setIcon(game.iconSrc)}
+                      sx={{ width: 60, height: 45 , mb: 1, display: 'inline-block'}}
+                    />
                   </Box>
 
                   <Typography

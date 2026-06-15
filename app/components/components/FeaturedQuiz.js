@@ -11,28 +11,25 @@ import {
   Card,
   CardContent
 } from '@mui/material';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import ExtensionIcon from '@mui/icons-material/Extension';
-import CalculateIcon from '@mui/icons-material/Calculate';
-import SpellcheckIcon from '@mui/icons-material/Spellcheck';
+import { setIcon } from './functions';
 
 export const FeaturedQuiz = () => {
   const featured = [
     {
       title: "Ponys und Pferde",
       desc: "Alles über Feen und Füchse",
-      icon: <ExtensionIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/quiz/1",
       gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
-      shadow: '0 8px 20px rgba(76, 175, 80, 0.3)'
+      shadow: '0 8px 20px rgba(76, 175, 80, 0.3)',
+      iconSrc: "pferde"
     },
     {
       title: "Farben",
       desc: "Der Farbkreis",
-      icon: <CalculateIcon sx={{ fontSize: { xs: 35, sm: 50 }, color: '#fff' }} />,
       path: "/quiz/2",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
-      shadow: '0 8px 20px rgba(33, 150, 243, 0.3)'
+      shadow: '0 8px 20px rgba(33, 150, 243, 0.3)',
+      iconSrc: "farben"
     },
 
   ];
@@ -96,7 +93,11 @@ export const FeaturedQuiz = () => {
                     boxSizing: 'border-box'
                 }}>
                   <Box sx={{ mb: 1, display: 'flex', justifyContent: 'center' }}>
-                    {game.icon}
+                    <Box
+                      component="img"
+                      src={setIcon(game.iconSrc)}
+                      sx={{ width: 60, height: 45 , mb: 1, display: 'inline-block'}}
+                    />
                   </Box>
 
                   <Typography

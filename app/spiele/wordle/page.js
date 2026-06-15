@@ -18,7 +18,9 @@ import {
   ArrowForwardIos as ArrowIcon,
 } from '@mui/icons-material';
 import { StandardHeader } from '../../components/components/StandardHeader';
+import { setIcon } from '../../components/components/functions';
 import { categoriesWordle } from './functions/functions';
+
 
 export default function WordleOverviewSite() {
   const themes = categoriesWordle();
@@ -76,8 +78,13 @@ export default function WordleOverviewSite() {
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: { xs: 'auto', sm: '56px' } }}>
-                    <QuizIcon sx={{ fontSize: 40, color: '#219538' }} />
+                    <Box
+                      component="img"
+                      src={setIcon(item.iconSrc)}
+                      sx={{ width: 60, height: 45 }}
+                    />
                   </ListItemIcon>
+
 
                   <ListItemText
                     primary={

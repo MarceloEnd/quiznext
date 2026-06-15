@@ -11,7 +11,7 @@ export const getKategorieById = (id) => {
     if (!entry) return null;
 
     const word = entry.wort.toUpperCase().split('');
-    
+
     // Attempt to find a valid "Snake Path" on a 3x3 grid
     let grid = null;
     let attempts = 0;
@@ -30,21 +30,21 @@ export const getKategorieById = (id) => {
 const generateSnakePath = (letters) => {
     // Initialize empty 3x3 grid
     const grid = Array(3).fill(null).map(() => Array(3).fill(null));
-    
+
     // Start at a random position
     let currR = Math.floor(Math.random() * 3);
     let currC = Math.floor(Math.random() * 3);
-    
+
     grid[currR][currC] = letters[0];
 
     for (let i = 1; i < letters.length; i++) {
         const neighbors = [];
-        
+
         // Check all 8 directions (including diagonals like in your image)
         for (let dr = -1; dr <= 1; dr++) {
             for (let dc = -1; dc <= 1; dc++) {
                 if (dr === 0 && dc === 0) continue;
-                
+
                 const nr = currR + dr;
                 const nc = currC + dc;
 
@@ -72,7 +72,8 @@ export const categoriesWortSchlange = () => {
   // (Falls deine IDs 1-20 alle einzigartig sind, reicht ein einfaches .map)
   const uniqueEntries = data.map(item => ({
     id: item.id,
-    kategorie: item.kategorie
+    kategorie: item.kategorie,
+    iconSrc: item.iconSrc
   }));
 
   // Sortierung alphabetisch nach dem Kategorienamen

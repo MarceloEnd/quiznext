@@ -19,7 +19,8 @@ export const categoriesWordle = () => {
   // (Falls deine IDs 1-20 alle einzigartig sind, reicht ein einfaches .map)
   const uniqueEntries = data.map(item => ({
     id: item.id,
-    kategorie: item.kategorie
+    kategorie: item.kategorie,
+    iconSrc: item.iconSrc
   }));
 
   // Sortierung alphabetisch nach dem Kategorienamen

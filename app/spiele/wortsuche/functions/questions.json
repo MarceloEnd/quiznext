@@ -4,14 +4,16 @@
     "kategorie": "Farben",
     "wort1": "gelb",
     "wort2": "rot",
-    "wort3": "blau"
+    "wort3": "blau",
+    "iconSrc": "farben"
   },
   {
     "id": 2,
     "kategorie": "Tiere",
     "wort1": "Hund",
     "wort2": "Katze",
-    "wort3": "Maus"
+    "wort3": "Maus",
+    "iconSrc": "tiere"
   },
   {
     "id": 3,

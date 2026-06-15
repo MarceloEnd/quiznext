@@ -9,7 +9,7 @@ import data from './questions.json';
 export const getKategorieById = (id) => {
   // .find() sucht das erste Element, auf das die Bedingung zutrifft
   const entry = data.find((item) => item.id === id);
-  
+
   return entry || null;
 };
 
@@ -19,7 +19,8 @@ export const categoriesWordSearch = () => {
   // (Falls deine IDs 1-20 alle einzigartig sind, reicht ein einfaches .map)
   const uniqueEntries = data.map(item => ({
     id: item.id,
-    kategorie: item.kategorie
+    kategorie: item.kategorie,
+    iconSrc: item.iconSrc
   }));
 
   // Sortierung alphabetisch nach dem Kategorienamen
