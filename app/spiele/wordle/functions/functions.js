@@ -9,7 +9,6 @@ import data from './questions.json';
 export const getKategorieById = (id) => {
   // .find() sucht das erste Element, auf das die Bedingung zutrifft
   const entry = data.find((item) => item.id === id);
-
   return entry || null;
 };
 
@@ -20,9 +19,21 @@ export const categoriesWordle = () => {
   const uniqueEntries = data.map(item => ({
     id: item.id,
     kategorie: item.kategorie,
-    iconSrc: item.iconSrc
+    iconSrc: item.iconSrc,
+    fragen: item.fragen
   }));
 
   // Sortierung alphabetisch nach dem Kategorienamen
   return uniqueEntries;
 };
+
+
+
+// ich brauche ein json datei in folgendem format:
+//
+// [  { "id": 1, "kategorie": "Natur", "iconSrc": "natur", "fragen": [{"id":1,"wort":"Birke"},{"id":2,"wort":"Blume"}]} ]
+//
+// dabei möchte ich 10 verschiedene Kategorien haben mit jeweils 10-15 Fragen
+//
+// die wörter für "wort" sollten genau 5 Buchstaben sein, nur deutsche Wörter und kindergerecht sein
+//dazu sollten die wörter keine leerzeichen enthalten und keine wörter mit ä ö oder ü

@@ -7,11 +7,13 @@ import {
 import { getKategorieById } from '../functions/functions';
 import { StandardHeader } from '../../../components/components/StandardHeader';
 import { EndMenuNextGame } from '../../../components/components/EndMenuNextGame';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 
 export default function WordSearchSite() {
     // In Next.js 15, we unwrap params using React.use()
     const params = useParams();
+    const searchParams = useSearchParams();
+    const level = searchParams.get('level');
     const wordId = parseInt(params?.slug || params?.id);
     const nextId = wordId + 1;
     const categoryData = getKategorieById(wordId);
@@ -34,9 +36,9 @@ export default function WordSearchSite() {
     useEffect(() => {
         setIsMounted(true);
         if (categoryData) {
-            const w1 = categoryData.wort1.toUpperCase();
-            const w2 = categoryData.wort2.toUpperCase();
-            const w3 = categoryData.wort3.toUpperCase();
+            const w1 = categoryData.fragen[level-1].wort1.toUpperCase();
+            const w2 = categoryData.fragen[level-1].wort2.toUpperCase();
+            const w3 = categoryData.fragen[level-1].wort3.toUpperCase();
 
             const combinedChars = [
                 ...w1.split(''),
@@ -59,7 +61,7 @@ export default function WordSearchSite() {
         let foundMatch = false;
 
         for (let i = 1; i <= 3; i++) {
-            const targetWord = categoryData[`wort${i}`].toUpperCase();
+            const targetWord = categoryData.fragen[level-1][`wort${i}`].toUpperCase();
             const currentProgress = wordProgress[i];
 
             // Check if the clicked letter is the next needed letter for this word
@@ -90,9 +92,9 @@ export default function WordSearchSite() {
     useEffect(() => {
         if (categoryData && isMounted) {
             const allDone =
-                wordProgress[1] === categoryData.wort1.toUpperCase() &&
-                wordProgress[2] === categoryData.wort2.toUpperCase() &&
-                wordProgress[3] === categoryData.wort3.toUpperCase();
+                wordProgress[1] === categoryData.fragen[level-1].wort1.toUpperCase() &&
+                wordProgress[2] === categoryData.fragen[level-1].wort2.toUpperCase() &&
+                wordProgress[3] === categoryData.fragen[level-1].wort3.toUpperCase();
 
             if (allDone && categoryData.wort1 !== "") {
                 setTimeout(() => setIsFinished(true), 800);
@@ -125,10 +127,10 @@ export default function WordSearchSite() {
                                 {[1, 2, 3].map((num) => (
                                     <Box key={num} sx={{ mb: 3, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1 }}>
                                         <Box sx={{ display: 'flex', gap: { xs: 0.5, sm: 1 }, flexWrap: 'wrap', justifyContent: 'center' }}>
-                                            {categoryData[`wort${num}`].split('').map((_, i) => {
+                                            {categoryData.fragen[level-1][`wort${num}`].split('').map((_, i) => {
                                                 const isFilled = i < wordProgress[num].length;
                                                 const letter = wordProgress[num][i];
-                                                const isWordComplete = wordProgress[num] === categoryData[`wort${num}`].toUpperCase();
+                                                const isWordComplete = wordProgress[num] === categoryData.fragen[level-1][`wort${num}`].toUpperCase();
 
                                                 return (
                                                     <Paper
@@ -194,7 +196,7 @@ export default function WordSearchSite() {
                             gameWon={isFinished}
                             winText={"Super! Du hast alle Wörter gefunden."}
                             winAnswer={'Exzellent gemacht!'}
-                            nextGameLink={`/spiele/wortsuche/${nextId}`}
+                            nextGameLink={`/spiele/wortsuche/${wordId}?level=${(parseInt(level) % 10 + 1)}`}
                             backLink={`/spiele/wortsuche`}
                         />
                     )}

@@ -6,12 +6,14 @@ import StarsIcon from '@mui/icons-material/Stars';
 import { StandardHeader } from '../../../components/components/StandardHeader';
 import { EndMenuNextGame } from '../../../components/components/EndMenuNextGame';
 import { getKategorieById } from '../functions/functions';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 
 export default function WortSchlangeSite() {
     // Next.js 15 pattern for unwrapping params
     const params = useParams();
     const puzzleId = parseInt(params?.slug || params?.id);
+    const searchParams = useSearchParams();
+    const level = searchParams.get('level');
 
     const [puzzleData, setPuzzleData] = useState(null);
     const [wordProgress, setWordProgress] = useState("");
@@ -23,9 +25,9 @@ export default function WortSchlangeSite() {
     // Initialize game on mount and ID change
     useEffect(() => {
         setIsMounted(true);
-        const data = getKategorieById(puzzleId);
+        const data = getKategorieById(puzzleId,level);
 
-        if (!data || data.wort.length !== 9) {
+        if (!data || data.fragen[level-1].wort.length !== 9) {
             console.error("Ungültige Spieldaten für ID:", puzzleId);
             return;
         }
@@ -41,7 +43,7 @@ export default function WortSchlangeSite() {
         if (isFinished || error || !puzzleData) return;
 
         const currentIndex = wordProgress.length;
-        const expectedLetter = puzzleData.wort[currentIndex].toUpperCase();
+        const expectedLetter = puzzleData.fragen[level-1].wort[currentIndex].toUpperCase();
 
         if (letter.toUpperCase() === expectedLetter) {
             setWordProgress(prev => prev + expectedLetter);
@@ -65,7 +67,7 @@ export default function WortSchlangeSite() {
         );
     }
 
-    const targetWord = puzzleData.wort.toUpperCase();
+    const targetWord = puzzleData.fragen[level-1].wort.toUpperCase();
 
     return (
         <Box sx={{ bgcolor: '#e3f2fd', minHeight: '100vh', pb: 10 }}>
@@ -101,8 +103,8 @@ export default function WortSchlangeSite() {
                     <Stack
                         direction="row"
                         spacing={1}
-                        justifyContent="center"
-                        sx={{ mb: { xs: 4, sm: 6 }, flexWrap: 'nowrap', gap: 1 }}
+
+                        sx={{ mb: { xs: 4, sm: 6 }, flexWrap: 'nowrap', gap: 1, justifyContent:"center" }}
                     >
                         {targetWord.split('').map((char, index) => {
                             const isFilled = index < wordProgress.length;
@@ -195,7 +197,7 @@ export default function WortSchlangeSite() {
                 gameWon={isFinished}
                 winText={`Super gemacht!`}
                 winAnswer={`${targetWord}`}
-                nextGameLink={`/spiele/wortschlange/${puzzleId + 1}`}
+                nextGameLink={`/spiele/wortschlange/${puzzleId}?level=${(parseInt(level) % 10 + 1)}`}
                 backLink={`/spiele/wortschlange`}
             />
         </Box>

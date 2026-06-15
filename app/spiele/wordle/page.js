@@ -1,131 +1,98 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link'; // Changed from react-router-dom
+import Link from 'next/link';
 import {
   Typography,
-  Button,
   Paper,
+  Box,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
-  Container,
-  Box
+  Button,
+  Container
 } from '@mui/material';
 import {
-  Psychology as QuizIcon,
-  ArrowForwardIos as ArrowIcon,
+  ExpandMore as ExpandMoreIcon,
+  ArrowForwardIos as ArrowIcon
 } from '@mui/icons-material';
 import { StandardHeader } from '../../components/components/StandardHeader';
 import { setIcon } from '../../components/components/functions';
 import { categoriesWordle } from './functions/functions';
 
-
 export default function WordleOverviewSite() {
   const themes = categoriesWordle();
 
   return (
-    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh' }}>
-      <StandardHeader/>
+    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh', pb: 4 }}>
+      <StandardHeader />
+      <Container maxWidth="md" sx={{ mt: 4 }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
+          Wordle
+        </Typography>
 
-      <Box sx={{ p: { xs: 2, sm: 6 } }}>
-        <Paper
-          elevation={0}
-          sx={{
-            p: { xs: 3, sm: 6 },
-            textAlign: 'center',
-            bgcolor: 'white',
-            borderRadius: '24px'
-          }}
-        >
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 900,
-              color: '#219538',
-              mb: 4,
-              fontSize: { xs: '2.5rem', sm: '3.75rem' },
-              fontFamily: '"Outfit", sans-serif'
-            }}
-            gutterBottom
+        {themes.map((item) => (
+          <Accordion
+            key={item.id}
+            elevation={2}
+            sx={{ mb: 2, borderRadius: '16px', '&:before': { display: 'none' } }}
           >
-            Wordle
-          </Typography>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
+                <Box component="img" src={setIcon(item.iconSrc)} sx={{ width: 40, height: 30 }} />
+                <Typography variant="h6" sx={{ fontWeight: 800, flexGrow: 1 }}>
+                  {item.kategorie}
+                </Typography>
+                <Button
+                  component={Link}
+                  href={`/spiele/wordle/${item.id}?level=1`}
+                  variant="contained"
+                  size="small"
+                  sx={{ backgroundColor: '#219538', borderRadius: '8px' }}
+                >
+                  Los
+                </Button>
+              </Box>
+            </AccordionSummary>
 
-          <List sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
-            {themes.map((item, index) => (
-              <Paper
-                key={index}
-                elevation={2}
+            <AccordionDetails sx={{ borderTop: '1px solid #eee', p: 2 }}>
+              <Box
                 sx={{
-                  borderRadius: '20px',
-                  overflow: 'hidden',
-                  backgroundColor: '#e3fae8',
-                  border: '1px solid rgba(33, 149, 56, 0.1)',
-                  transition: 'all 0.2s ease-in-out',
-                  '&:hover': {
-                    transform: 'translateY(-3px)',
-                    boxShadow: '0 8px 16px rgba(0,0,0,0.1)'
-                  }
+                  display: 'grid',
+                  gridTemplateColumns: {
+                    xs: 'repeat(2, 1fr)',
+                    md: 'repeat(5, 1fr)',
+                  },
+                  gap: 1.5,
                 }}
               >
-                <ListItem
-                  sx={{
-                    p: 3,
-                    flexDirection: { xs: 'column', sm: 'row' },
-                    gap: { xs: 2, sm: 0 }
-                  }}
-                >
-                  <ListItemIcon sx={{ minWidth: { xs: 'auto', sm: '56px' } }}>
-                    <Box
-                      component="img"
-                      src={setIcon(item.iconSrc)}
-                      sx={{ width: 60, height: 45 }}
-                    />
-                  </ListItemIcon>
-
-
-                  <ListItemText
-                    primary={
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: 800,
-                          fontFamily: '"Outfit", sans-serif',
-                          textAlign: { xs: 'center', sm: 'left' }
-                        }}
-                      >
-                        {item.kategorie}
-                      </Typography>
-                    }
-                  />
-
+                {item.fragen.map((wortObj) => (
                   <Button
+                    key={wortObj.id}
                     component={Link}
-                    href={`/spiele/wordle/${item.id}`}
+                    href={`/spiele/wordle/${item.id}?level=${wortObj.id}`}
                     variant="contained"
+                    size="small"
                     sx={{
-                      borderRadius: '12px',
                       backgroundColor: '#219538',
-                      px: 4,
+                      borderRadius: '8px',
+                      padding: '8px 4px',
                       fontWeight: 'bold',
-                      textTransform: 'none',
-                      width: { xs: '100%', sm: 'auto' },
-                      '&:hover': {
-                        backgroundColor: '#1a7a2e',
-                      }
+                      width: '100%',
+                      '&:hover': { backgroundColor: '#1a7a2e' }
                     }}
-                    endIcon={<ArrowIcon />}
                   >
-                    Los!
+                    {`Level ${wortObj.id}`}
                   </Button>
-                </ListItem>
-              </Paper>
-            ))}
-          </List>
-        </Paper>
-      </Box>
+                ))}
+              </Box>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Container>
     </Box>
   );
-  }
+}

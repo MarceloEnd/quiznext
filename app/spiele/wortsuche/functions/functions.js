@@ -20,7 +20,8 @@ export const categoriesWordSearch = () => {
   const uniqueEntries = data.map(item => ({
     id: item.id,
     kategorie: item.kategorie,
-    iconSrc: item.iconSrc
+    iconSrc: item.iconSrc,
+    fragen: item.fragen
   }));
 
   // Sortierung alphabetisch nach dem Kategorienamen

@@ -7,14 +7,15 @@ import {
 import { StandardHeader } from '../../../components/components/StandardHeader';
 import { getKategorieById } from '../functions/functions';
 import { EndMenuNextGame } from '../../../components/components/EndMenuNextGame';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams} from 'next/navigation';
 
 export default function WordleGameSite() {
   const params = useParams();
+  const searchParams = useSearchParams();
+  const level = searchParams.get('level');
   const wordId = parseInt(params?.slug || params?.id);
   const categoryData = getKategorieById(wordId);
-
-  const targetWord = categoryData ? categoryData.wort.toUpperCase() : "";
+  const targetWord = categoryData ? categoryData.fragen[level-1].wort.toUpperCase() : "";
   const maxAttempts = 6;
   const wordLength = 5;
 
@@ -76,7 +77,7 @@ export default function WordleGameSite() {
   if (!isMounted || !categoryData) return null;
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#F8F9FA', display: 'flex', flexDirection: 'column' }}>
+    <Box key={level} sx={{ minHeight: '100vh', bgcolor: '#F8F9FA', display: 'flex', flexDirection: 'column' }}>
       <StandardHeader previousPath="/spiele/lesemaus" />
 
       <Container maxWidth="sm" sx={{ py: 4, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -148,7 +149,7 @@ export default function WordleGameSite() {
         gameWon={gameState === 'won'}
         winText={gameState === 'won' ? "Super gemacht!" : "Schade!"}
         winAnswer={targetWord}
-        nextGameLink={`/spiele/wordle/${(wordId % 100) + 1}`}
+        nextGameLink={`/spiele/wordle/${wordId}?level=${(parseInt(level) % 10 + 1)}`}
         backLink={`/spiele/wordle`}
       />
     </Box>

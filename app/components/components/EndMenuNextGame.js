@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation';
 
 export const EndMenuNextGame = ({ gameWon, winText, winAnswer, nextGameLink, backLink }) => {
   const router = useRouter();
-
   return (
     <Dialog
       open={gameWon}
@@ -71,7 +70,7 @@ export const EndMenuNextGame = ({ gameWon, winText, winAnswer, nextGameLink, bac
         <Button
           variant="contained"
           size="large"
-          onClick={() => router.push(nextGameLink)}
+          onClick={() => {window.location.href = nextGameLink}}
           fullWidth
           sx={{
             py: 1.5,

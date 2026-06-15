@@ -1,144 +1,122 @@
 [
-  {
-    "id": 1,
-    "kategorie": "Farben",
-    "wort1": "gelb",
-    "wort2": "rot",
-    "wort3": "blau",
-    "iconSrc": "farben"
-  },
-  {
-    "id": 2,
-    "kategorie": "Tiere",
-    "wort1": "Hund",
-    "wort2": "Katze",
-    "wort3": "Maus",
-    "iconSrc": "tiere"
-  },
-  {
-    "id": 3,
-    "kategorie": "Obst",
-    "wort1": "Apfel",
-    "wort2": "Banane",
-    "wort3": "Birne"
-  },
-  {
-    "id": 4,
-    "kategorie": "Spielzeug",
-    "wort1": "Puppe",
-    "wort2": "Auto",
-    "wort3": "Ball"
-  },
-  {
-    "id": 5,
-    "kategorie": "Fahrzeuge",
-    "wort1": "Bus",
-    "wort2": "Zug",
-    "wort3": "Laster"
-  },
-  {
-    "id": 6,
-    "kategorie": "Wetter",
-    "wort1": "Sonne",
-    "wort2": "Regen",
-    "wort3": "Wind"
-  },
-  {
-    "id": 7,
-    "kategorie": "Kleidung",
-    "wort1": "Hose",
-    "wort2": "Rock",
-    "wort3": "Schuh"
-  },
-  {
-    "id": 8,
-    "kategorie": "Koerper",
-    "wort1": "Nase",
-    "wort2": "Hand",
-    "wort3": "Arm"
-  },
-  {
-    "id": 9,
-    "kategorie": "Bauernhof",
-    "wort1": "Kuh",
-    "wort2": "Schwein",
-    "wort3": "Huhn"
-  },
-  {
-    "id": 10,
-    "kategorie": "Natur",
-    "wort1": "Baum",
-    "wort2": "Blume",
-    "wort3": "Gras"
-  },
-  {
-    "id": 11,
-    "kategorie": "Getraenke",
-    "wort1": "Wasser",
-    "wort2": "Milch",
-    "wort3": "Saft"
-  },
-  {
-    "id": 12,
-    "kategorie": "Zuhause",
-    "wort1": "Bett",
-    "wort2": "Tisch",
-    "wort3": "Lampe"
-  },
-  {
-    "id": 13,
-    "kategorie": "Formen",
-    "wort1": "Kreis",
-    "wort2": "Stern",
-    "wort3": "Herz"
-  },
-  {
-    "id": 14,
-    "kategorie": "Wald",
-    "wort1": "Fuchs",
-    "wort2": "Wolf",
-    "wort3": "Reh"
-  },
-  {
-    "id": 15,
-    "kategorie": "Essen",
-    "wort1": "Brot",
-    "wort2": "Nudeln",
-    "wort3": "Reis"
-  },
-  {
-    "id": 16,
-    "kategorie": "Garten",
-    "wort1": "Amsel",
-    "wort2": "Biene",
-    "wort3": "Wurm"
-  },
-  {
-    "id": 17,
-    "kategorie": "Himmel",
-    "wort1": "Wolke",
-    "wort2": "Mond",
-    "wort3": "Stern"
-  },
-  {
-    "id": 18,
-    "kategorie": "Meer",
-    "wort1": "Fisch",
-    "wort2": "Haifisch",
-    "wort3": "Sand"
-  },
-  {
-    "id": 19,
-    "kategorie": "Gemuese",
-    "wort1": "Gurke",
-    "wort2": "Tomate",
-    "wort3": "Mais"
-  },
-  {
-    "id": 20,
-    "kategorie": "Gefuehle",
-    "wort1": "froh",
-    "wort2": "stolz",
-    "wort3": "wild"
-  }
+  { "id": 1, "kategorie": "Tiere", "iconSrc": "tiere", "fragen": [
+    {"id":1,"wort1":"Hund","wort2":"Katze","wort3":"Maus"},
+    {"id":2,"wort1":"Pferd","wort2":"Esel","wort3":"Schaf"},
+    {"id":3,"wort1":"Vogel","wort2":"Huhn","wort3":"Ente"},
+    {"id":4,"wort1":"Tiger","wort2":"Löwe","wort3":"Bär"},
+    {"id":5,"wort1":"Fisch","wort2":"Wal","wort3":"Hai"},
+    {"id":6,"wort1":"Ziege","wort2":"Kalb","wort3":"Stier"},
+    {"id":7,"wort1":"Rabe","wort2":"Falke","wort3":"Adler"},
+    {"id":8,"wort1":"Wolf","wort2":"Fuchs","wort3":"Hase"},
+    {"id":9,"wort1":"Elefant","wort2":"Zebra","wort3":"Giraffe"},
+    {"id":10,"wort1":"Wurm","wort2":"Biene","wort3":"Wespe"}
+  ]},
+  { "id": 2, "kategorie": "Essen", "iconSrc": "essen", "fragen": [
+    {"id":1,"wort1":"Apfel","wort2":"Birne","wort3":"Nuss"},
+    {"id":2,"wort1":"Pizza","wort2":"Nudel","wort3":"Suppe"},
+    {"id":3,"wort1":"Salat","wort2":"Gurke","wort3":"Brot"},
+    {"id":4,"wort1":"Milch","wort2":"Butter","wort3":"Käse"},
+    {"id":5,"wort1":"Torte","wort2":"Keks","wort3":"Honig"},
+    {"id":6,"wort1":"Wurst","wort2":"Schinken","wort3":"Ei"},
+    {"id":7,"wort1":"Melone","wort2":"Traube","wort3":"Beere"},
+    {"id":8,"wort1":"Kuchen","wort2":"Zucker","wort3":"Salz"},
+    {"id":9,"wort1":"Pommes","wort2":"Fisch","wort3":"Steak"},
+    {"id":10,"wort1":"Wasser","wort2":"Saft","wort3":"Tee"}
+  ]},
+  { "id": 3, "kategorie": "Schule", "iconSrc": "schule", "fragen": [
+    {"id":1,"wort1":"Stift","wort2":"Block","wort3":"Heft"},
+    {"id":2,"wort1":"Tafel","wort2":"Kreide","wort3":"Bank"},
+    {"id":3,"wort1":"Buch","wort2":"Fibel","wort3":"Karte"},
+    {"id":4,"wort1":"Lineal","wort2":"Radierer","wort3":"Zirkel"},
+    {"id":5,"wort1":"Schultasche","wort2":"Mappe","wort3":"Etui"},
+    {"id":6,"wort1":"Pinsel","wort2":"Farbe","wort3":"Kleber"},
+    {"id":7,"wort1":"Schere","wort2":"Papier","wort3":"Pappe"},
+    {"id":8,"wort1":"Lehrer","wort2":"Schüler","wort3":"Klasse"},
+    {"id":9,"wort1":"Pause","wort2":"Sport","wort3":"Spiel"},
+    {"id":10,"wort1":"Brief","wort2":"Text","wort3":"Wort"}
+  ]},
+  { "id": 4, "kategorie": "Zuhause", "iconSrc": "haus", "fragen": [
+    {"id":1,"wort1":"Tisch","wort2":"Stuhl","wort3":"Sofa"},
+    {"id":2,"wort1":"Bett","wort2":"Lampe","wort3":"Regal"},
+    {"id":3,"wort1":"Kueche","wort2":"Herd","wort3":"Topf"},
+    {"id":4,"wort1":"Wand","wort2":"Tuer","wort3":"Dach"},
+    {"id":5,"wort1":"Fenster","wort2":"Glas","wort3":"Rahmen"},
+    {"id":6,"wort1":"Kissen","wort2":"Decke","wort3":"Tuch"},
+    {"id":7,"wort1":"Bad","wort2":"Seife","wort3":"Handtuch"},
+    {"id":8,"wort1":"Garten","wort2":"Baum","wort3":"Zaun"},
+    {"id":9,"wort1":"Keller","wort2":"Flur","wort3":"Keller"},
+    {"id":10,"wort1":"Schrank","wort2":"Kiste","wort3":"Box"}
+  ]},
+  { "id": 5, "kategorie": "Kleidung", "iconSrc": "kleidung", "fragen": [
+    {"id":1,"wort1":"Hose","wort2":"Hemd","wort3":"Jacke"},
+    {"id":2,"wort1":"Schuh","wort2":"Socke","wort3":"Stiefel"},
+    {"id":3,"wort1":"Kleid","wort2":"Rock","wort3":"Weste"},
+    {"id":4,"wort1":"Mütze","wort2":"Hut","wort3":"Schal"},
+    {"id":5,"wort1":"Gürtel","wort2":"Kette","wort3":"Ring"},
+    {"id":6,"wort1":"Tasche","wort2":"Beutel","wort3":"Netz"},
+    {"id":7,"wort1":"Pulli","wort2":"Anzug","wort3":"Kappe"},
+    {"id":8,"wort1":"Latz","wort2":"Tuch","wort3":"Maske"},
+    {"id":9,"wort1":"Jeans","wort2":"Shorts","wort3":"Top"},
+    {"id":10,"wort1":"Mantel","wort2":"Cape","wort3":"Weste"}
+  ]},
+  { "id": 6, "kategorie": "Hobby", "iconSrc": "hobby", "fragen": [
+    {"id":1,"wort1":"Sport","wort2":"Spiel","wort3":"Malen"},
+    {"id":2,"wort1":"Lesen","wort3":"Singen","wort3":"Tanz"},
+    {"id":3,"wort1":"Reisen","wort2":"Fahrt","wort3":"Boot"},
+    {"id":4,"wort1":"Ball","wort2":"Puppe","wort3":"Auto"},
+    {"id":5,"wort1":"Puzzle","wort2":"Karten","wort3":"Wuerfel"},
+    {"id":6,"wort1":"Klavier","wort2":"Flöte","wort3":"Geige"},
+    {"id":7,"wort1":"Kino","wort2":"Film","wort3":"Show"},
+    {"id":8,"wort1":"Schwimmen","wort2":"Lauf","wort3":"Sprung"},
+    {"id":9,"wort1":"Reiten","wort2":"Wandern","wort3":"Angeln"},
+    {"id":10,"wort1":"Basteln","wort2":"Backen","wort3":"Kochen"}
+  ]},
+  { "id": 7, "kategorie": "Familie", "iconSrc": "familie", "fragen": [
+    {"id":1,"wort1":"Vater","wort2":"Mutter","wort3":"Kind"},
+    {"id":2,"wort1":"Onkel","wort2":"Tante","wort3":"Cousin"},
+    {"id":3,"wort1":"Oma","wort2":"Opa","wort3":"Enkel"},
+    {"id":4,"wort1":"Baby","wort2":"Junge","wort3":"Mädchen"},
+    {"id":5,"wort1":"Sohn","wort2":"Tochter","wort3":"Kind"},
+    {"id":6,"wort1":"Bruder","wort2":"Schwester","wort3":"Zwilling"},
+    {"id":7,"wort1":"Eltern","wort2":"Partner","wort3":"Gast"},
+    {"id":8,"wort1":"Freund","wort2":"Nachbar","wort3":"Held"},
+    {"id":9,"wort1":"Frau","wort2":"Mann","wort3":"Person"},
+    {"id":10,"wort1":"Clan","wort2":"Sippe","wort3":"Haus"}
+  ]},
+  { "id": 8, "kategorie": "Natur", "iconSrc": "natur", "fragen": [
+    {"id":1,"wort1":"Sonne","wort2":"Mond","wort3":"Stern"},
+    {"id":2,"wort1":"Regen","wort2":"Wind","wort3":"Wolke"},
+    {"id":3,"wort1":"Frost","wort2":"Sturm","wort3":"Hitze"},
+    {"id":4,"wort1":"Nebel","wort2":"Schnee","wort3":"Eis"},
+    {"id":5,"wort1":"Berg","wort2":"Tal","wort3":"Fels"},
+    {"id":6,"wort1":"Fluss","wort2":"See","wort3":"Meer"},
+    {"id":7,"wort1":"Wald","wort2":"Wiese","wort3":"Feld"},
+    {"id":8,"wort1":"Blume","wort2":"Kraut","wort3":"Halm"},
+    {"id":9,"wort1":"Zweig","wort2":"Ast","wort3":"Blatt"},
+    {"id":10,"wort1":"Erde","wort2":"Stein","wort3":"Sand"}
+  ]},
+  { "id": 9, "kategorie": "Farben", "iconSrc": "farben", "fragen": [
+    {"id":1,"wort1":"Weiss","wort2":"Grau","wort3":"Schwarz"},
+    {"id":2,"wort1":"Blau","wort2":"Gelb","wort3":"Grün"},
+    {"id":3,"wort1":"Braun","wort2":"Beige","wort3":"Rosa"},
+    {"id":4,"wort1":"Silber","wort2":"Gold","wort3":"Bronze"},
+    {"id":5,"wort1":"Hell","wort2":"Dunkel","wort3":"Bunt"},
+    {"id":6,"wort1":"Lila","wort2":"Violett","wort3":"Cyan"},
+    {"id":7,"wort1":"Koralle","wort2":"Mint","wort3":"Ocker"},
+    {"id":8,"wort1":"Pfirsich","wort2":"Apricot","wort3":"Beere"},
+    {"id":9,"wort1":"Marine","wort2":"Azur","wort3":"Indigo"},
+    {"id":10,"wort1":"Sienna","wort2":"Khaki","wort3":"Sepia"}
+  ]},
+  { "id": 10, "kategorie": "Formen", "iconSrc": "formen", "fragen": [
+    {"id":1,"wort1":"Kreis","wort2":"Oval","wort3":"Punkt"},
+    {"id":2,"wort1":"Dreieck","wort2":"Quadrat","wort3":"Stern"},
+    {"id":3,"wort1":"Rauten","wort2":"Herz","wort3":"Kreuz"},
+    {"id":4,"wort1":"Linie","wort2":"Bogen","wort3":"Kurve"},
+    {"id":5,"wort1":"Winkel","wort2":"Kante","wort3":"Seite"},
+    {"id":6,"wort1":"Ring","wort2":"Kugel","wort3":"Wuerfel"},
+    {"id":7,"wort1":"Kegel","wort2":"Saeule","wort3":"Zylinder"},
+    {"id":8,"wort1":"Flach","wort2":"Hohl","wort3":"Fest"},
+    {"id":9,"wort1":"Breit","wort2":"Lang","wort3":"Kurz"},
+    {"id":10,"wort1":"Schief","wort2":"Gerade","wort3":"Echt"}
+  ]}
 ]

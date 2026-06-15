@@ -1,52 +1,32 @@
 [
-  { "id": 1, "kategorie": "Farben", "wort": "hellbraun", "iconSrc": "farben" },
-  { "id": 2, "kategorie": "Farben", "wort": "rosarotet" },
-  { "id": 3, "kategorie": "Farben", "wort": "tiefschwarz" },
-  { "id": 4, "kategorie": "Tiere", "wort": "Abendpfau" },
-  { "id": 5, "kategorie": "Tiere", "wort": "Backfisch" },
-  { "id": 6, "kategorie": "Tiere", "wort": "Buntstift" },
-  { "id": 7, "kategorie": "Tiere", "wort": "Dachshase" },
-  { "id": 8, "kategorie": "Tiere", "wort": "Eichhorne" },
-  { "id": 9, "kategorie": "Tiere", "wort": "Feldmausi" },
-  { "id": 10, "kategorie": "Tiere", "wort": "Grasmücke" },
-  { "id": 11, "kategorie": "Tiere", "wort": "Heupferd" },
-  { "id": 12, "kategorie": "Tiere", "wort": "Nashörner" },
-  { "id": 13, "kategorie": "Tiere", "wort": "Ohrwürmer" },
-  { "id": 14, "kategorie": "Tiere", "wort": "Rehkitzle" },
-  { "id": 15, "kategorie": "Tiere", "wort": "Schildkrö" },
-  { "id": 16, "kategorie": "Tiere", "wort": "Stachelsch" },
-  { "id": 17, "kategorie": "Tiere", "wort": "Waldvogel" },
-  { "id": 18, "kategorie": "Tiere", "wort": "Zebraheng" },
-  { "id": 19, "kategorie": "Natur", "wort": "Apfelbaum" },
-  { "id": 20, "kategorie": "Natur", "wort": "Birnbaum" },
-  { "id": 21, "kategorie": "Natur", "wort": "Blaukraut" },
-  { "id": 22, "kategorie": "Natur", "wort": "Eichenast" },
-  { "id": 23, "kategorie": "Natur", "wort": "Feuerberg" },
-  { "id": 24, "kategorie": "Natur", "wort": "Grashalme" },
-  { "id": 25, "kategorie": "Natur", "wort": "Himmelbau" },
-  { "id": 26, "kategorie": "Natur", "wort": "Moosbeere" },
-  { "id": 27, "kategorie": "Natur", "wort": "Regenboge" },
-  { "id": 28, "kategorie": "Natur", "wort": "Sonnenrad" },
-  { "id": 29, "kategorie": "Natur", "wort": "Tannenzap" },
-  { "id": 30, "kategorie": "Natur", "wort": "Wasserfal" },
-  { "id": 31, "kategorie": "Haus", "wort": "Bilderrah" },
-  { "id": 32, "kategorie": "Haus", "wort": "Dachrinne" },
-  { "id": 33, "kategorie": "Haus", "wort": "Esszimmer" },
-  { "id": 34, "kategorie": "Haus", "wort": "Hausmauer" },
-  { "id": 35, "kategorie": "Haus", "wort": "Kochtopfe" },
-  { "id": 36, "kategorie": "Haus", "wort": "Leselampe" },
-  { "id": 37, "kategorie": "Haus", "wort": "Nachttopf" },
-  { "id": 38, "kategorie": "Haus", "wort": "Sofakisse" },
-  { "id": 39, "kategorie": "Haus", "wort": "Tischdeck" },
-  { "id": 40, "kategorie": "Haus", "wort": "Wohnstube" },
-  { "id": 41, "kategorie": "Schule", "wort": "Buntstift" },
-  { "id": 42, "kategorie": "Schule", "wort": "Heftumsch" },
-  { "id": 43, "kategorie": "Schule", "wort": "Lehrkraft" },
-  { "id": 44, "kategorie": "Schule", "wort": "Malschule" },
-  { "id": 45, "kategorie": "Schule", "wort": "Pausenhof" },
-  { "id": 46, "kategorie": "Schule", "wort": "Schulbank" },
-  { "id": 47, "kategorie": "Schule", "wort": "Turnhalle" },
-  { "id": 48, "kategorie": "Spiel", "wort": "Ballspiel" },
-  { "id": 49, "kategorie": "Spiel", "wort": "Luftbalon" },
-  { "id": 50, "kategorie": "Spiel", "wort": "Spielzeug" }
+  { "id": 1, "kategorie": "Tiere", "iconSrc": "tiere", "fragen": [
+    {"id":1,"wort":"Eichhörne"}, {"id":2,"wort":"Nashörner"}, {"id":3,"wort":"Waldvogel"}, {"id":4,"wort":"Seepferde"}, {"id":5,"wort":"Backfisch"}, {"id":6,"wort":"Feldmaüse"}, {"id":7,"wort":"Storchart"}, {"id":8,"wort":"Kamelreit"}, {"id":9,"wort":"Amselpaar"}, {"id":10,"wort":"Ententeam"}
+  ]},
+  { "id": 2, "kategorie": "Natur", "iconSrc": "natur", "fragen": [
+    {"id":1,"wort":"Apfelbaum"}, {"id":2,"wort":"Birnbäume"}, {"id":3,"wort":"Eichenast"}, {"id":4,"wort":"Feuerberg"}, {"id":5,"wort":"Grashalme"}, {"id":6,"wort":"Moosbeere"}, {"id":7,"wort":"Sonnenrad"}, {"id":8,"wort":"Tannenzap"}, {"id":9,"wort":"Regenboge"}, {"id":10,"wort":"Sternbild"}
+  ]},
+  { "id": 3, "kategorie": "Schule", "iconSrc": "schule", "fragen": [
+    {"id":1,"wort":"Buntstift"}, {"id":2,"wort":"Lehrkraft"}, {"id":3,"wort":"Malschule"}, {"id":4,"wort":"Pausenhof"}, {"id":5,"wort":"Schulbank"}, {"id":6,"wort":"Turnhalle"}, {"id":7,"wort":"Lernspiel"}, {"id":8,"wort":"Schreibhe"}, {"id":9,"wort":"Radiergum"}, {"id":10,"wort":"Hausaufga"}
+  ]},
+  { "id": 4, "kategorie": "Haus", "iconSrc": "haus", "fragen": [
+    {"id":1,"wort":"Dachrinne"}, {"id":2,"wort":"Esszimmer"}, {"id":3,"wort":"Hausmauer"}, {"id":4,"wort":"Kochtopfe"}, {"id":5,"wort":"Leselampe"}, {"id":6,"wort":"Nachttopf"}, {"id":7,"wort":"Sofakisse"}, {"id":8,"wort":"Tischdeck"}, {"id":9,"wort":"Wohnstube"}, {"id":10,"wort":"Bilderrah"}
+  ]},
+  { "id": 5, "kategorie": "Kleidung", "iconSrc": "kleidung", "fragen": [
+    {"id":1,"wort":"Regenjack"}, {"id":2,"wort":"Sporthose"}, {"id":3,"wort":"Ledergurt"}, {"id":4,"wort":"Stoffrock"}, {"id":5,"wort":"Fusssohle"}, {"id":6,"wort":"Handschuh"}, {"id":7,"wort":"Badekleid"}, {"id":8,"wort":"Wintermus"}, {"id":9,"wort":"Seidensch"}, {"id":10,"wort":"Gummistie"}
+  ]},
+  { "id": 6, "kategorie": "Hobby", "iconSrc": "hobby", "fragen": [
+    {"id":1,"wort":"Ballspiel"}, {"id":2,"wort":"Luftbalon"}, {"id":3,"wort":"Spielzeug"}, {"id":4,"wort":"Malbücher"}, {"id":5,"wort":"Leseratte"}, {"id":6,"wort":"Tanzmusik"}, {"id":7,"wort":"Reiseplan"}, {"id":8,"wort":"Bootsfahr"}, {"id":9,"wort":"Puppenbau"}, {"id":10,"wort":"Sportfest"}
+  ]},
+  { "id": 7, "kategorie": "Essen", "iconSrc": "essen", "fragen": [
+    {"id":1,"wort":"Erdbeeren"}, {"id":2,"wort":"Backwaren"}, {"id":3,"wort":"Milchsaft"}, {"id":4,"wort":"Nudelsala"}, {"id":5,"wort":"Zuckerhut"}, {"id":6,"wort":"Obsttelle"}, {"id":7,"wort":"Honigbrot"}, {"id":8,"wort":"Würstchen"}, {"id":9,"wort":"Apfelsaft"}, {"id":10,"wort":"Käsesuppe"}
+  ]},
+  { "id": 8, "kategorie": "Farben", "iconSrc": "farben", "fragen": [
+    {"id":1,"wort":"Hellbraun"}, {"id":2,"wort":"Silbergra"}, {"id":3,"wort":"Goldglanz"}, {"id":4,"wort":"Beigetöne"}, {"id":5,"wort":"Mintgrüne"}, {"id":6,"wort":"Azurfarbt"}, {"id":7,"wort":"Indigobla"}, {"id":8,"wort":"Siennarot"}, {"id":9,"wort":"Khakifarb"}, {"id":10,"wort":"Tiefschwa"}
+  ]},
+  { "id": 9, "kategorie": "Familie", "iconSrc": "familie", "fragen": [
+    {"id":1,"wort":"Großväter"}, {"id":2,"wort":"Geschwist"}, {"id":3,"wort":"Verwandte"}, {"id":4,"wort":"Babysitte"}, {"id":5,"wort":"Ehepartne"}, {"id":6,"wort":"Gastgeber"}, {"id":7,"wort":"Nachbarns"}, {"id":8,"wort":"Urgroßell"}, {"id":9,"wort":"Cousinche"}, {"id":10,"wort":"Großmutte"}
+  ]},
+  { "id": 10, "kategorie": "Wetter", "iconSrc": "wetter", "fragen": [
+    {"id":1,"wort":"Regenfall"}, {"id":2,"wort":"Windstark"}, {"id":3,"wort":"Wolkenzug"}, {"id":4,"wort":"Frostkalt"}, {"id":5,"wort":"Sturmblöe"}, {"id":6,"wort":"Hitzewelle"}, {"id":7,"wort":"Kaltluftw"}, {"id":8,"wort":"Schneefal"}, {"id":9,"wort":"Nebelbank"}, {"id":10,"wort":"Sonnenshc"}
+  ]}
 ]

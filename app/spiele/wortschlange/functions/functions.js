@@ -6,11 +6,11 @@ import data from './questions.json';
  * @returns {object|null} - Das JSON-Objekt oder null, falls nichts gefunden wurde.
  */
 
-export const getKategorieById = (id) => {
+export const getKategorieById = (id,level) => {
     const entry = data.find(item => item.id === id);
     if (!entry) return null;
 
-    const word = entry.wort.toUpperCase().split('');
+    const word = entry.fragen[level-1].wort.toUpperCase().split('');
 
     // Attempt to find a valid "Snake Path" on a 3x3 grid
     let grid = null;
@@ -73,7 +73,8 @@ export const categoriesWortSchlange = () => {
   const uniqueEntries = data.map(item => ({
     id: item.id,
     kategorie: item.kategorie,
-    iconSrc: item.iconSrc
+    iconSrc: item.iconSrc,
+    fragen: item.fragen
   }));
 
   // Sortierung alphabetisch nach dem Kategorienamen

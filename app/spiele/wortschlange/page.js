@@ -4,119 +4,94 @@ import React from 'react';
 import Link from 'next/link';
 import {
   Typography,
-  Button,
   Paper,
+  Box,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
-  Container,
-  Box
+  Button,
+  Container
 } from '@mui/material';
 import {
-  Psychology as QuizIcon,
-  ArrowForwardIos as ArrowIcon,
+  ExpandMore as ExpandMoreIcon,
+  ArrowForwardIos as ArrowIcon
 } from '@mui/icons-material';
 import { StandardHeader } from '../../components/components/StandardHeader';
-import { categoriesWortSchlange } from './functions/functions';
 import { setIcon } from '../../components/components/functions';
+import { categoriesWortSchlange } from './functions/functions';
 
 export default function WortschlangeOverviewSite() {
   const themes = categoriesWortSchlange();
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#fdfdfd' }}>
-      <StandardHeader previousPath="/spiele" />
+    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh', pb: 4 }}>
+      <StandardHeader />
+      <Container maxWidth="md" sx={{ mt: 4 }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
+          Wortschlange
+        </Typography>
 
-      <Container maxWidth="md" sx={{ mt: 4, pb: 10 }}>
-        <Paper
-          elevation={4}
-          sx={{
-            p: { xs: 3, sm: 6 },
-            textAlign: 'center',
-            borderRadius: 4,
-            bgcolor: 'white'
-          }}
-        >
-          <Typography
-            variant="h2"
-            color="primary"
-            gutterBottom
-            sx={{
-              fontWeight: 900,
-              mb: 4,
-              fontSize: { xs: '2.5rem', sm: '3.75rem' },
-              letterSpacing: -1
-            }}
+        {themes.map((item) => (
+          <Accordion
+            key={item.id}
+            elevation={2}
+            sx={{ mb: 2, borderRadius: '16px', '&:before': { display: 'none' } }}
           >
-            Wort Schlange
-          </Typography>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
+                <Box component="img" src={setIcon(item.iconSrc)} sx={{ width: 40, height: 30 }} />
+                <Typography variant="h6" sx={{ fontWeight: 800, flexGrow: 1 }}>
+                  {item.kategorie}
+                </Typography>
+                <Button
+                  component={Link}
+                  href={`/spiele/wortschlange/${item.id}?level=1`}
+                  variant="contained"
+                  size="small"
+                  sx={{ backgroundColor: '#219538', borderRadius: '8px' }}
+                >
+                  Los
+                </Button>
+              </Box>
+            </AccordionSummary>
 
-          <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            {themes.map((item, index) => (
-              <Paper
-                key={item.id || index}
-                elevation={3}
+            <AccordionDetails sx={{ borderTop: '1px solid #eee', p: 2 }}>
+              <Box
                 sx={{
-                  borderRadius: '20px',
-                  overflow: 'hidden',
-                  backgroundColor: '#e3fae8ff',
-                  transition: 'all 0.2s ease-in-out',
-                  '&:hover': {
-                    transform: 'scale(1.02)',
-                    boxShadow: 6
-                  }
+                  display: 'grid',
+                  gridTemplateColumns: {
+                    xs: 'repeat(2, 1fr)',
+                    md: 'repeat(5, 1fr)',
+                  },
+                  gap: 1.5,
                 }}
               >
-                <ListItem
-                  sx={{
-                    p: { xs: 2, sm: 3 },
-                    flexDirection: { xs: 'column', sm: 'row' },
-                    textAlign: { xs: 'center', sm: 'left' },
-                    gap: { xs: 2, sm: 0 }
-                  }}
-                >
-                  <ListItemIcon sx={{ minWidth: { xs: 0, sm: 56 } }}>
-                    <Box
-                      component="img"
-                      src={setIcon(item.iconSrc)}
-                      sx={{ width: 60, height: 45 }}
-                    />
-                  </ListItemIcon>
-
-                  <ListItemText
-                    primary={
-                      <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                        {item.kategorie}
-                      </Typography>
-                    }
-                    secondary="Finde die versteckten Wörter"
-                  />
-
-                  <Link href={`/spiele/wortschlange/${item.id}`} passHref legacyBehavior>
-                    <Button
-                      variant="contained"
-                      sx={{
-                        borderRadius: '12px',
-                        backgroundColor: '#219538ff',
-                        px: 4,
-                        py: 1.5,
-                        fontWeight: 'bold',
-                        '&:hover': {
-                          backgroundColor: '#219538ff',
-                          filter: 'brightness(0.9)'
-                        }
-                      }}
-                      endIcon={<ArrowIcon />}
-                    >
-                      Starten
-                    </Button>
-                  </Link>
-                </ListItem>
-              </Paper>
-            ))}
-          </List>
-        </Paper>
+                {item.fragen.map((wortObj) => (
+                  <Button
+                    key={wortObj.id}
+                    component={Link}
+                    href={`/spiele/wortschlange/${item.id}?level=${wortObj.id}`}
+                    variant="contained"
+                    size="small"
+                    sx={{
+                      backgroundColor: '#219538',
+                      borderRadius: '8px',
+                      padding: '8px 4px',
+                      fontWeight: 'bold',
+                      width: '100%',
+                      '&:hover': { backgroundColor: '#1a7a2e' }
+                    }}
+                  >
+                    {`Level ${wortObj.id}`}
+                  </Button>
+                ))}
+              </Box>
+            </AccordionDetails>
+          </Accordion>
+        ))}
       </Container>
     </Box>
   );
