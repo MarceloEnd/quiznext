@@ -73,7 +73,7 @@ export default function WimmelbildSite({ params }) {
   if (!isMounted) return null;
 
   return (
-    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh', pb: 8 }}>
+    <Box sx={{ minHeight: '100vh', pb: 8 }}>
       <StandardHeader previousPath="/spiele" />
 
       <Container maxWidth="xl" sx={{ py: 4, textAlign: 'center' }}>

@@ -22,31 +22,13 @@ import themes from './pictures.json'; // Directly importing the data
 
 export default function WimmelbilderOverviewSite() {
   return (
-    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh' }}>
+    <Box sx={{ minHeight: '100vh' }}>
       <StandardHeader />
 
-      <Container maxWidth="md" sx={{ py: { xs: 2, sm: 6 } }}>
-        <Paper
-          elevation={0}
-          sx={{
-            p: { xs: 2, sm: 6 },
-            textAlign: 'center',
-            bgcolor: 'transparent'
-          }}
-        >
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 900,
-              color: '#219538',
-              mb: 4,
-              fontSize: { xs: '2.5rem', sm: '3.75rem' },
-              fontFamily: '"Outfit", sans-serif'
-            }}
-            gutterBottom
-          >
-            Wimmelbilder
-          </Typography>
+      <Container maxWidth="md" sx={{ mt: 4 }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
+          Wimmelbilder
+        </Typography>
 
           <List sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             {themes.map((item) => (
@@ -57,7 +39,6 @@ export default function WimmelbilderOverviewSite() {
                   borderRadius: '24px',
                   overflow: 'hidden',
                   backgroundColor: '#e3fae8',
-                  border: '2px solid #fff',
                   transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   '&:hover': {
                     transform: 'translateY(-5px)',
@@ -117,7 +98,7 @@ export default function WimmelbilderOverviewSite() {
               </Paper>
             ))}
           </List>
-        </Paper>
+
       </Container>
     </Box>
   );

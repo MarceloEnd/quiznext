@@ -118,14 +118,14 @@ function Sudoku6x6Game() {
   );
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#fdfdfd' }}>
+    <Box sx={{ minHeight: '100vh' }}>
       <StandardHeader previousPath="/spiele" />
       <Container maxWidth="sm" sx={{ mt: 4, textAlign: 'center', pb: 10 }}>
         <Typography variant="h3" fontWeight="900" color="primary" sx={{ mb: 2 }}>
           6x6 SUDOKU
         </Typography>
 
-        <Stack direction="row" spacing={2} justifyContent="center" alignItems="center" sx={{ mb: 3 }}>
+        <Stack direction="row" spacing={2}  sx={{ mb: 3,justifyContent:"center", alignItems:"center" }}>
           <Paper elevation={2} sx={{ px: 2, py: 0.5, display: 'flex', alignItems: 'center', bgcolor: '#f8f9fa' }}>
             <TimerIcon sx={{ fontSize: 20, mr: 1, color: '#666' }} />
             <Typography variant="h6" sx={{ fontFamily: 'monospace', fontWeight: 'bold' }}>
@@ -160,7 +160,7 @@ function Sudoku6x6Game() {
           </Box>
         </Paper>
 
-        <Stack direction="row" spacing={{ xs: 0.5, sm: 1.5 }} justifyContent="center" sx={{ mt: 5 }}>
+        <Stack direction="row" spacing={{ xs: 0.5, sm: 1.5 }} sx={{ mt: 5, justifyContent:"center" }}>
           {[1, 2, 3, 4, 5, 6].map(n => (
             <Button
               key={n}

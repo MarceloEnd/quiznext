@@ -90,7 +90,7 @@ function MemoryVersusGame() {
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', bgcolor: '#f9f9f9' }}>
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <StandardHeader previousPath="/spiele" />
 
       <Container

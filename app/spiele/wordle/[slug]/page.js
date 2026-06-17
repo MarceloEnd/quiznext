@@ -77,7 +77,7 @@ export default function WordleGameSite() {
   if (!isMounted || !categoryData) return null;
 
   return (
-    <Box key={level} sx={{ minHeight: '100vh', bgcolor: '#F8F9FA', display: 'flex', flexDirection: 'column' }}>
+    <Box key={level} sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <StandardHeader previousPath="/spiele/lesemaus" />
 
       <Container maxWidth="sm" sx={{ py: 4, flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

@@ -70,7 +70,7 @@ export default function WortSchlangeSite() {
     const targetWord = puzzleData.fragen[level-1].wort.toUpperCase();
 
     return (
-        <Box sx={{ bgcolor: '#e3f2fd', minHeight: '100vh', pb: 10 }}>
+        <Box sx={{ minHeight: '100vh', pb: 10 }}>
             <StandardHeader previousPath="/spiele/wortschlange" />
 
             <Container maxWidth="md" sx={{ mt: 4 }}>

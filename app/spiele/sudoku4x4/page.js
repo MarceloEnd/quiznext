@@ -78,7 +78,7 @@ function Sudoku4x4Game() {
   }, [isActive, selected, updateCell, gameWon]);
 
   const renderQuadrant = (startRow, startCol) => (
-    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 70px)', gap: '1px', bgcolor: '#ccc' }}>
+    <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 70px)', gap: '1px' }}>
       {userBoard.slice(startRow, startRow + 2).map((row, relativeR) => {
         const r = startRow + relativeR;
         return row.slice(startCol, startCol + 2).map((cell, relativeC) => {
@@ -113,14 +113,14 @@ function Sudoku4x4Game() {
   );
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#fdfdfd' }}>
+    <Box sx={{ minHeight: '100vh' }}>
       <StandardHeader previousPath="/spiele" />
       <Container maxWidth="sm" sx={{ mt: 4, textAlign: 'center', pb: 10 }}>
         <Typography variant="h3" fontWeight="900" color="primary" sx={{ mb: 2 }}>
           4x4 SUDOKU
         </Typography>
 
-        <Stack direction="row" spacing={2} justifyContent="center" alignItems="center" sx={{ mb: 3 }}>
+        <Stack direction="row" spacing={2}  sx={{ mb: 3, justifyContent:"center", alignItems:"center" }}>
           <Paper elevation={2} sx={{ px: 2, py: 0.5, display: 'flex', alignItems: 'center', bgcolor: '#f8f9fa' }}>
             <TimerIcon sx={{ fontSize: 20, mr: 1, color: '#666' }} />
             <Typography variant="h6" sx={{ fontFamily: 'monospace', fontWeight: 'bold' }}>
@@ -156,7 +156,7 @@ function Sudoku4x4Game() {
           </Box>
         </Paper>
 
-        <Stack direction="row" spacing={{ xs: 1, sm: 2 }} justifyContent="center" sx={{ mt: 5 }}>
+        <Stack direction="row" spacing={{ xs: 1, sm: 2 }} sx={{ mt: 5, justifyContent:"center" }}>
           {[1, 2, 3, 4].map(n => (
             <Button
               key={n}

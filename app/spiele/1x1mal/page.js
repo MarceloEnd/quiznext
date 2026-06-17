@@ -110,7 +110,7 @@ export default function EinmalEinsTimeAttackSite() {
   const currentQuestion = questionPool[currentIndex];
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#fdfdfd' }}>
+    <Box sx={{ minHeight: '100vh' }}>
       <StandardHeader previousPath="/spiele" />
       <Container maxWidth="sm" sx={{ mt: 4, textAlign: 'center', pb: 10 }}>
         <Typography variant="h3" fontWeight="900" color="primary" sx={{ mb: 2, letterSpacing: -1 }}>

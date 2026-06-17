@@ -27,7 +27,7 @@ export default function WortschlangeOverviewSite() {
   const themes = categoriesWortSchlange();
 
   return (
-    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh', pb: 4 }}>
+    <Box sx={{minHeight: '100vh', pb: 4 }}>
       <StandardHeader />
       <Container maxWidth="md" sx={{ mt: 4 }}>
         <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>

@@ -129,7 +129,7 @@ function MathSquareGame() {
     if (!gameData) return null;
 
     return (
-        <Box sx={{ minHeight: '100vh', bgcolor: '#F5F7FA' }}>
+        <Box sx={{ minHeight: '100vh' }}>
             <StandardHeader previousPath="/spiele"/>
             <Container disableGutters={isMobile} sx={{ mt: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Typography

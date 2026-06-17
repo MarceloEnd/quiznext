@@ -65,7 +65,7 @@ export default function LesemausSite() {
   let globalCharIndex = 0;
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', bgcolor: '#F8F9FA' }}>
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <StandardHeader previousPath="/spiele/lesemaus" />
 
       <Container maxWidth="md" sx={{ py: { xs: 3, sm: 6 }, flexGrow: 1 }}>

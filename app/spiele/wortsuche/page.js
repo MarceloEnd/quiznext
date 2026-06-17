@@ -27,7 +27,7 @@ export default function WordSearchOverviewSite() {
   const themes = categoriesWordSearch();
 
   return (
-    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh', pb: 4 }}>
+    <Box sx={{ minHeight: '100vh', pb: 4 }}>
       <StandardHeader />
       <Container maxWidth="md" sx={{ mt: 4 }}>
         <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
@@ -38,7 +38,7 @@ export default function WordSearchOverviewSite() {
           <Accordion
             key={item.id}
             elevation={2}
-            sx={{ mb: 2, borderRadius: '16px', '&:before': { display: 'none' } }}
+            sx={{ mb: 2, borderRadius: '16px', '&:before': { display: 'none' }, backgroundColor:'#e3fae8' }}
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>

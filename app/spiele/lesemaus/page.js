@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   Typography,
   Button,
+  Container,
   Paper,
   List,
   ListItem,
@@ -23,30 +24,10 @@ export default function LesemausOverviewSite() {
   const themes = categoriesLeseMaus();
 
   return (
-    <Box sx={{ bgcolor: '#f8f9fa', minHeight: '100vh' }}>
+    <Box sx={{minHeight: '100vh' }}>
       <StandardHeader/>
-
-      <Box sx={{ p: { xs: 2, sm: 6 } }}>
-        <Paper
-          elevation={0}
-          sx={{
-            p: { xs: 3, sm: 6 },
-            textAlign: 'center',
-            bgcolor: 'white',
-            borderRadius: '24px'
-          }}
-        >
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 900,
-              color: '#219538',
-              mb: 4,
-              fontSize: { xs: '2.5rem', sm: '3.75rem' },
-              fontFamily: '"Outfit", sans-serif'
-            }}
-            gutterBottom
-          >
+        <Container maxWidth="md" sx={{ mt: 4 }}>
+          <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
             Lese Maus
           </Typography>
 
@@ -116,8 +97,7 @@ export default function LesemausOverviewSite() {
               </Paper>
             ))}
           </List>
-        </Paper>
-      </Box>
+        </Container>
     </Box>
   );
 }

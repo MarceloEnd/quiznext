@@ -112,7 +112,7 @@ export default function WordSearchSite() {
     }
 
     return (
-        <Box sx={{ bgcolor: '#f0f4f8', minHeight: '100vh', pb: 8 }}>
+        <Box sx={{ minHeight: '100vh', pb: 8 }}>
             <StandardHeader />
             <Container maxWidth="md" sx={{ mt: 4 }}>
                 <Paper elevation={4} sx={{ p: { xs: 2, sm: 5 }, borderRadius: 8, border: '1px solid #e0e0e0' }}>

@@ -104,7 +104,7 @@ export default function GeteiltSite() {
   const progress = (currentIndex / questions.length) * 100;
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#fdfdfd' }}>
+    <Box sx={{ minHeight: '100vh' }}>
       <StandardHeader previousPath="/spiele" />
       <Container maxWidth="sm" sx={{ mt: 4, textAlign: 'center', pb: 10 }}>
         <Typography

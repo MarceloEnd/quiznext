@@ -88,7 +88,7 @@ function MemoryColorGame() {
   };
 
   return (
-    <Box sx={{ bgcolor: '#F5F7FA', minHeight: '100vh', pb: 10 }}>
+    <Box sx={{minHeight: '100vh', pb: 10 }}>
       <StandardHeader previousPath="/spiele" />
 
       <Container maxWidth="md" sx={{ mt: { xs: 2, sm: 4 }, textAlign: 'center' }}>

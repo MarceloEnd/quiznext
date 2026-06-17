@@ -33,7 +33,7 @@ export default function ImpressumSite() {
             Kontakt
           </Typography>
           <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
-            Telefon: n/a<br />
+            Telefon: +491773453649 <br />
             E-Mail: info@quizforkids.de
           </Typography>
         </Box>
