@@ -30,7 +30,7 @@ export default function WordSearchOverviewSite() {
     <Box sx={{ minHeight: '100vh', pb: 4 }}>
       <StandardHeader />
       <Container maxWidth="md" sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#c5efff', mb: 4, textAlign: 'center' }}>
           Wortsuche
         </Typography>
 
@@ -38,7 +38,12 @@ export default function WordSearchOverviewSite() {
           <Accordion
             key={item.id}
             elevation={2}
-            sx={{ mb: 2, borderRadius: '16px', '&:before': { display: 'none' }, backgroundColor:'#e3fae8' }}
+            sx={{
+              mb: 2,
+              borderRadius: '16px !important', // Force the rounding
+              overflow: 'hidden',              // Critical: clips the square corners of internal components
+              '&:before': { display: 'none' }
+            }}
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
@@ -51,7 +56,7 @@ export default function WordSearchOverviewSite() {
                   href={`/spiele/wortsuche/${item.id}?level=1`}
                   variant="contained"
                   size="small"
-                  sx={{ backgroundColor: '#219538', borderRadius: '8px' }}
+                  sx={{ backgroundColor: '#f7bd4b', borderRadius: '8px' }}
                 >
                   Los
                 </Button>
@@ -77,12 +82,12 @@ export default function WordSearchOverviewSite() {
                     variant="contained"
                     size="small"
                     sx={{
-                      backgroundColor: '#219538',
+                      backgroundColor: '#f7bd4b',
                       borderRadius: '8px',
                       padding: '8px 4px',
                       fontWeight: 'bold',
                       width: '100%',
-                      '&:hover': { backgroundColor: '#1a7a2e' }
+                      '&:hover': { backgroundColor: '#f7bd4b' }
                     }}
                   >
                     {`Level ${wortObj.id}`}

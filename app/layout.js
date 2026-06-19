@@ -1,8 +1,9 @@
 import { Footer } from './components/components/Footer';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { Red_Hat_Text } from 'next/font/google';
 import ThemeRegistry from './components/components/providers/ThemeRegistry';
+import { Analytics } from '@vercel/analytics/next';
+import CookieConsent from './components/components/CookieConsent';
 
 // Initialize the font
 const redHat = Red_Hat_Text({
@@ -23,7 +24,9 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </ThemeRegistry>
-        <GoogleAnalytics gaId="G-4BEMP9FEDP" />
+
+        <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );

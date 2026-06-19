@@ -70,7 +70,7 @@ export const Footer = () => {
                 fontWeight: 600,
                 fontFamily: '"Outfit", sans-serif',
                 transition: 'all 0.2s',
-                '&:hover': { color: '#4ba5f7', transform: 'translateY(-1px)' }
+                '&:hover': { color: '#f7bd4b', transform: 'translateY(-1px)' }
               }}
             >
               AGB
@@ -86,10 +86,25 @@ export const Footer = () => {
                 fontWeight: 600,
                 fontFamily: '"Outfit", sans-serif',
                 transition: 'all 0.2s',
-                '&:hover': { color: '#4ba5f7', transform: 'translateY(-1px)' }
+                '&:hover': { color: '#f7bd4b', transform: 'translateY(-1px)' }
               }}
             >
               Impressum
+            </MuiLink>
+            <MuiLink
+              component={Link}
+              href="/kontakt"
+              sx={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                fontFamily: '"Outfit", sans-serif',
+                transition: 'all 0.2s',
+                '&:hover': { color: '#f7bd4b', transform: 'translateY(-1px)' }
+              }}
+            >
+              Kontakt
             </MuiLink>
           </Stack>
         </Stack>

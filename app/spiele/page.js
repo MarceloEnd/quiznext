@@ -143,11 +143,7 @@ export default function GameOverviewSite() {
       <StandardHeader previousPath="/" />
 
       <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Typography
-          variant={isMobile ? "h4" : "h2"}
-          gutterBottom
-          sx={{ fontWeight: 800, textAlign: 'center', color: "#4ba5f7", textTransform: 'uppercase', mb: 6 }}
-        >
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#4ba5f7', mb: 4, textAlign: 'center' }}>
           Spiele
         </Typography>
 

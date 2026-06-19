@@ -10,6 +10,7 @@ import {
   Paper,
   Box,
   Grid,
+  Container,
   useTheme,
   useMediaQuery
 } from '@mui/material';
@@ -39,26 +40,9 @@ export default function QuizOverviewSite(){
     <div className="Start">
       <StandardHeader />
 
-      <Box
-        sx={{
-          p: { xs: 3, sm: 6 },
-          textAlign: 'center',
-          bgcolor: 'transparent',
-          maxWidth: 'lg',
-          mx: 'auto'
-        }}
-      >
-        <Typography
-          variant={isMobile ? "h4" : "h2"}
-          gutterBottom
-          sx={{
-            fontWeight: 800,
-            color: "#4ba5f7",
-            mb: 4,
-            textTransform: 'uppercase'
-          }}
-        >
-          Teste dein Quiz Wissen
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#4ba5f7', mb: 4, textAlign: 'center' }}>
+          Quiz
         </Typography>
 
         {/* Using Grid layout to handle the dynamic side-by-side card structure */}
@@ -124,7 +108,7 @@ export default function QuizOverviewSite(){
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </Container>
     </div>
   );
 };

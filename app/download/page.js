@@ -13,11 +13,11 @@ export default function Download() {
     <Box sx={{ minHeight: '100vh', bgcolor: '#F8F9FA' }}>
       <StandardHeader />
 
-      <Container sx={{ mt: 6, mb: 8, textAlign: 'center' }}>
-        <Typography variant="h3" fontWeight="900" sx={{ mb: 1, color: '#2D3436' }}>
-          Materialien 📚
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#4ba5f7', mb: 4, textAlign: 'center' }}>
+          Downloads
         </Typography>
-        <Typography variant="h6" sx={{ mb: 4, color: 'text.secondary' }}>
+        <Typography variant="h6" sx={{ mb: 4, color: 'text.secondary',textAlign: 'center'  }}>
           Kostenlos herunterladen
         </Typography>
 

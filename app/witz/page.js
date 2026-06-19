@@ -9,6 +9,7 @@ import {
   Paper,
   Grid,
   Card,
+  Container,
   CardContent,
   CardActions,
   useTheme,
@@ -30,26 +31,9 @@ export default function JokeOverviewSite() {
     <div className="Start">
       <StandardHeader />
 
-      <Box
-        sx={{
-          p: { xs: 3, sm: 6 },
-          textAlign: 'center',
-          bgcolor: 'transparent',
-          maxWidth: 'lg',
-          mx: 'auto'
-        }}
-      >
-        <Typography
-          variant={isMobile ? "h4" : "h2"}
-          gutterBottom
-          sx={{
-            fontWeight: 800,
-            color: "#4ba5f7",
-            mb: 4,
-            textTransform: 'uppercase'
-          }}
-        >
-          Witze vom feinsten
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#4ba5f7', mb: 4, textAlign: 'center' }}>
+          Witze
         </Typography>
 
         {/* Using Grid layout to handle the dynamic side-by-side card structure */}
@@ -114,7 +98,7 @@ export default function JokeOverviewSite() {
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </Container>
     </div>
   );
 };

@@ -26,7 +26,7 @@ export default function WimmelbilderOverviewSite() {
       <StandardHeader />
 
       <Container maxWidth="md" sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
+        <Typography variant="h2" sx={{ fontWeight: 900, color: '#4ba5f7', mb: 4, textAlign: 'center' }}>
           Wimmelbilder
         </Typography>
 
@@ -38,7 +38,6 @@ export default function WimmelbilderOverviewSite() {
                 sx={{
                   borderRadius: '24px',
                   overflow: 'hidden',
-                  backgroundColor: '#e3fae8',
                   transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   '&:hover': {
                     transform: 'translateY(-5px)',
@@ -56,7 +55,7 @@ export default function WimmelbilderOverviewSite() {
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: 'auto' }}>
-                    <SearchIcon sx={{ fontSize: 45, color: '#219538' }} />
+                    <SearchIcon sx={{ fontSize: 45 }} />
                   </ListItemIcon>
 
                   <ListItemText
@@ -80,14 +79,14 @@ export default function WimmelbilderOverviewSite() {
                       variant="contained"
                       sx={{
                         borderRadius: '16px',
-                        backgroundColor: '#219538',
+                        backgroundColor: '#f7bd4b',
                         px: 4,
                         py: 1.5,
                         fontWeight: 'bold',
                         fontSize: '1.1rem',
                         width: { xs: '100%', sm: 'auto' },
                         textTransform: 'none', // Keeps it friendly
-                        '&:hover': { backgroundColor: '#1a7a2e' }
+                        '&:hover': { backgroundColor: '#f7bd4b' }
                       }}
                       endIcon={<ArrowIcon />}
                     >

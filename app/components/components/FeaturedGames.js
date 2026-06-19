@@ -19,7 +19,7 @@ export const FeaturedGames = () => {
       title: "Wortschlange",
       desc: "Folge der Spur!",
       path: "/spiele/wortschlange",
-      gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
+      gradient: 'linear-gradient(135deg, #412199 0%, #412199 100%)',
       shadow: '0 8px 20px rgba(76, 175, 80, 0.3)',
       iconSrc: "wortschlange"
     },
@@ -43,7 +43,7 @@ export const FeaturedGames = () => {
       title: "Wortsuche",
       desc: "Finde alle Wörter!",
       path: "/spiele/wortsuche",
-      gradient: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)',
+      gradient: 'linear-gradient(135deg, #412199 0%, #412199 100%)',
       shadow: '0 8px 20px rgba(233, 30, 99, 0.3)',
       iconSrc: "wortsuche"
     }

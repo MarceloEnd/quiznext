@@ -27,7 +27,7 @@ export default function LesemausOverviewSite() {
     <Box sx={{minHeight: '100vh' }}>
       <StandardHeader/>
         <Container maxWidth="md" sx={{ mt: 4 }}>
-          <Typography variant="h2" sx={{ fontWeight: 900, color: '#219538', mb: 4, textAlign: 'center' }}>
+          <Typography variant="h2" sx={{ fontWeight: 900, color: '#4ba5f7', mb: 4, textAlign: 'center' }}>
             Lese Maus
           </Typography>
 
@@ -39,7 +39,6 @@ export default function LesemausOverviewSite() {
                 sx={{
                   borderRadius: '20px',
                   overflow: 'hidden',
-                  backgroundColor: '#e3fae8',
                   border: '1px solid rgba(33, 149, 56, 0.1)',
                   transition: 'all 0.2s ease-in-out',
                   '&:hover': {
@@ -56,7 +55,7 @@ export default function LesemausOverviewSite() {
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: { xs: 'auto', sm: '56px' } }}>
-                    <QuizIcon sx={{ fontSize: 40, color: '#219538' }} />
+
                   </ListItemIcon>
 
                   <ListItemText
@@ -80,13 +79,13 @@ export default function LesemausOverviewSite() {
                     variant="contained"
                     sx={{
                       borderRadius: '12px',
-                      backgroundColor: '#219538',
+                      backgroundColor: '#f7bd4b',
                       px: 4,
                       fontWeight: 'bold',
                       textTransform: 'none',
                       width: { xs: '100%', sm: 'auto' },
                       '&:hover': {
-                        backgroundColor: '#1a7a2e',
+                        backgroundColor: '#f7bd4b',
                       }
                     }}
                     endIcon={<ArrowIcon />}
