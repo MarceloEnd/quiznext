@@ -4,7 +4,7 @@ import { Red_Hat_Text } from 'next/font/google';
 import ThemeRegistry from './components/components/providers/ThemeRegistry';
 import { Analytics } from '@vercel/analytics/next';
 import CookieConsent from './components/components/CookieConsent';
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 // Initialize the font
 const redHat = Red_Hat_Text({
