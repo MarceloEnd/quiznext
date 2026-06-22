@@ -1,15 +1,18 @@
+"use client";
+
+import Image from 'next/image';
 import React, { useState, useRef } from 'react';
-import { 
-  Box, Container, Typography, Button, Paper, 
-  Dialog, DialogTitle, DialogContent, DialogActions, Grid 
+import {
+  Box, Container, Typography, Button, Paper,
+  Dialog, DialogTitle, DialogContent, DialogActions, Grid
 } from '@mui/material';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 // Deine Bild-Importe
-import MitFehler1 from '../../images/Wimmelbilder/1.png';  
+import MitFehler1 from '../Wimmelbilder/2.png';
 
 const DIFFERENCES = [
-  { id: 1, x: 11.6, y: 30.0, r: 5, name: "Einhorn" },
+  { id: 1, x: 63, y: 59.0, r: 3, name: "Einhorn" },
   { id: 2, x: 27.1, y: 27.7, r: 5, name: "Einhorn" },
   { id: 3, x: 16.1, y: 64.9, r: 5, name: "Einhorn" },
   { id: 4, x: 27.7, y: 74.8, r: 5, name: "Einhorn" },
@@ -17,7 +20,7 @@ const DIFFERENCES = [
   { id: 6, x: 91.6, y: 75.9, r: 5, name: "Einhorn" }
 ];
 
-export const WimmelbildCursorSite = () => {
+export default function  WimmelbildCursorSite() {
   const [foundIds, setFoundIds] = useState([]);
   const [gameWon, setGameWon] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -55,7 +58,7 @@ export const WimmelbildCursorSite = () => {
       <Typography variant="h3" fontWeight="900" gutterBottom color="primary">
         OSTERN: FINDE DIE FEHLER
       </Typography>
-      
+
       <Typography variant="h6" sx={{ mb: 3, color: 'text.secondary' }}>
         Gefunden: {foundIds.length} von {DIFFERENCES.length}
       </Typography>
@@ -63,20 +66,20 @@ export const WimmelbildCursorSite = () => {
       <Grid container spacing={2} justifyContent="center">
         {/* Rechtes Bild (Klickbar & mit Koordinaten-Anzeige) */}
         <Grid item xs={12} md={6}>
-          <Paper 
+          <Paper
             elevation={6}
             ref={clickableImageRef}
             onMouseMove={handleMouseMove}
             onClick={handleImageClick}
-            sx={{ 
-              position: 'relative', 
-              borderRadius: 2, 
-              overflow: 'hidden', 
+            sx={{
+              position: 'relative',
+              borderRadius: 2,
+              overflow: 'hidden',
               cursor: 'none', // Wir verstecken den echten Cursor
-              lineHeight: 0 
+              lineHeight: 0
             }}
           >
-            <img src={MitFehler1} alt="Fehler suchen" style={{ width: '100%', height: 'auto' }} />
+            <Image src={MitFehler1} alt="Fehler suchen" style={{ width: '100%', height: 'auto' }} />
 
             {/* Die gefundenen Kreise */}
             {foundIds.map(id => {
@@ -108,9 +111,9 @@ export const WimmelbildCursorSite = () => {
               flexDirection: 'column',
               alignItems: 'center'
             }}>
-              <Typography sx={{ 
-                position: 'absolute', top: 25, 
-                backgroundColor: 'rgba(0,0,0,0.7)', color: 'white', 
+              <Typography sx={{
+                position: 'absolute', top: 25,
+                backgroundColor: 'rgba(0,0,0,0.7)', color: 'white',
                 padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem',
                 whiteSpace: 'nowrap'
               }}>

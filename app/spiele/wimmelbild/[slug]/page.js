@@ -11,31 +11,17 @@ import {
 } from '@mui/material';
 import { StandardHeader } from '../../../components/components/StandardHeader';
 import { EndMenuNextGame } from '../../../components/components/EndMenuNextGame';
-import MitFehler1 from '../Wimmelbilder/1.png';
 import Image from 'next/image';
+import { PUZZLE_DATA } from './data';
+import { useParams, useSearchParams} from 'next/navigation';
 
-// IMPORTANT: In Next.js, it's best to move this data to a JSON or fetch it.
-// For now, I'm keeping it here but adapting it for dynamic use.
-const PUZZLE_DATA = {
-  1: {
-    name: "Einhorn",
-    differences: [
-      { id: 1, x: 11.6, y: 30.0, r: 5 },
-      { id: 2, x: 27.1, y: 27.7, r: 5 },
-      { id: 3, x: 16.1, y: 64.9, r: 5 },
-      { id: 4, x: 27.7, y: 74.8, r: 5 },
-      { id: 5, x: 72.3, y: 50.5, r: 5 },
-      { id: 6, x: 91.6, y: 75.9, r: 5 }
-    ]
-  }
-};
-
-export default function WimmelbildSite({ params }) {
+export default function WimmelbildSite() {
   // Unwrap params using React.use() for Next.js 15+
-  const resolvedParams = use(params);
-  const id = resolvedParams.id || "1";
+  const params1 = useParams();
+  //const resolvedParams = use(params);
+  //const id = resolvedParams.id || "1";
+  const id = params1.slug
   const currentPuzzle = PUZZLE_DATA[id] || PUZZLE_DATA[1];
-
   const [foundIds, setFoundIds] = useState([]);
   const [gameWon, setGameWon] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -114,8 +100,8 @@ export default function WimmelbildSite({ params }) {
                 intrinsic ratios. Ensure the image is in /public/images/...
               */}
               <Image
-                src={MitFehler1}
-                alt="Wimmelbild"
+                src={currentPuzzle.image}
+                alt={currentPuzzle.name}
                 sx={{
                   width: '100%',
                   height: 'auto',
@@ -161,7 +147,7 @@ export default function WimmelbildSite({ params }) {
           gameWon={gameWon}
           winText={`SUPER GEMACHT!`}
           winAnswer={`Du hast alle ${currentPuzzle.differences.length} Unterschiede gefunden!`}
-          nextGameLink={`/spiele/wimmelbild/${parseInt(id) + 1}`}
+          nextGameLink={`/spiele/wimmelbild/${parseInt(id) % 2 + 1}`}
           backLink="/spiele/wimmelbildliste"
         />
       </Container>
