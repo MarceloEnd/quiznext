@@ -10,6 +10,9 @@ import schenkelklopfer from '../images/icons/schenkelklopfer.png';
 import sudoku from '../images/icons/sudoku.png';
 import wordle from '../images/icons/wordle.png';
 import wortschlange from '../images/icons/wortschlange.png';
+import familie from '../images/icons/familie.png';
+import farben from '../images/icons/farben.png';
+import wetter from '../images/icons/wetter.png';
 
 export const setIcon = (category) => {
     if(category === '123'){
@@ -47,6 +50,15 @@ export const setIcon = (category) => {
     }
     else if(category === 'wortschlange'){
       return wortschlange.src;
+    }
+    else if(category === 'familie'){
+      return familie.src;
+    }
+    else if(category === 'farben'){
+      return farben.src;
+    }
+    else if(category === 'wetter'){
+      return wetter.src;
     }
     else{
       return defaultIcon.src;
