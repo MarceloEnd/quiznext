@@ -148,7 +148,7 @@ export default function WimmelbildSite() {
           winText={`SUPER GEMACHT!`}
           winAnswer={`Du hast alle ${currentPuzzle.differences.length} Unterschiede gefunden!`}
           nextGameLink={`/spiele/wimmelbild/${parseInt(id) % 2 + 1}`}
-          backLink="/spiele/wimmelbildliste"
+          backLink="/spiele/wimmelbild"
         />
       </Container>
     </Box>
