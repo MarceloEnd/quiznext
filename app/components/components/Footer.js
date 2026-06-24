@@ -62,7 +62,7 @@ export const Footer = () => {
             {/* CLEAN MODERN LINK: No legacyBehavior needed */}
             <MuiLink
               component={Link}
-              href="/agb"
+              href="/ueberuns"
               sx={{
                 color: '#ffffff',
                 textDecoration: 'none',
@@ -73,7 +73,7 @@ export const Footer = () => {
                 '&:hover': { color: '#f7bd4b', transform: 'translateY(-1px)' }
               }}
             >
-              AGB
+              Über uns
             </MuiLink>
 
             <MuiLink
