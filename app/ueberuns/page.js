@@ -30,9 +30,7 @@ export default function UeberunsSite() {
             <br /><br />
             Und falls ihr Anregungen und Ideen habt, schickt sie uns gerne an
             <br />
-            <a href="mailto:idee@quizforkids.de" style={{ color: 'inherit', textDecoration: 'underline' }}>
-              idee@quizforkids.de
-            </a>
+            Idee [at] quizforkids.de
           </Typography>
         </Box>
       </Container>
