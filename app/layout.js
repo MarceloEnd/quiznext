@@ -5,7 +5,6 @@ import ThemeRegistry from './components/components/providers/ThemeRegistry';
 import { Analytics } from '@vercel/analytics/next';
 import CookieConsent from './components/components/CookieConsent';
 import { Metadata } from "next";
-import Script from 'next/script';
 
 // Initialize the font
 const redHat = Red_Hat_Text({
@@ -24,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="de" className={redHat.variable}>
     <head>
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6486557001399248"
           crossOrigin="anonymous"
