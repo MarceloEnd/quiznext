@@ -61,8 +61,7 @@ export default function WimmelbildSite() {
   return (
     <Box sx={{ minHeight: '100vh', pb: 8 }}>
       <StandardHeader previousPath="/spiele" />
-
-      <Container maxWidth="xl" sx={{ py: 4, textAlign: 'center' }}>
+      <Container maxWidth="xl" sx={{ textAlign: 'center', justifycontent:"center", alignitems:'center' }}>
         <Typography
           variant="h3"
           fontWeight="900"
@@ -75,15 +74,15 @@ export default function WimmelbildSite() {
         >
           FINDE DIE FEHLER
         </Typography>
-
         <Typography variant="h6" sx={{ mb: 3, color: 'text.secondary', fontWeight: 600 }}>
           Gefunden: {foundIds.length} von {currentPuzzle.differences.length}
         </Typography>
-
-        <Grid container spacing={0} justifyContent="center">
-          <Grid item xs={12} md={10} lg={8}>
+      </Container>
+      <Container maxWidth="xl" sx={{ py: 4, textAlign: 'center', justifycontent:"center", alignitems:'center', maxWidth:'80vh' }}>
+        <Grid container spacing={0} justifycontent="center" sx={{maxWidth:'75vh', textAlign: 'center', justifycontent:"center", alignitems:'center'}}>
+          <Grid item xs={10} md={10} lg={8} >
             <Paper
-              elevation={12}
+              elevation={6}
               sx={{
                 position: 'relative',
                 borderRadius: 4,
@@ -91,23 +90,27 @@ export default function WimmelbildSite() {
                 cursor: 'crosshair',
                 touchAction: 'none',
                 border: '8px solid white',
-                lineHeight: 0 // Removes tiny gap at bottom of image
+                lineHeight: 0,
+                maxWidth: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
               ref={clickableImageRef}
               onClick={handleImageClick}
             >
-              {/* We use a standard img here because coord math is easier with
-                intrinsic ratios. Ensure the image is in /public/images/...
-              */}
+
               <Image
                 src={currentPuzzle.image}
                 alt={currentPuzzle.name}
+                width={1000}
+                height={600}
                 sx={{
                   width: '100%',
                   height: 'auto',
                   display: 'block',
                   userSelect: 'none',
-                  WebkitUserDrag: 'none'
+                  WebkitUserDrag: 'none',
                 }}
               />
 

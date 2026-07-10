@@ -14,9 +14,6 @@ const redHat = Red_Hat_Text({
 
 export const metadata = {
   title: 'Quiz for Kids',
-  other: {
-    "google-adsense-account": "ca-pub-6486557001399248",
-  },
 };
 
 export default function RootLayout({ children }) {
