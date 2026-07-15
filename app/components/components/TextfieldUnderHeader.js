@@ -24,7 +24,7 @@ export const TextfieldUnderHeader = ({ header, subtext }) => {
         </Typography>
         <Typography
           variant="body1"
-          sx={{ color: 'text.secondary', maxWidth: '600px', mx: 'auto', lineHeight: 1.8 }}
+          sx={{ color: 'text.secondary', maxWidth: '700px', mx: 'auto', lineHeight: 1.8, whiteSpace: "pre-wrap"}}
         >
           {subtext}
         </Typography>

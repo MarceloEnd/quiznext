@@ -15,7 +15,6 @@ import {
 // Corrected import paths for Next.js/Turbopack
 import TaskAltIcon from '@mui/icons-material/TaskAlt'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import PsychologyIcon from '@mui/icons-material/Psychology';
 
 export const QuizArea = ({ data, onNext, currentIndex = 0, totalQuestions = 10 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -86,7 +85,6 @@ export const QuizArea = ({ data, onNext, currentIndex = 0, totalQuestions = 10 }
         >
           <CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 4, gap: 1 }}>
-                <PsychologyIcon sx={{ color: '#FF9800', fontSize: 32 }} />
                 <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#333', textAlign: 'center' }}>
                 {data.question}
                 </Typography>

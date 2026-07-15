@@ -7,7 +7,7 @@ import { getQuiz } from '../functions/get_quiz';
 import { QuizArea } from '../components/QuizArea';
 import { StandardHeader } from '../../components/components/StandardHeader';
 import { EndMenuNewGame } from '../../components/components/EndMenuNewGame';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 export default function QuizSite() {
   const params = useParams();
@@ -74,7 +74,7 @@ export default function QuizSite() {
           backLink="/quiz"
         />
       )}
-
+      <Container sx={{marginTop:'5vh'}} />
     </div>
   )
 }

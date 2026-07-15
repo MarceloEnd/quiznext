@@ -1,222 +1,718 @@
 [
   {
-    "question": "Wie heißt die Hauptfigur der Serie?",
-    "options": {
-      "A": "Ava",
-      "B": "Sophia",
-      "C": "Isabel",
-      "D": "Layla"
-    },
-    "correctAnswerKey": "B"
+    "id":1,
+    "kategorie": "Peppa Wutz Fan Quiz",
+    "iconSrc": "Peppa",
+    "questions":
+    [
+      {
+        "question": "Wie heißt Peppas kleiner Bruder?",
+        "options": {
+          "A": "Luzius",
+          "B": "Schorsch",
+          "C": "Pedro",
+          "D": "Linus"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier ist Peppa?",
+        "options": {
+          "A": "Katze",
+          "B": "Hund",
+          "C": "Schwein",
+          "D": "Kaninchen"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Was macht Peppa am allerliebsten, wenn es regnet?",
+        "options": {
+          "A": "Bücher lesen",
+          "B": "In Matschepfützen springen",
+          "C": "Fernsehen",
+          "D": "Kuchen backen"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wie heißt Peppas beste Freundin?",
+        "options": {
+          "A": "Luzie Locke",
+          "B": "Susi Sheep",
+          "C": "Luisa Löffel",
+          "D": "Molly Mieze"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welche Farbe hat Peppas Lieblingskleid?",
+        "options": {
+          "A": "Blau",
+          "B": "Gelb",
+          "C": "Grün",
+          "D": "Rot"
+        },
+        "correctAnswerKey": "D"
+      },
+      {
+        "question": "Welches Tier ist Schorschs absolutes Lieblingsspielzeug?",
+        "options": {
+          "A": "Ein Bär",
+          "B": "Ein Dinosaurier",
+          "C": "Ein Elefant",
+          "D": "Ein Krokodil"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welche Farbe hat das Auto von Peppas Familie?",
+        "options": {
+          "A": "Gelb",
+          "B": "Blau",
+          "C": "Rot",
+          "D": "Grün"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Wie heißt die Kindergärtnerin von Peppa und ihren Freunden?",
+        "options": {
+          "A": "Frau Löffel",
+          "B": "Madame Gazelle",
+          "C": "Frau Mümmel",
+          "D": "Frau Kuh"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Musikinstrument hat Madame Gazelle früher in einer Rockband gespielt?",
+        "options": {
+          "A": "E-Gitarre",
+          "B": "Schlagzeug",
+          "C": "Keyboard",
+          "D": "Bassgitarre"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wo wohnen Oma und Opa Wutz?",
+        "options": {
+          "A": "In einem Leuchtturm",
+          "B": "In einem Haus auf einem großen Hügel",
+          "C": "In einer Höhle",
+          "D": "In einem Wohnwagen"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier ist Klausi Kläff?",
+        "options": {
+          "A": "Ein Hund",
+          "B": "Ein Fuchs",
+          "C": "Ein Wolf",
+          "D": "Ein Kater"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was ist Opa Wutz' liebstes Hobby?",
+        "options": {
+          "A": "Briefmarken sammeln",
+          "B": "Gärtnern und Bootfahren",
+          "C": "Kochen",
+          "D": "Stricken"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wie heißt das Haustier von Oma und Opa Wutz?",
+        "options": {
+          "A": "Goldfisch Goldi",
+          "B": "Polly Piepmatz",
+          "C": "Kiki Katze",
+          "D": "Bello"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Was antwortet Schorsch fast immer, wenn er gefragt wird?",
+        "options": {
+          "A": "Nein!",
+          "B": "Sausier!",
+          "C": "Hallo!",
+          "D": "Hunger!"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welchen Beruf hat Herr Zebra?",
+        "options": {
+          "A": "Feuerwehrmann",
+          "B": "Postbote",
+          "C": "Polizist",
+          "D": "Bäcker"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier ist Luisa?",
+        "options": {
+          "A": "Ein Kaninchen",
+          "B": "Eine Katze",
+          "C": "Ein Schaf",
+          "D": "Ein Zebra"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wie heißt der kleine Bruder von Luisa Löffel?",
+        "options": {
+          "A": "Linus",
+          "B": "Lutz",
+          "C": "Lennard",
+          "D": "Löffelchen"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Gemüse isst Luisa Löffel am allerliebsten?",
+        "options": {
+          "A": "Tomaten",
+          "B": "Karotten",
+          "C": "Gurken",
+          "D": "Erbsen"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wer repariert fast alles in der Stadt und fliegt auch den Rettungshubschrauber?",
+        "options": {
+          "A": "Opa Kläff",
+          "B": "Frau Mümmel",
+          "C": "Herr Bulle",
+          "D": "Papa Wutz"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier bringt Peppa zum Haustierwettbewerb mit?",
+        "options": {
+          "A": "Einen Hund namens Bello",
+          "B": "Einen Goldfisch namens Goldi",
+          "C": "Eine Katze namens Schnurri",
+          "D": "Einen Hamster"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wer ist der beste Freund von Opa Wutz?",
+        "options": {
+          "A": "Opa Kläff",
+          "B": "Herr Bulle",
+          "C": "Herr Zebra",
+          "D": "Opa Pony"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier ist Emily?",
+        "options": {
+          "A": "Ein Elefant",
+          "B": "Eine Ente",
+          "C": "Ein Esel",
+          "D": "Ein Eichhörnchen"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was arbeitet Mama Wutz?",
+        "options": {
+          "A": "Sie arbeitet am Computer von zu Hause aus",
+          "B": "Sie ist Lehrerin",
+          "C": "Sie arbeitet im Supermarkt",
+          "D": "Sie ist Polizistin"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was kann Papa Wutz überhaupt nicht gut lesen, obwohl er behauptet, ein Experte zu sein?",
+        "options": {
+          "A": "Bücher",
+          "B": "Landkarten",
+          "C": "Rezepte",
+          "D": "Zeitungen"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier ist Zoe?",
+        "options": {
+          "A": "Ein Zebra",
+          "B": "Ein Ziegenzwerg",
+          "C": "Ein Zobel",
+          "D": "Eine Ziege"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wie heißen die Zwillingsschwestern von Zoe Zebra?",
+        "options": {
+          "A": "Zaza und Zuzu",
+          "B": "Anna und Bella",
+          "C": "Mimi und Momo",
+          "D": "Lilly und Lana"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier ist Schorschs bester Freund im Kindergarten?",
+        "options": {
+          "A": "Richard Löffel",
+          "B": "Mausi Mietz",
+          "C": "Gerry Giraffe",
+          "D": "Freddy Fuchs"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier ist Pedro?",
+        "options": {
+          "A": "Ein Pony",
+          "B": "Ein Pinguin",
+          "C": "Ein Pelikan",
+          "D": "Ein Panther"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was vergisst oder verliert Pedro Pony ständig?",
+        "options": {
+          "A": "Seine Schuhe",
+          "B": "Seinen Rucksack",
+          "C": "Seine Brille",
+          "D": "Seinen Hut"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Welches Kostüm trägt Pedro Pony besonders gerne?",
+        "options": {
+          "A": "Superheld",
+          "B": "Cowboy",
+          "C": "Pirat",
+          "D": "Ritter"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier ist Danny?",
+        "options": {
+          "A": "Ein Hund",
+          "B": "Eing Dachs",
+          "C": "Ein Delphin",
+          "D": "Ein Dino"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was besitzt Opa Kläff (Dannys Opa)?",
+        "options": {
+          "A": "Einen Vergnügungspark",
+          "B": "Einen Bootsreparaturplatz / Schrottplatz",
+          "C": "Einen Bauernhof",
+          "D": "Einen Spielzeugladen"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier ist Suzy?",
+        "options": {
+          "A": "Ein Schaf",
+          "B": "Eine Schwalbe",
+          "C": "Ein Schwein",
+          "D": "Eine Schildkröte"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Als was verkleidet sich Suzy Sheep am liebsten?",
+        "options": {
+          "A": "Als Krankenschwester",
+          "B": "Als Feuerwehrfrau",
+          "C": "Als Prinzessin",
+          "D": "Als Astronautin"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier ist Candy?",
+        "options": {
+          "A": "Eine Katze",
+          "B": "Ein Kamel",
+          "C": "Ein Känguru",
+          "D": "Ein Küken"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier ist Rebecca?",
+        "options": {
+          "A": "Ein Kaninchen",
+          "B": "Ein Reh",
+          "C": "Eine Ratte",
+          "D": "Ein Rind"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wo wohnt Familie Löffel (Rebeccas Familie)?",
+        "options": {
+          "A": "In einem Bau unter der Erde (Hügel)",
+          "B": "In einem Baumhaus",
+          "C": "In einem Hochhaus",
+          "D": "Auf einem Boot"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier ist Freddy?",
+        "options": {
+          "A": "Ein Fuchs",
+          "B": "Ein Frosch",
+          "C": "Ein Flamingo",
+          "D": "Ein Falke"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was kann Freddy Fuchs besonders gut?",
+        "options": {
+          "A": "Sachen riechen",
+          "B": "Hoch springen",
+          "C": "Schnell rennen",
+          "D": "Unter Wasser schwimmen"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welchen Beruf hat Freddys Vater (Herr Fuchs)?",
+        "options": {
+          "A": "Er hat einen Verkaufswagen mit allem Möglichen",
+          "B": "Er ist Polizist",
+          "C": "Er ist Busfahrer",
+          "D": "Er ist Arzt"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier ist Gerald?",
+        "options": {
+          "A": "Eine Giraffe",
+          "B": "Ein Gepard",
+          "C": "Ein Gnu",
+          "D": "Ein Gecko"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Warum ist Gerald Giraffe beim Versteckspielen anfangs traurig?",
+        "options": {
+          "A": "Weil er zu groß ist und sich schwer verstecken kann",
+          "B": "Weil er zu langsam ist",
+          "C": "Weil niemand mit ihm spielen will",
+          "D": "Weil er seine Brille verloren hat"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wie heißt die Brieffreundin von Peppa, die aus Frankreich kommt?",
+        "options": {
+          "A": "Chloé",
+          "B": "Delphine Esel",
+          "C": "Marie",
+          "D": "Fleur"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Tier ist Kylie?",
+        "options": {
+          "A": "Ein Känguru",
+          "B": "Ein Koala",
+          "C": "Ein Krokodil",
+          "D": "Ein Kormoran"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Aus welchem Land kommt Kylie Känguru zu Besuch?",
+        "options": {
+          "A": "Australien",
+          "B": "USA",
+          "C": "Afrika",
+          "D": "Kanada"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wie heißt Peppas ältere Cousine?",
+        "options": {
+          "A": "Chloé Wutz",
+          "B": "Lilli Wutz",
+          "C": "Klara Wutz",
+          "D": "Anna Wutz"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wie heißen die beiden Polizisten in der Serie?",
+        "options": {
+          "A": "Herr Dachs und Herr Fuchs",
+          "B": "Polizist Herr Eichhorn und Polizist Herr Hase",
+          "C": "Polizist Panda und Polizist Eichhörnchen",
+          "D": "Herr Bulle und Herr Löwe"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Was macht Herr Bulle am liebsten auf den Straßen?",
+        "options": {
+          "A": "Die Straße aufgraben",
+          "B": "Blumen pflanzen",
+          "C": "Autos waschen",
+          "D": "Schilder putzen"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wer fliegt in den Weltraum und ist ein großes Vorbild für die Kinder?",
+        "options": {
+          "A": "Super-Kartoffel",
+          "B": "Käpt'n Kläff",
+          "C": "Doktor Hamster",
+          "D": "Astronaut Dr. Braun"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was passiert am Ende fast jeder Peppa Wutz Folge?",
+        "options": {
+          "A": "Alle lachen und fallen auf den Rücken",
+          "B": "Es fängt an zu regnen",
+          "C": "Alle gehen ins Bett",
+          "D": "Es gibt Kuchen"
+        },
+        "correctAnswerKey": "A"
+      }
+    ]
   },
   {
-    "question": "Wie heißt Sophias Einhorn?",
-    "options": {
-      "A": "Leaf",
-      "B": "Wildstar",
-      "C": "River",
-      "D": "Glacier"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Welche magische Kraft besitzt Wildstar?",
-    "options": {
-      "A": "Wasser-Magie",
-      "B": "Licht-Magie",
-      "C": "Pflanzen-Magie",
-      "D": "Eis-Magie"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Auf welcher Insel befindet sich die Akademie?",
-    "options": {
-      "A": "Sterneninsel",
-      "B": "Insel Berry",
-      "C": "Kristallinsel",
-      "D": "Regenbogeninsel"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Was passiert bei der magischen Bindung?",
-    "options": {
-      "A": "Das Einhorn bekommt Flügel",
-      "B": "Das Mal leuchtet und Magie wird frei",
-      "C": "Der Reiter spricht mit Tieren",
-      "D": "Die Akademie verschwindet"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Wer ist die Rektorin der Akademie?",
-    "options": {
-      "A": "Frau Primrose",
-      "B": "Frau Efeu",
-      "C": "Frau Stern",
-      "D": "Frau Beere"
-    },
-    "correctAnswerKey": "A"
-  },
-  {
-    "question": "Wie heißt Avas Einhorn?",
-    "options": {
-      "A": "Blossom",
-      "B": "Leaf",
-      "C": "Fern",
-      "D": "Willow"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Was ist Isabels größte Leidenschaft?",
-    "options": {
-      "A": "Kochen",
-      "B": "Sport und Wettbewerb",
-      "C": "Lesen",
-      "D": "Malen"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Welches Element kontrolliert Valentina?",
-    "options": {
-      "A": "Erde",
-      "B": "Feuer",
-      "C": "Luft",
-      "D": "Metall"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Wie heißt der dunkle See?",
-    "options": {
-      "A": "Schattensee",
-      "B": "Grim-See",
-      "C": "Schwarzsee",
-      "D": "Nachtsee"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Wer war Sophias Vater an der Akademie?",
-    "options": {
-      "A": "Ein Koch",
-      "B": "Ein berühmter Reiter",
-      "C": "Ein Lehrer",
-      "D": "Ein Gärtner"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Welche Farbe hat Wildstars Fell?",
-    "options": {
-      "A": "Reinweiß",
-      "B": "Weiß mit goldenen Sternen",
-      "C": "Silbergrau",
-      "D": "Schwarz"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Wer ist besonders modebewusst?",
-    "options": {
-      "A": "Layla",
-      "B": "Ava",
-      "C": "Valentina",
-      "D": "Isabel"
-    },
-    "correctAnswerKey": "C"
-  },
-  {
-    "question": "Was macht Grim mit Einhörnern?",
-    "options": {
-      "A": "Sie werden unsichtbar",
-      "B": "Sie verlieren Magie und werden krank",
-      "C": "Sie werden riesig",
-      "D": "Sie werden zu Pferden"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Welches Einhorn gehört zu Layla?",
-    "options": {
-      "A": "Storm",
-      "B": "Glacier",
-      "C": "Sunbeam",
-      "D": "Cloud"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Wie reisen die Schüler zur Insel?",
-    "options": {
-      "A": "Mit dem Flugzeug",
-      "B": "Mit einem magischen Bus",
-      "C": "Mit dem Schiff",
-      "D": "Auf Pferden"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "In welchem Wohnheim wohnt Sophia?",
-    "options": {
-      "A": "Saphir-Saal",
-      "B": "Bernstein-Wohnheim",
-      "C": "Smaragd-Turm",
-      "D": "Rubin-Trakt"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Was ist die Aufgabe der Reiter?",
-    "options": {
-      "A": "Rennen gewinnen",
-      "B": "Die Insel vor Grim schützen",
-      "C": "Einhörner verkaufen",
-      "D": "Zaubertränke brauen"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Wie heißt das Einhorn von Isabel?",
-    "options": {
-      "A": "River",
-      "B": "Lake",
-      "C": "Ocean",
-      "D": "Brook"
-    },
-    "correctAnswerKey": "A"
-  },
-  {
-    "question": "Welche Farbe hat Wildstars Magie?",
-    "options": {
-      "A": "Blau",
-      "B": "Gelb/Gold",
-      "C": "Grün",
-      "D": "Violett"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Wer ist Sophias erste Rivalin?",
-    "options": {
-      "A": "Ava",
-      "B": "Valentina",
-      "C": "Layla",
-      "D": "Isabel"
-    },
-    "correctAnswerKey": "B"
-  },
-  {
-    "question": "Was ist das Schicksalsrad?",
-    "options": {
-      "A": "Ein Glücksspiel",
-      "B": "Ort der Einhorn-Zuweisung",
-      "C": "Trainingsgerät",
-      "D": "Geheimes Portal"
-    },
-    "correctAnswerKey": "B"
+    "id":2,
+    "kategorie": "Harry Potter Band 1 Fanquiz",
+    "iconSrc": "Harry",
+    "questions":
+    [
+      {
+        "question": "An welcher Adresse wohnt Harry Potter zu Beginn des Buches bei den Dursleys?",
+        "options": {
+          "A": "Ligusterweg 4",
+          "B": "Spinners End 7",
+          "C": "Grimmauldplatz 12",
+          "D": "Fuchsbau 1"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Welches Tier bringt Harry im Zoo versehentlich dazu, aus seinem Terrarium zu entkommen?",
+        "options": {
+          "A": "Eine Vogelspinne",
+          "B": "Eine Boa Constrictor",
+          "C": "Einen Leguan",
+          "D": "Eine Kobra"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wer bricht in die Hütte auf dem Felsen ein, um Harry seinen Hogwarts-Brief persönlich zu übergeben?",
+        "options": {
+          "A": "Albus Dumbledore",
+          "B": "Rubeus Hagrid",
+          "C": "Minerva McGonagall",
+          "D": "Severus Snape"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wo befindet sich der geheime Zugang zur Winkelgasse?",
+        "options": {
+          "A": "Hinter der Station King's Cross",
+          "B": "Im Keller von Borgin & Burkes",
+          "C": "Hinter der Kneipe 'Der Tropfende Kessel'",
+          "D": "Unter einer Telefonzelle in London"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Aus welchem Holz besteht Harry Potters Zauberstab, den er bei Ollivander kauft?",
+        "options": {
+          "A": "Stechpalme",
+          "B": "Eibe",
+          "C": "Weide",
+          "D": "Eiche"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Von welchem Gleis fährt der Hogwarts-Express ab?",
+        "options": {
+          "A": "Gleis 8 3/4",
+          "B": "Gleis 9",
+          "C": "Gleis 9 3/4",
+          "D": "Gleis 10"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Welche magische Süßigkeit sammelt Ron Weasley im Zug leidenschaftlich gern?",
+        "options": {
+          "A": "Bertie Botts Bohnen",
+          "B": "Schokofrösche",
+          "C": "Kürbispasteten",
+          "D": "Zuckerstangen"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "In welches Hogwarts-Haus wird Hermine Granger vom Sprechenden Hut geschickt?",
+        "options": {
+          "A": "Ravenclaw",
+          "B": "Hufflepuff",
+          "C": "Slytherin",
+          "D": "Gryffindor"
+        },
+        "correctAnswerKey": "D"
+      },
+      {
+        "question": "Wer ist der Hausgeist von Slytherin?",
+        "options": {
+          "A": "Der Fast Kopflose Nick",
+          "B": "Der Blutige Baron",
+          "C": "Die Graue Dame",
+          "D": "Der Fette Mönch"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welchen Besen bekommt Harry Potter geschenkt, nachdem er Sucher der Gryffindor-Mannschaft wird?",
+        "options": {
+          "A": "Sauberwisch 7",
+          "B": "Nimbus 2000",
+          "C": "Nimbus 2001",
+          "D": "Feuerblitz"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welches Wesen bricht an Halloween in Hogwarts ein und wird von Harry, Ron und Hermine besiegt?",
+        "options": {
+          "A": "Ein Bergtroll",
+          "B": "Ein Acromantula",
+          "C": "Ein Drei-köpfiger Hund",
+          "D": "Ein Werwolf"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Was sieht Harry, als er zum ersten Mal in den Spiegel Nerhegeb blickt?",
+        "options": {
+          "A": "Sich selbst als Zaubereiminister",
+          "B": "Sich selbst mit dem Stein der Weisen",
+          "C": "Seine Eltern",
+          "D": "Die Siegestrophäe beim Quidditch"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Wie heißt der dreiköpfige Hund, der die Falltür im verbotenen Korridor bewacht?",
+        "options": {
+          "A": "Fang",
+          "B": "Fluffy",
+          "C": "Aragog",
+          "D": "Bello"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welche Drachenrasse brütet Hagrid heimlich in seiner Hütte aus?",
+        "options": {
+          "A": "Norwegischer Stachelbuckel",
+          "B": "Ungarischer Hornschwanz",
+          "C": "Chinesischer Feuerball",
+          "D": "Walisischer Grüner"
+        },
+        "correctAnswerKey": "A"
+      },
+      {
+        "question": "Wer ist der eigentliche Erschaffer des Steins der Weisen?",
+        "options": {
+          "A": "Albus Dumbledore",
+          "B": "Gellert Grindelwald",
+          "C": "Nicolas Flamel",
+          "D": "Salazar Slytherin"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Welche magische Pflanze fängt die drei Freunde ab, nachdem sie durch die Falltür springen?",
+        "options": {
+          "A": "Alraune",
+          "B": "Teufelsschlinge",
+          "C": "Bubotubler",
+          "D": "Lenkpflaume"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Welche Schachspiel-Figur reitet Ron Weasley während der lebensgroßen Zaubererschach-Partie?",
+        "options": {
+          "A": "Einen Läufer",
+          "B": "Einen Springer (Pferd)",
+          "C": "Einen Turm",
+          "D": "Einen Bauern"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wer stellt das Rätsel mit den sieben Zaubertränken auf, das Hermine durch Logik löst?",
+        "options": {
+          "A": "Professor McGonagall",
+          "B": "Professor Flitwick",
+          "C": "Professor Snape",
+          "D": "Professor Quirrell"
+        },
+        "correctAnswerKey": "C"
+      },
+      {
+        "question": "Auf wessen Hinterkopf verbirgt sich das Gesicht von Lord Voldemort?",
+        "options": {
+          "A": "Professor Snape",
+          "B": "Professor Quirrell",
+          "C": "Hausmeister Filch",
+          "D": "Professor Binns"
+        },
+        "correctAnswerKey": "B"
+      },
+      {
+        "question": "Wer erhält beim Abschlussfest die entscheidenden letzten 10 Punkte für Gryffindor, weil er Mut bewiesen hat, sich seinen Freunden entgegenzustellen?",
+        "options": {
+          "A": "Neville Longbottom",
+          "B": "Harry Potter",
+          "C": "Ron Weasley",
+          "D": "Seamus Finnigan"
+        },
+        "correctAnswerKey": "A"
+      }
+    ]
   }
 ]

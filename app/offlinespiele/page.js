@@ -1,38 +1,28 @@
-"use client"; // Required for useTheme and useMediaQuery
+"use client";
 
 import React from 'react';
-// 1. Swap the Link import
 import Link from 'next/link';
 import { StandardHeader } from "../components/components/StandardHeader";
 import {
   Typography,
   Button,
   Paper,
-  Box,
   Grid,
+  Card,
   Container,
+  CardContent,
+  CardActions,
   useTheme,
-  useMediaQuery
+  useMediaQuery,
+  Box
 } from '@mui/material';
 import {
   Psychology as QuizIcon,
-  ArrowForwardIos as ArrowIcon
+  ArrowForwardIos as ArrowIcon,
 } from '@mui/icons-material';
+import { categories } from "./functions/helper";
 
-import { categories } from "./functions/json_helpers";
-export default function QuizOverviewSite(){
-  const activities = [
-    {
-      title: "Ponys und Pferde",
-      description: "Teste dein Pferde Wissen?",
-      path: "/quiz/1"
-    },
-    {
-      title: "Farben",
-      description: "Kennst du den Farbkreis?",
-      path: "/quiz/2"
-    }
-  ];
+export default function OfflineOverviewSite() {
   const themes = categories();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -43,22 +33,21 @@ export default function QuizOverviewSite(){
 
       <Container maxWidth="lg" sx={{ py: 4 }}>
         <Typography variant="h2" sx={{ fontWeight: 900, color: '#4ba5f7', mb: 4, textAlign: 'center' }}>
-          Quiz
+          Offline Spiele
         </Typography>
 
-        {/* Using Grid layout to handle the dynamic side-by-side card structure */}
         <Grid container spacing={3} justifycontent="center">
           {themes.map((item, index) => (
             <Grid
               key={index}
-              size={{ xs: 12, sm: 6, md: 4 }} // Fluid resizing across viewports
+              size={{ xs: 12, sm: 6, md: 4 }}
             >
               <Paper
                 elevation={3}
                 sx={{
                   borderRadius: '24px',
                   p: 3,
-                  height: '100%', // Ensures all cards match heights evenly
+                  height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -72,21 +61,19 @@ export default function QuizOverviewSite(){
                 }}
               >
 
-                {/* Card Content area with flexible growth spacing */}
                 <Box sx={{ flexGrow: 1, mb: 3 }}>
                   <Typography variant="h5" sx={{ fontWeight: 800, color: '#2D3436', mb: 1 }}>
                     {item[1]}
                   </Typography>
                   <Typography variant="body1" color="text.secondary">
-                    Die neusten Fragen zum Thema: {item[1]}
+                    Kurzbeschreibung noch hinzufügen
                   </Typography>
                 </Box>
 
-                {/* Interactive Action Anchor Button */}
                 <Button
                   variant="contained"
                   component={Link}
-                  href={`/quiz/${item[0]}`}
+                  href={`/offlinespiele/${item[0]}`}
                   fullWidth
                   sx={{
                     borderRadius: '16px',

@@ -10,7 +10,7 @@ export default function Download() {
   const pdfUrl = "/pdfs/Mermaid_friends.pdf";
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#F8F9FA' }}>
+    <Box sx={{ minHeight: '100vh'}}>
       <StandardHeader />
 
       <Container maxWidth="lg" sx={{ py: 4 }}>
@@ -18,7 +18,7 @@ export default function Download() {
           Downloads
         </Typography>
         <Typography variant="h6" sx={{ mb: 4, color: 'text.secondary',textAlign: 'center'  }}>
-          Kostenlos herunterladen
+          Kostenlose Downloads zum herunterladen und ausdrucken.
         </Typography>
 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
@@ -65,7 +65,7 @@ export default function Download() {
                 borderRadius: '12px',
                 fontWeight: 'bold',
                 px: 4,
-                backgroundColor: '#219538',
+                backgroundColor: '#FF9800',
                 '&:hover': { backgroundColor: '#1a7a2e' }
               }}
             >

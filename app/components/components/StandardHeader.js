@@ -26,6 +26,7 @@ export const StandardHeader = () => {
     { title: 'Witze', path: '/witz' },
     { title: 'Spiele', path: '/spiele' },
     { title: 'Downloads', path: '/download' },
+    { title: 'Offline Spiele', path: '/offlinespiele' },
   ];
 
   const handleDrawerToggle = () => {

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Auf die Nüsse",
+    "minSpieler": 2,
+    "maxSpieler": 4,
+    "minAge": 8,
+    "duration": "15min",
+    "categories": "Reisespiel, Würfelspiel",
+    "text": "Das Spiel ist erstaunlich amüsant.\nEs ist klein und leicht.\nMan kann viele Runden spielen."
+  }
+]
