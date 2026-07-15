@@ -26,7 +26,7 @@ export const FeaturedOfflineGames = () => {
     {
       title: "Monopoly",
       desc: "Gehe nicht ins Gefängnis",
-      path: "/offlinespiele/2",
+      path: "/offlinespiele/1",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
       shadow: '0 8px 20px rgba(33, 150, 243, 0.3)',
       iconSrc: "spiele"
@@ -34,7 +34,7 @@ export const FeaturedOfflineGames = () => {
     {
       title: "Jenga",
       desc: "Wie hoch kannst du den Turm bauen?",
-      path: "/offlinespiele/3",
+      path: "/offlinespiele/1",
       gradient: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
       shadow: '0 8px 20px rgba(255, 152, 0, 0.3)',
       iconSrc: "spiele"
