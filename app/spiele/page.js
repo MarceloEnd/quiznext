@@ -77,17 +77,6 @@ const GAMES = [
     iconSrc: "sudoku"
   },
   {
-    title: "Rechne Quadrat",
-    basePath: "/spiele/rechnequadrat",
-    difficulties: [
-      { label: "Leicht", query: "?leicht", color: "#4caf50" },
-      { label: "Normal", query: "", color: "#2196f3" },
-      { label: "Schwer", query: "?schwer", color: "#f44336" }
-    ],
-    description: "",
-    iconSrc: "rechnequadrat"
-  },
-  {
     title: "Wort Suche",
     basePath: "/spiele/wortsuche",
     difficulties: [{ label: "Spielen", query: "", color: "#219538ff" }],

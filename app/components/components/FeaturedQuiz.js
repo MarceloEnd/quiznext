@@ -16,20 +16,20 @@ import { setIcon } from './functions';
 export const FeaturedQuiz = () => {
   const featured = [
     {
-      title: "Ponys und Pferde",
-      desc: "Alles über Feen und Füchse",
+      title: "Peppa Wutz Fan Quiz",
+      desc: "Alles über Peppa Wutz",
       path: "/quiz/1",
       gradient: 'linear-gradient(135deg, #4CAF50 0%, #81C784 100%)',
       shadow: '0 8px 20px rgba(76, 175, 80, 0.3)',
-      iconSrc: "pferde"
+      iconSrc: "peppa"
     },
     {
-      title: "Farben",
-      desc: "Der Farbkreis",
+      title: "Harry Potter Band 1 Fan Quiz",
+      desc: "Der Stein der Weisen",
       path: "/quiz/2",
       gradient: 'linear-gradient(135deg, #2196F3 0%, #64B5F6 100%)',
       shadow: '0 8px 20px rgba(33, 150, 243, 0.3)',
-      iconSrc: "farben"
+      iconSrc: "harry"
     },
 
   ];

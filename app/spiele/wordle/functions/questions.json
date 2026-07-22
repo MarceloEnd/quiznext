@@ -1,12 +1,146 @@
 [
-  { "id": 1, "kategorie": "Natur", "iconSrc": "natur", "fragen": [{"id":1,"wort":"Birke"},{"id":2,"wort":"Blume"},{"id":3,"wort":"Wiese"},{"id":4,"wort":"Kraut"},{"id":5,"wort":"Fisch"},{"id":6,"wort":"Halme"},{"id":7,"wort":"Erden"},{"id":8,"wort":"Zweig"},{"id":9,"wort":"Fluss"},{"id":10,"wort":"Biene"}]},
-  { "id": 2, "kategorie": "Tiere", "iconSrc": "tiere", "fragen": [{"id":1,"wort":"Hunde"},{"id":2,"wort":"Katze"},{"id":3,"wort":"Mause"},{"id":4,"wort":"Pferd"},{"id":5,"wort":"Huhne"},{"id":6,"wort":"Vogel"},{"id":7,"wort":"Ziege"},{"id":8,"wort":"Tiger"},{"id":9,"wort":"Fisch"},{"id":10,"wort":"Hasen"}]},
-  { "id": 3, "kategorie": "Essen", "iconSrc": "essen", "fragen": [{"id":1,"wort":"Apfel"},{"id":2,"wort":"Birne"},{"id":3,"wort":"Wurst"},{"id":4,"wort":"Pizza"},{"id":5,"wort":"Salat"},{"id":6,"wort":"Kekse"},{"id":7,"wort":"Brote"},{"id":8,"wort":"Milch"},{"id":9,"wort":"Nudel"},{"id":10,"wort":"Torte"}]},
-  { "id": 4, "kategorie": "Schule", "iconSrc": "schule", "fragen": [{"id":1,"wort":"Stift"},{"id":2,"wort":"Block"},{"id":3,"wort":"Tafel"},{"id":4,"wort":"Fibel"},{"id":5,"wort":"Lerne"},{"id":6,"wort":"Bucher"},{"id":7,"wort":"Radio"},{"id":8,"wort":"Kante"},{"id":9,"wort":"Karte"},{"id":10,"wort":"Brief"}]},
-  { "id": 5, "kategorie": "Farben", "iconSrc": "farben", "fragen": [{"id":1,"wort":"Weiss"},{"id":2,"wort":"Grune"},{"id":3,"wort":"Blaues"},{"id":4,"wort":"Gelbe"},{"id":5,"wort":"Graue"},{"id":6,"wort":"Braun"},{"id":7,"wort":"Beige"},{"id":8,"wort":"Rosar"},{"id":9,"wort":"Lilas"},{"id":10,"wort":"Bunte"}]},
-  { "id": 6, "kategorie": "Hobby", "iconSrc": "hobby", "fragen": [{"id":1,"wort":"Sport"},{"id":2,"wort":"Spiel"},{"id":3,"wort":"Malen"},{"id":4,"wort":"Lesen"},{"id":5,"wort":"Tanze"},{"id":6,"wort":"Singe"},{"id":7,"wort":"Reise"},{"id":8,"wort":"Fahrt"},{"id":9,"wort":"Boote"},{"id":10,"wort":"Puppa"}]},
-  { "id": 7, "kategorie": "Kleidung", "iconSrc": "kleidung", "fragen": [{"id":1,"wort":"Hosen"},{"id":2,"wort":"Hemde"},{"id":3,"wort":"Jacke"},{"id":4,"wort":"Mütze"},{"id":5,"wort":"Schuh"},{"id":6,"wort":"Rocke"},{"id":7,"wort":"Weste"},{"id":8,"wort":"Socke"},{"id":9,"wort":"Kleid"},{"id":10,"wort":"Hands"}]},
-  { "id": 8, "kategorie": "Familie", "iconSrc": "familie", "fragen": [{"id":1,"wort":"Vater"},{"id":2,"wort":"Mutti"},{"id":3,"wort":"Onkel"},{"id":4,"wort":"Tante"},{"id":5,"wort":"Kinds"},{"id":6,"wort":"Babys"},{"id":7,"wort":"Omas"},{"id":8,"wort":"Opas"},{"id":9,"wort":"Enkel"},{"id":10,"wort":"Cousi"}]},
-  { "id": 9, "kategorie": "Wetter", "iconSrc": "wetter", "fragen": [{"id":1,"wort":"Sonne"},{"id":2,"wort":"Regen"},{"id":3,"wort":"Winde"},{"id":4,"wort":"Wolke"},{"id":5,"wort":"Frost"},{"id":6,"wort":"Sturm"},{"id":7,"wort":"Hitze"},{"id":8,"wort":"Kälte"},{"id":9,"wort":"Schne"},{"id":10,"wort":"Nebel"}]},
-  { "id": 10, "kategorie": "Zuhause", "iconSrc": "haus", "fragen": [{"id":1,"wort":"Tisch"},{"id":2,"wort":"Stuhl"},{"id":3,"wort":"Sofas"},{"id":4,"wort":"Bette"},{"id":5,"wort":"Lampe"},{"id":6,"wort":"Regal"},{"id":7,"wort":"Wande"},{"id":8,"wort":"Turen"},{"id":9,"wort":"Hause"},{"id":10,"wort":"Kuche"}]}
+  {
+    "id": 1,
+    "kategorie": "Natur",
+    "iconSrc": "natur",
+    "fragen": [
+      { "id": 1, "wort": "Birke" },
+      { "id": 2, "wort": "Blume" },
+      { "id": 3, "wort": "Wiese" },
+      { "id": 4, "wort": "Kraut" },
+      { "id": 5, "wort": "Fisch" },
+      { "id": 6, "wort": "Halme" },
+      { "id": 7, "wort": "Erden" },
+      { "id": 8, "wort": "Zweig" },
+      { "id": 9, "wort": "Fluss" },
+      { "id": 10, "wort": "Biene" }
+    ]
+  },
+  {
+    "id": 2,
+    "kategorie": "Tiere",
+    "iconSrc": "tiere",
+    "fragen": [
+      { "id": 1, "wort": "Hunde" },
+      { "id": 2, "wort": "Katze" },
+      { "id": 4, "wort": "Pferd" },
+      { "id": 6, "wort": "Vogel" },
+      { "id": 7, "wort": "Ziege" },
+      { "id": 8, "wort": "Tiger" },
+      { "id": 9, "wort": "Fisch" },
+      { "id": 10, "wort": "Hasen" }
+    ]
+  },
+  {
+    "id": 3,
+    "kategorie": "Essen",
+    "iconSrc": "essen",
+    "fragen": [
+      { "id": 1, "wort": "Apfel" },
+      { "id": 2, "wort": "Birne" },
+      { "id": 3, "wort": "Wurst" },
+      { "id": 4, "wort": "Pizza" },
+      { "id": 5, "wort": "Salat" },
+      { "id": 6, "wort": "Kekse" },
+      { "id": 7, "wort": "Brote" },
+      { "id": 8, "wort": "Milch" },
+      { "id": 9, "wort": "Nudel" },
+      { "id": 10, "wort": "Torte" }
+    ]
+  },
+  {
+    "id": 4,
+    "kategorie": "Schule",
+    "iconSrc": "schule",
+    "fragen": [
+      { "id": 1, "wort": "Stift" },
+      { "id": 2, "wort": "Block" },
+      { "id": 3, "wort": "Tafel" },
+      { "id": 4, "wort": "Fibel" },
+      { "id": 7, "wort": "Radio" },
+      { "id": 8, "wort": "Kante" },
+      { "id": 9, "wort": "Karte" },
+      { "id": 10, "wort": "Brief" }
+    ]
+  },
+  {
+    "id": 5,
+    "kategorie": "Farben",
+    "iconSrc": "farben",
+    "fragen": [
+      { "id": 1, "wort": "Weiss" },
+      { "id": 6, "wort": "Braun" },
+      { "id": 7, "wort": "Beige" }
+    ]
+  },
+  {
+    "id": 6,
+    "kategorie": "Hobby",
+    "iconSrc": "hobby",
+    "fragen": [
+      { "id": 1, "wort": "Sport" },
+      { "id": 2, "wort": "Spiel" },
+      { "id": 3, "wort": "Malen" },
+      { "id": 4, "wort": "Lesen" },
+      { "id": 7, "wort": "Reise" },
+      { "id": 8, "wort": "Fahrt" },
+      { "id": 9, "wort": "Boote" }
+    ]
+  },
+  {
+    "id": 7,
+    "kategorie": "Kleidung",
+    "iconSrc": "kleidung",
+    "fragen": [
+      { "id": 1, "wort": "Hosen" },
+      { "id": 3, "wort": "Jacke" },
+      { "id": 5, "wort": "Schuh" },
+      { "id": 7, "wort": "Weste" },
+      { "id": 8, "wort": "Socke" },
+      { "id": 9, "wort": "Kleid" }
+    ]
+  },
+  {
+    "id": 8,
+    "kategorie": "Familie",
+    "iconSrc": "familie",
+    "fragen": [
+      { "id": 1, "wort": "Vater" },
+      { "id": 2, "wort": "Mutti" },
+      { "id": 3, "wort": "Onkel" },
+      { "id": 4, "wort": "Tante" },
+      { "id": 6, "wort": "Babys" },
+      { "id": 9, "wort": "Enkel" }
+    ]
+  },
+  {
+    "id": 9,
+    "kategorie": "Wetter",
+    "iconSrc": "wetter",
+    "fragen": [
+      { "id": 1, "wort": "Sonne" },
+      { "id": 2, "wort": "Regen" },
+      { "id": 3, "wort": "Winde" },
+      { "id": 4, "wort": "Wolke" },
+      { "id": 5, "wort": "Frost" },
+      { "id": 6, "wort": "Sturm" },
+      { "id": 7, "wort": "Hitze" },
+      { "id": 8, "wort": "Kälte" },
+      { "id": 10, "wort": "Nebel" }
+    ]
+  },
+  {
+    "id": 10,
+    "kategorie": "Zuhause",
+    "iconSrc": "haus",
+    "fragen": [
+      { "id": 1, "wort": "Tisch" },
+      { "id": 2, "wort": "Stuhl" },
+      { "id": 3, "wort": "Sofas" },
+      { "id": 5, "wort": "Lampe" },
+      { "id": 6, "wort": "Regal" },
+      { "id": 7, "wort": "Wande" },
+      { "id": 9, "wort": "Hause" }
+    ]
+  }
 ]
