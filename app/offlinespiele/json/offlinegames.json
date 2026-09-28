@@ -7,6 +7,62 @@
     "minAge": 8,
     "duration": "15min",
     "categories": "Reisespiel, Würfelspiel",
-    "text": "Das Spiel ist erstaunlich amüsant.\nEs ist klein und leicht.\nMan kann viele Runden spielen."
+    "shortText": "Ein rasantes und lustiges Würfelspiel für die ganze Familie.",
+    "text": "Auf die Nüsse ist ein erstaunlich amüsantes und schnelles Würfelspiel, das perfekt für zwischendurch ist. Durch seine kompakte Größe ist es ideal als Reisespiel geeignet und passt in jede Tasche. Man fiebert bei jedem Wurf mit und kann problemlos viele Runden hintereinander spielen, ohne dass es langweilig wird."
+  },
+  {
+    "id": 2,
+    "name": "Uno",
+    "minSpieler": 2,
+    "maxSpieler": 6,
+    "minAge": 6,
+    "duration": "10min",
+    "categories": "Reisespiel, Kartenspiel",
+    "shortText": "Der bunte Kartenspiel-Klassiker voller Überraschungen und Richtungswechsel.",
+    "text": "Uno ist der absolute Klassiker unter den Kartenspielen und darf in keinem Gepäck fehlen. Ziel ist es, als Erster alle Karten abzulegen. Mit Aktionskarten wie Aussetzen, Retourgänge oder Zieh-Vier wird das Spielgeschehen blitzschnell auf den Kopf gestellt. Wer vergisst, 'Uno!' zu rufen, wird gnadenlos bestraft!"
+  },
+  {
+    "id": 3,
+    "name": "Die Siedler von Catan",
+    "minSpieler": 3,
+    "maxSpieler": 4,
+    "minAge": 10,
+    "duration": "75min",
+    "categories": "Brettspiel, Strategie",
+    "shortText": "Das legendäre Strategiespiel um Handel, Bauen und Entdecken.",
+    "text": "Auf der Insel Catan herrscht reges Treiben: Die Spieler erkunden unbekanntes Terrain, errichten Siedlungen und Städte und treiben strategischen Handel mit Rohstoffen wie Holz, Lehm und Getreide. Da sich das Spielfeld bei jeder Partie anders zusammenfügt, bietet Catan einen enormen Wiederspielwert und fordert taktisches Geschick."
+  },
+  {
+    "id": 4,
+    "name": "Monopoly",
+    "minSpieler": 2,
+    "maxSpieler": 6,
+    "minAge": 8,
+    "duration": "90min",
+    "categories": "Brettspiel, Klassiker",
+    "shortText": "Das weltberühmte Spiel um Grundbesitz, Mieten und große Vermögen.",
+    "text": "Bei Monopoly schlüpfen die Spieler in die Rolle von Immobilienmaklern und Geschäftsleuten. Es gilt, Straßen zu kaufen, Häuser und Hotels zu bauen und von Mitspielern saftige Mieten zu kassieren. Wer am Ende das meiste Geld anhäuft und die Konkurrenz in den Bankrott treibt, gewinnt das Spiel. Nervenkitzel und Emotionen sind garantiert!"
+  },
+  {
+    "id": 5,
+    "name": "Kniffel",
+    "minSpieler": 1,
+    "maxSpieler": 6,
+    "minAge": 6,
+    "duration": "30min",
+    "categories": "Würfelspiel, Klassiker",
+    "shortText": "Der Würfel-Klassiker für kluge Taktiker und Glückspilze.",
+    "text": "Kniffel ist das ideale Spiel, um das Glück herauszufordern und gleichzeitig clevere Entscheidungen zu treffen. Mit fünf Würfeln haben die Spieler pro Runde drei Versuche, um bestimmte Kombinationen wie ein Full House, eine kleine Straße oder natürlich das begehrte 'Kniffel' zu erzielen. Wer am Ende die meisten Punkte auf dem Block vereint, gewinnt."
+  },
+  {
+    "id": 6,
+    "name": "Zug um Zug",
+    "minSpieler": 2,
+    "maxSpieler": 5,
+    "minAge": 8,
+    "duration": "45min",
+    "categories": "Brettspiel, Familienspiel",
+    "shortText": "Ein spannendes Abenteuer quer durch das Land mit bunten Zügen.",
+    "text": "Zug um Zug ist ein modernes Zug- und Taktikspiel, bei dem die Spieler Streckennetz-Karten sammeln, um Städte miteinander zu verbinden. Das Prinzip ist kinderleicht zu lernen, bietet aber reichlich taktische Tiefe, da man sich gegenseitig die Wege versperren kann. Die farbigen Plastik-Waggons machen das Spiel auch optisch zu einem echten Highlight."
   }
 ]

@@ -78,10 +78,10 @@ export default function QuizOverviewSite(){
                     {item[1]}
                   </Typography>
                   <Typography variant="body1" color="text.secondary">
-                    Die neusten Fragen zum Thema: {item[1]}
+                    Die neusten Fragen zum Thema: <br/> {item[1]}
                   </Typography>
                 </Box>
-
+                
                 {/* Interactive Action Anchor Button */}
                 <Button
                   variant="contained"
