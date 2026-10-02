@@ -144,19 +144,19 @@ export default function OfflineOverviewSite() {
                   }}
                 >
                   <Box sx={{ flexGrow: 1, mb: 3 }}>
-                    <Typography variant="h5" sx={{ fontWeight: 800, color: '#2D3436', mb: 1 }}>
-                      {item.name}
-                    </Typography>
+                  <Typography variant="h5" sx={{ fontWeight: 800, color: '#2D3436', mb: 1 }}>
+                    {item.name}
+                  </Typography>
 
-                    <Box sx={{ my: 4 }}>
-                      <Grid container spacing={2}>
+                    <Box sx={{ my: 4 }} >
+                      <Grid container spacing={0} >
                         {[
                           { label: "Spieler", value: `${item.minSpieler}-${item.maxSpieler}` },
                           { label: "Alter", value: `${item.minAge}+` },
                           { label: "Dauer", value: item.duration }
                         ].map((subItem, idx) => (
-                          <Grid item="true" xs={4} key={idx}>
-                            <Paper elevation={0} sx={{ p: 1, textAlign: 'center', bgcolor: '#c5efff', borderRadius: 2 }}>
+                          <Grid item="true" xs={2} key={idx}>
+                            <Paper elevation={0} sx={{ p: 1, textAlign: 'center', bgcolor: '#c5efff', borderRadius: 2, marginLeft: '20px', width:'80px' }}>
                               <Typography variant="caption" sx={{ display: 'block', color: 'text.secondary' }}>{subItem.label}</Typography>
                               <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{subItem.value}</Typography>
                             </Paper>
@@ -169,8 +169,8 @@ export default function OfflineOverviewSite() {
                       variant="body1"
                       color="text.secondary"
                       sx={{
-                        maxWidth: '400px',
-                        minWidth: '400px'
+                        maxWidth: '350px',
+                        minWidth: '350px'
                       }}
                     >
                       {item.shortText}
